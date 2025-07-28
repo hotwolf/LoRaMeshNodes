@@ -1,5 +1,5 @@
 //###############################################################################
-//# LoRaMeshNodes - Configuration                                               #
+//# LoRaMeshNodes - Antenna                                                     #
 //###############################################################################
 //#    Copyright 2025 Dirk Heisswolf                                            #
 //#    This file is part of the LoRaMeshNodes project.                          #
@@ -22,25 +22,35 @@
 //#                                                                             #
 //###############################################################################
 //# Description:                                                                #
-//#   Common configuration                                                      #
+//#   A selection of LoRa antennas.                                             #
 //#                                                                             #
 //###############################################################################
 //# Version History:                                                            #
-//#   July 18, 2025                                                             #
+//#   July 21, 2025                                                             #
 //#      - Initial release                                                      #
 //#                                                                             #
 //###############################################################################
-//include <./target.scad>
-include <../lib/NopSCADlib/lib.scad>
+include <../lib/NopSCADlib/utils/core/core.scad>
 use     <../lib/NopSCADlib/vitamins/antenna.scad>
+//                                                                                       t
+LoRa_20cm_antenna   =  ["LoRa_20cm_antenna", 
+                        "20cm LoRa Antenna",
+                        200,                       //! Total length
+                        6,                         //! Diameter at the top
+                        13,                        //! Diameter at the base
+                        20.6,                      //! Split point
+                        20.6,                      //! Length of the straight part
+                        [5.3, 26, 1.7, 8.5, 2],    //! Hinge post width, z value of the pin, pin diameter, width reduction and slot width
+                        [13.1, 13, 6.5],             //! Grip d, h, h2
+                        [[97.6, 0.7, 0.6],         //! List of ring z, thickness, depths
+                         [99, 0.7, 0.6]],          //! Space for left panel, washers and nuts when screwed on fully.
+                        6.45];                     //! Panel hole radius
 
-use     <../vitamins/LMN_Heltec_T114.scad>
-use     <../vitamins/LMN_lipo.scad>
-use     <../vitamins/LMN_solar.scad>
-use     <../vitamins/LMN_antenna.scad>
 
-//Common parameters
-solarA = 35;   //Solar panel tilt angle
-wallT  =  3;   //Wall thickness of the enclosure
-gapW   =  0.2; //Gap between moving parts
-edgeR  =  1;   //Rounded edges
+module LoRa_20cm_antenna(wall=3, angle=90) {
+   antenna(LoRa_20cm_antenna, wall, angle);   
+}
+
+if($preview) {    
+   antenna(LoRa_20cm_antenna, 3, 90);
+}
