@@ -1,0 +1,12 @@
+<div class="links">
+<h1>Related Projects</h1>
+
+<!-- WindowPainter -->
+<div class="link">
+<a class="active" href="//hotwolf.github.io/WindowPainter">
+<h1>WindowPainter</h1>
+Another vertical plotter
+</a>
+</div><!--<div id="link">-->
+
+</div><!--<div id="links">-->
