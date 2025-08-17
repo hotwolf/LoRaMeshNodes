@@ -1,0 +1,28 @@
+Vitamins:
+    M
+    s
+    n
+    v
+    a
+ M   
+ s  l
+ n  e
+ v  n
+ a  c
+  | 1|  1 Lithium-Polymer-Akku 3,7V 2500mAh
+ 1| 1|  2 Solar Panel 100x100mm² 5V 3W
+  | 1|  1 Antenna 20cm LoRa Antenna
+  | 1|  1 Nut M6.25 x 1.8mm 
+  | 1|  1 Heltec T144
+  | 1|  1 Heltec L76K_GNSS Module
+  | 1|  1 Washer star M6.4 x 0.6mm
+
+Printed:
+  | 1|  1 MSNvA_buttons.stl
+  | 1|  1 MSNvA_lEnc.stl
+  | 1|  1 MSNvA_stand.stl
+ 1|  |  1 MSNvA_top.stl
+
+Assemblies:
+  1 MSNvA_assembly
+  1 MSNvA_lEnc_assembly

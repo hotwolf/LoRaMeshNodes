@@ -1,0 +1,7 @@
+{
+    "MSNvA/assemblies/MSNvA_lEnc_assembled.png": 6.208,
+    "MSNvA/assemblies/MSNvA_lEnc_assembly.png": 6.008,
+    "MSNvA/assemblies/MSNvA_assembled.png": 39.931,
+    "MSNvA/assemblies/MSNvA_assembly.png": 36.133,
+    "MSNvA/readme.html": 0.111
+}

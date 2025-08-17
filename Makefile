@@ -36,7 +36,11 @@
 REPO_DIR       := .
 #REPO_DIR      := $(CURDIR)
 SCAD_DIR       := $(REPO_DIR)/scad
+LIB_DIR        := $(REPO_DIR)/lib
 NOPSCADLIB_DIR := $(REPO_DIR)/lib/NopSCADlib
+
+OPENSCADPATH   := $(abspath $(LIB_DIR)):.
+export OPENSCADPATH
 
 #Tools	      
 ifndef EDITOR 
@@ -66,8 +70,11 @@ all:	SSNvA MSNvA
 
 SSNvA:
 	$(PYTHON) $(NOPSCADLIB_DIR)/scripts/make_all.py SSNvA
-MSNvA:
+MSNvA:  FORCE
+	env | grep PATH
 	$(PYTHON) $(NOPSCADLIB_DIR)/scripts/make_all.py MSNvA
+
+FORCE:
 
 ####################
 # Update libraries #

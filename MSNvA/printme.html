@@ -1,0 +1,241 @@
+<p><a name="TOP"></a></p>
+<h1>LoRaMeshNodes</h1>
+<p>These are the assembly instructions for the Mobile Solar Node (Variant A) (MSNvA),
+a portable solar powered <a href="https://meshtastic.org">Meshtastic</a> or
+<a href="https://meshcore.co.uk">MeshCore</a> node.</p>
+<p><img alt="Main Assembly" src="assemblies/MSNvA_assembled.png" /></p>
+<div style="page-break-after: always;"></div>
+<h2>Table of Contents</h2>
+<ol>
+<li><a href="#Parts_list">Parts list</a></li>
+<li><a href="#MSNvA_lEnc_assembly">MSNvA LEnc Assembly</a></li>
+<li><a href="#MSNvA_assembly">MSNvA Assembly</a></li>
+</ol>
+<div style="page-break-after: always;"></div>
+<p><a name="Parts_list"></a></p>
+<h2>Parts list</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><span style="writing-mode: vertical-rl; text-orientation: mixed;">MSNvA&nbsp;LEnc</span></th>
+<th style="text-align: right;"><span style="writing-mode: vertical-rl; text-orientation: mixed;">MSNvA</span></th>
+<th style="text-align: right;"><span style="writing-mode: vertical-rl; text-orientation: mixed;">TOTALS</span></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><strong>Vitamins</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;.&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: left;">&nbsp;&nbsp; Antenna 20cm LoRa Antenna</td>
+</tr>
+<tr>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;.&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: left;">&nbsp;&nbsp; Heltec L76K_GNSS Module</td>
+</tr>
+<tr>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;.&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: left;">&nbsp;&nbsp; Heltec T144</td>
+</tr>
+<tr>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;.&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: left;">&nbsp;&nbsp; Lithium-Polymer-Akku 3,7V 2500mAh</td>
+</tr>
+<tr>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;.&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: left;">&nbsp;&nbsp; Nut M6.25 x 1.8mm</td>
+</tr>
+<tr>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;2&nbsp;</td>
+<td style="text-align: left;">&nbsp;&nbsp; Solar Panel 100x100mm² 5V 3W</td>
+</tr>
+<tr>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;.&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: left;">&nbsp;&nbsp; Washer star M6.4 x 0.6mm</td>
+</tr>
+<tr>
+<td style="text-align: right;">&nbsp;&nbsp;7&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;8&nbsp;</td>
+<td style="text-align: left;">&nbsp;&nbsp;Total vitamins count</td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><strong>3D printed parts</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;.&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: left;">&nbsp;&nbsp;MSNvA_buttons.stl</td>
+</tr>
+<tr>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;.&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: left;">&nbsp;&nbsp;MSNvA_lEnc.stl</td>
+</tr>
+<tr>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;.&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: left;">&nbsp;&nbsp;MSNvA_stand.stl</td>
+</tr>
+<tr>
+<td style="text-align: right;">&nbsp;&nbsp;.&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: left;">&nbsp;&nbsp;MSNvA_top.stl</td>
+</tr>
+<tr>
+<td style="text-align: right;">&nbsp;&nbsp;3&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;1&nbsp;</td>
+<td style="text-align: right;">&nbsp;&nbsp;4&nbsp;</td>
+<td style="text-align: left;">&nbsp;&nbsp;Total 3D printed parts count</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+<p><a name="MSNvA_lEnc_assembly"></a></p>
+<h2>MSNvA LEnc Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Qty</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Antenna 20cm LoRa Antenna</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Heltec L76K_GNSS Module</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Heltec T144</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Lithium-Polymer-Akku 3,7V 2500mAh</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Nut M6.25 x 1.8mm</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Solar Panel 100x100mm² 5V 3W</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Washer star M6.4 x 0.6mm</td>
+</tr>
+</tbody>
+</table>
+<h3>3D Printed parts</h3>
+<table>
+<thead>
+<tr>
+<th>1 x <a href="stls/MSNvA_buttons.stl">MSNvA_buttons.stl</a></th>
+<th>1 x <a href="stls/MSNvA_lEnc.stl">MSNvA_lEnc.stl</a></th>
+<th>1 x <a href="stls/MSNvA_stand.stl">MSNvA_stand.stl</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="MSNvA_buttons.stl" src="stls/MSNvA_buttons.png" /></td>
+<td><img alt="MSNvA_lEnc.stl" src="stls/MSNvA_lEnc.png" /></td>
+<td><img alt="MSNvA_stand.stl" src="stls/MSNvA_stand.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="MSNvA_lEnc_assembly" src="assemblies/MSNvA_lEnc_assembly.png" /></p>
+<ol>
+<li>Attach the antenna to the enclosure </li>
+<li>Connect it to the Heltec T114 board</li>
+<li>Insert buttons</li>
+<li>Insert Heltec T114 board</li>
+<li>Connect and insert the GNSS module (optional)</li>
+<li>Attach the battery with two zip ties</li>
+<li>Connect the battery to the Heltec T114 board</li>
+</ol>
+<p><img alt="MSNvA_lEnc_assembled" src="assemblies/MSNvA_lEnc_assembled.png" /></p>
+<div style="page-break-after: always;"></div>
+<p><a name="MSNvA_assembly"></a></p>
+<h2>MSNvA Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Qty</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Solar Panel 100x100mm² 5V 3W</td>
+</tr>
+</tbody>
+</table>
+<h3>3D Printed parts</h3>
+<table>
+<thead>
+<tr>
+<th>1 x <a href="stls/MSNvA_top.stl">MSNvA_top.stl</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="MSNvA_top.stl" src="stls/MSNvA_top.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Sub-assemblies</h3>
+<table>
+<thead>
+<tr>
+<th>1 x MSNvA_lEnc_assembly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="MSNvA_lEnc_assembled" src="assemblies/MSNvA_lEnc_assembled_tn.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="MSNvA_assembly" src="assemblies/MSNvA_assembly.png" /></p>
+<ol>
+<li>Connect the solar panel to the Heltec T114 board</li>
+<li>Place the solar panel on the enclosure</li>
+<li>Attach the top frame</li>
+</ol>
+<p><img alt="MSNvA_assembled" src="assemblies/MSNvA_assembled.png" /></p>
