@@ -1,9 +1,6 @@
 MSNvA_assembly:
-Vitamins:
-  1 Solar Panel 100x100mm² 5V 3W
-
 Printed:
-  1 MSNvA_top.stl
+  1 MSNvA_cov.stl
 
 Assemblies:
-  1 MSNvA_lEnc_assembly
+  1 MSNvA_enc_assembly

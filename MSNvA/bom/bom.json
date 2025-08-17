@@ -49,7 +49,7 @@
         "routed": {}
     },
     {
-        "name": "MSNvA_assembly",
+        "name": "MSNvA_enc_assembly",
         "big": null,
         "ngb": false,
         "zoomed": 0,
@@ -64,6 +64,25 @@
         },
         "printed": {
             "MSNvA_top.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    },
+    {
+        "name": "MSNvA_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {
+            "MSNvA_enc_assembly": 1
+        },
+        "vitamins": {},
+        "printed": {
+            "MSNvA_cov.stl": {
                 "count": 1,
                 "colour": "[0, 0.572549, 0]",
                 "camera": "0,0,0,70,0,315,500"

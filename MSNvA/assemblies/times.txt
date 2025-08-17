@@ -1,7 +1,9 @@
 {
-    "MSNvA/assemblies/MSNvA_lEnc_assembled.png": 6.208,
-    "MSNvA/assemblies/MSNvA_lEnc_assembly.png": 6.008,
-    "MSNvA/assemblies/MSNvA_assembled.png": 39.931,
-    "MSNvA/assemblies/MSNvA_assembly.png": 36.133,
-    "MSNvA/readme.html": 0.111
+    "MSNvA/assemblies/MSNvA_lEnc_assembled.png": 5.517,
+    "MSNvA/assemblies/MSNvA_lEnc_assembly.png": 5.428,
+    "MSNvA/assemblies/MSNvA_assembled.png": 228.377,
+    "MSNvA/assemblies/MSNvA_assembly.png": 228.998,
+    "MSNvA/readme.html": 0.151,
+    "MSNvA/assemblies/MSNvA_enc_assembled.png": 33.324,
+    "MSNvA/assemblies/MSNvA_enc_assembly.png": 31.405
 }

@@ -399,7 +399,8 @@ module MSNvA_lEnc_stl() {
 //! 6. Attach the battery with two zip ties
 //! 7. Connect the battery to the Heltec T114 board
 module MSNvA_lEnc_assembly() {
-    pose([-82, 50, 71], [76, 0, 237])
+    pose([ -70.08, 49.90, 50.00 ], [ 44.50, 0.00, 36.40 ], exploded = true)
+    pose([ -70.08, 49.90, 50.00 ], [ 44.50, 0.00, 36.40 ], exploded = false)
     assembly("MSNvA_lEnc") {
 
         //LiPo battery
@@ -499,6 +500,34 @@ module MSNvA_top_stl() {
     }         
 }
 *MSNvA_top_stl();
+
+
+//Node assembly
+//! 1. Connect the solar panel to the Heltec T114 board
+//! 2. Place the solar panel on the enclosure
+//! 3. Attach the top frame
+module MSNvA_enc_assembly() {
+    pose([ -70.08, 49.90, 50.00 ], [ 44.50, 0.00, 36.40 ], exploded = true)
+    pose([ -70.08, 49.90, 50.00 ], [ 44.50, 0.00, 36.40 ], exploded = false)
+//    pose([-82, 50, 71], [76, 0, 237])
+    assembly("MSNvA_enc") {
+
+     //Lower enclosure
+     MSNvA_lEnc_assembly();
+
+     //Solar panel
+     explode([0,0,20])   
+     translate([-100,0,0]) solar_100x100();
+
+     //Top
+     explode([0,0,40])   
+     MSNvA_top_stl();
+    }
+}
+//$explode = 1;
+//$vpt = [-82, 50, 71];
+//$vpr = [76, 0, 237];
+//MSNvA_assembly();
   
 module MSNvA_cov_stl() {
     stl("MSNvA_cov");
@@ -571,9 +600,7 @@ module MSNvA_cov_stl() {
                         offset(r=covWallT-1)
                             simpEncProf();
                     sphere(r=1);
-                }
-            
-            
+                }         
         }
         union() {
             minkowski() {
@@ -614,31 +641,32 @@ module MSNvA_cov_stl() {
 }
 *MSNvA_cov_stl();
 
-//Final assembly
-//! 1. Connect the solar panel to the Heltec T114 board
-//! 2. Place the solar panel on the enclosure
-//! 3. Attach the top frame
+//Cover assembly
+//! Slide on the protective cover for transportation.
 module MSNvA_assembly() {
-    pose([-82, 50, 71], [76, 0, 237])
+    pose([ 1.83, 50.00, 71.00 ], [ 55.70, 0.00, 25.90 ], exploded = true)
+    pose([ 1.83, 50.00, 71.00 ], [ 55.70, 0.00, 25.90 ], exploded = false)
+//    pose([-82, 50, 71], [76, 0, 237])
     assembly("MSNvA") {
 
-     //Lower enclosure
-     MSNvA_lEnc_assembly();
+     //Enclosure
+     MSNvA_enc_assembly();
 
-     //Solar panel
-     explode([0,0,20])   
-     translate([-100,0,0]) solar_100x100();
-
-     //Top
-     explode([0,0,40])   
-     MSNvA_top_stl();
+     //cover
+     explode([-0.6*lEncX,0,0])   
+     translate([1.2*lEncX,0,0]) MSNvA_cov_stl();
     }
 }
 //$explode = 1;
 //$vpt = [-82, 50, 71];
 //$vpr = [76, 0, 237];
 //MSNvA_assembly();
-
-if($preview) {    
-   MSNvA_assembly();
+  
+if($preview) {
+//    $vpt = [-82, 50, 71];
+//    $vpr = [76, 0, 237];
+    $explode = 1;
+//    MSNvA_lEnc_assembly();
+//    MSNvA_enc_assembly();
+    MSNvA_assembly();
 }

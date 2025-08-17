@@ -1,6 +1,7 @@
 {
-    "MSNvA_stand.stl": 5.933,
-    "MSNvA_buttons.stl": 1.816,
-    "MSNvA_lEnc.stl": 121.882,
-    "MSNvA_top.stl": 86.739
+    "MSNvA_stand.stl": 5.925,
+    "MSNvA_buttons.stl": 1.657,
+    "MSNvA_lEnc.stl": 104.396,
+    "MSNvA_top.stl": 81.269,
+    "MSNvA_cov.stl": 202.832
 }

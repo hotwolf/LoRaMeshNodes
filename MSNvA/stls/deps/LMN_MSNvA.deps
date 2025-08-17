@@ -1,4 +1,4 @@
-MSNvA/stls/MSNvA_top.stl: \
+MSNvA/stls/MSNvA_cov.stl: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/jhead.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/dip.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/clip.scad \
