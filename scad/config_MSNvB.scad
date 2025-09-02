@@ -1,5 +1,5 @@
 //###############################################################################
-//# LoRaMeshNodes - Configuration                                               #
+//# LoRaMeshNodes - Configuration for Mobile Solar Node Variant B               #
 //###############################################################################
 //#    Copyright 2025 Dirk Heisswolf                                            #
 //#    This file is part of the LoRaMeshNodes project.                          #
@@ -22,27 +22,12 @@
 //#                                                                             #
 //###############################################################################
 //# Description:                                                                #
-//#   Common configuration                                                      #
+//#   Variant specific configuration                                            #
 //#                                                                             #
 //###############################################################################
 //# Version History:                                                            #
-//#   July 18, 2025                                                             #
+//#   August 22, 2025                                                           #
 //#      - Initial release                                                      #
 //#                                                                             #
 //###############################################################################
-//include <./target.scad>
-include <../lib/NopSCADlib/lib.scad>
-use     <../lib/NopSCADlib/vitamins/antenna.scad>
-use     <../lib/NopSCADlib/vitamins/batteries.scad>
 
-use     <../vitamins/LMN_Heltec_T114.scad>
-use     <../vitamins/LMN_lipo.scad>
-use     <../vitamins/LMN_solar.scad>
-use     <../vitamins/LMN_antenna.scad>
-use     <../vitamins/LMN_BMS.scad>
-
-//Common parameters
-solarA = 35;   //Solar panel tilt angle
-wallT  =  3;   //Wall thickness of the enclosure
-gapW   =  0.2; //Gap between moving parts
-edgeR  =  1;   //Rounded edges
