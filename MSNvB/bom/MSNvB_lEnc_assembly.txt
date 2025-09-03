@@ -1,0 +1,17 @@
+MSNvB_lEnc_assembly:
+Vitamins:
+  1 Solar Panel 100x100mm² 5V 3W
+  1 Antenna 20cm LoRa Antenna
+  1 Cell Samsung 25R 18650 LION
+  1 Battery negative contact
+  1 Battery positive contact
+  1 Nut M6.25 x 1.8mm 
+  1 Heltec T144
+  1 Heltec L76K_GNSS Module
+  1 1S 3.7V battery protection board
+  1 Washer star M6.4 x 0.6mm
+
+Printed:
+  1 MSNvB_buttons.stl
+  1 MSNvB_lEnc.stl
+  1 MSNvB_stand.stl

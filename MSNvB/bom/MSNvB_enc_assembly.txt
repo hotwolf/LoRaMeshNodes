@@ -1,0 +1,9 @@
+MSNvB_enc_assembly:
+Vitamins:
+  1 Solar Panel 100x100mm² 5V 3W
+
+Printed:
+  1 MSNvB_top.stl
+
+Assemblies:
+  1 MSNvB_lEnc_assembly

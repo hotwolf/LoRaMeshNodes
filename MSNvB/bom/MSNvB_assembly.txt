@@ -1,0 +1,6 @@
+MSNvB_assembly:
+Printed:
+  1 MSNvB_cov.stl
+
+Assemblies:
+  1 MSNvB_enc_assembly

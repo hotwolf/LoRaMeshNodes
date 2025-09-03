@@ -410,7 +410,7 @@ module MSNvB_lEnc_stl() {
             difference() {
                 union() {
                     translate([bmsX-17,bmsY-6,-lEncZ+wallT-1])
-                        rounded_cube_xy([34,8,-bmsZ], r=2);
+                        rounded_cube_xy([34,7,-bmsZ], r=2);
          
                 }
                 union() {
@@ -435,43 +435,14 @@ module MSNvB_lEnc_stl() {
             translate([-standT-wallT-2*gapW,pcbY,-lEncZ+wallT])
             rotate([0,180,0])
             Heltec_T114_cutout();
-            translate([-standT-wallT-2*gapW,pcbY,-lEncZ+wallT])
-            rotate([0,180,0])
-            rounded_cube_xy([50.80,22.86,lEncZ-wallT],r=1);
+//            translate([-standT-wallT-2*gapW,pcbY,-lEncZ+wallT])
+//            rotate([0,180,0])
+//            rounded_cube_xy([50.80,22.86,lEncZ-wallT],r=1);
 
-            //Li-Ion battery
-
-
-
-
-
-
-
-
-//            //bat     
-//            translate([-lEncX/2+batX-18,batY+2,-lEncZ+wallT+3])
-//            minkowski() {
-//                cube([41,30,10]);
-//                sphere(2);
-//            }
-//            translate([-lEncX/2+batX-18+7,batY+2,-lEncZ+wallT+5])
-//            minkowski() {
-//                cube([41,30,10]);
-//                sphere(2);
-//            }
-//     
             translate([0,standBarY,-lEncZ+2])
             rotate([0,270,0])
             linear_extrude(lEncX)
                 polygon(barCutoutProf);
-//       
-//            for (y=[7,29])
-//                translate([-lEncX/2+batX+6,batY+3+y,-lEncZ+wallT])
-//                rotate([90,0,0])
-//                linear_extrude(8)
-//                offset(r=-0.6)
-//                offset(r=0.6) 
-//                    polygon(ziptChanProf);   
             
         }
     }
