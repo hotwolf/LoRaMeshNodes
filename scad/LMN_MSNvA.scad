@@ -247,12 +247,12 @@ module MSNvA_lEnc_stl() {
             translate([0,standY-(standY+standR)*tan(solarA)+1.5*standR+lEncRim,-lEncZ/2])
             rotate([-solarA,0,0])
             scale([standT,6,0.5*lEncZ])
-                  sphere(d=1);      
+                  sphere(d=1, $fn=64);      
             
             translate([-lEncX,standY-(standY+standR)*tan(solarA)+1.5*standR+lEncRim,-lEncZ/2])
             rotate([-solarA,0,0])
             scale([standT,6,0.5*lEncZ])
-                  sphere(d=1);      
+                  sphere(d=1, $fn=64);      
            
             //Inner space
             difference() {
