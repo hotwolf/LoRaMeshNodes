@@ -1,7 +1,7 @@
 {
-    "MSNvB_stand.stl": 11.751,
-    "MSNvB_buttons.stl": 2.531,
-    "MSNvB_lEnc.stl": 78.361,
-    "MSNvB_top.stl": 59.682,
-    "MSNvB_cov.stl": 263.333
+    "MSNvB_stand.stl": 12.416,
+    "MSNvB_buttons.stl": 2.144,
+    "MSNvB_lEnc.stl": 82.583,
+    "MSNvB_top.stl": 61.926,
+    "MSNvB_cov.stl": 250.508
 }

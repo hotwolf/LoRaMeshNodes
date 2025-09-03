@@ -57,7 +57,7 @@ standT     =   6;                                                    //Thickness
 standBarW  =  12;                                                    //Width of the stand's bar
 standBarT  =   wallT;                                                //Thickness of the stand's bar
 standBarY  =  36;                                                    //Y position of the stand's bar
-standA     =   0;                                                    //Current angle of the stand
+standA     =  90;                                                    //Current angle of the stand
 batType    = S25R18650;                                              //Battery type
 batCType   = battery_contact(batType);                               //Battery contact type
 batL       = battery_length(batType);                                //Battery length
@@ -240,7 +240,7 @@ module MSNvB_lEnc_stl() {
         }
         //Negative
         union() {
-            //Snap
+            //Snaps
             translate([-lEncX/2,lEncY/2,0])
             for (a = [0,90,180,270]) {
                 rotate([0,0,a])
@@ -253,6 +253,17 @@ module MSNvB_lEnc_stl() {
                 }
             }
             
+            //Grips
+            translate([0,standY-(standY+standR)*tan(solarA)+1.5*standR+lEncRim,-lEncZ/2])
+            rotate([-solarA,0,0])
+            scale([standT,6,0.5*lEncZ])
+                  sphere(d=1);      
+            
+            translate([-lEncX,standY-(standY+standR)*tan(solarA)+1.5*standR+lEncRim,-lEncZ/2])
+            rotate([-solarA,0,0])
+            scale([standT,6,0.5*lEncZ])
+                  sphere(d=1);      
+                     
             //Inner space
             difference() {
                 translate([-wallT,0,0]) lEncInnerProf();
@@ -260,8 +271,8 @@ module MSNvB_lEnc_stl() {
                     translate([-standT-wallT-2*gapW,0,-1.5*lEncZ]) 
                         cube([standT+wallT+2*gapW,lEncY,2*lEncZ]);
 
-                    translate([-standT-0.75*standR-2*gapW,lEncY-27,-1.5*lEncZ]) 
-                        rounded_cube_xy([standT+0.75*standR,32,2*lEncZ], r=2);
+                    translate([-standT-0.75*standR-2*gapW-0.2,lEncY-27.4,-1.5*lEncZ]) 
+                        rounded_cube_xy([standT+0.75*standR+0.2,32,2*lEncZ], r=2);
 
 
                     translate([-lEncX,0,-1.5*lEncZ])                    
@@ -310,7 +321,7 @@ module MSNvB_lEnc_stl() {
         //Positive       
         union() {
              //PCB holder
-            translate([-standT-wallT-2*gapW+1,pcbY-27/2,-lEncZ+wallT+2])
+            translate([-standT-wallT-2*gapW,pcbY-27/2,-lEncZ+wallT+2])
             rotate([0,180,0])
             rounded_cube_xy([54,27,4], r=2);
             
@@ -362,8 +373,8 @@ module MSNvB_lEnc_stl() {
             difference() {
                 union() {
                     intersection() {
-                        translate([-lEncX/2,batY,-lEncZ+wallT])
-                            rounded_cube_xy([batNX-batPX+4,batD+8,0.6*batD], r=2, xy_center=true);
+                        translate([-lEncX/2,batY,batZ-batD/2])
+                            rounded_cube_xy([batNX-batPX+4,batD+8,(batD+batCH)/2], r=2, xy_center=true);
                      
                         translate([-edgeR,0,0])
                         rotate([270,0,90]) 
@@ -383,8 +394,8 @@ module MSNvB_lEnc_stl() {
                     translate([batPX-batCT+contact_thickness(batCType),batY-batCW/2,batZ-batCH/2])
                         cube([batCT,batCW,batCH+20]);
 
-                    translate([batPX,batY,batZ])
-                        cube([20,6,batCH+20], center=true);
+                    translate([batPX-10,batY-3,batZ-batCH/2])
+                        cube([20,6,batCH+20]);
 
                     translate([batPX+contact_thickness(batCType),batY,batZ])
                     scale([1,1,2])
@@ -395,8 +406,8 @@ module MSNvB_lEnc_stl() {
                     translate([batNX-contact_thickness(batCType),batY-batCW/2,batZ-batCH/2])
                         cube([batCT,batCW,batCH+20]);
 
-                    translate([batNX,batY,batZ])
-                        cube([20,6,batCH+20], center=true);
+                    translate([batNX-10,batY-3,batZ-batCH/2])
+                        cube([20,6,batCH+20]);
                  
                     translate([batNX-contact_thickness(batCType),batY,batZ])
                     scale([1,1,2])
@@ -422,8 +433,8 @@ module MSNvB_lEnc_stl() {
                     translate([bmsX-13,bmsY-5,bmsZ-4])
                         cube([26,10,20]);
 
-                    translate([bmsX-15,bmsY-1.2,bmsZ-4])
-                        cube([30,1.2,20]);
+                    translate([bmsX-15.2,bmsY-1.2,bmsZ-4])
+                        cube([30.4,1.0,20]);
                     
                 }
             }
@@ -435,9 +446,9 @@ module MSNvB_lEnc_stl() {
             translate([-standT-wallT-2*gapW,pcbY,-lEncZ+wallT])
             rotate([0,180,0])
             Heltec_T114_cutout();
-//            translate([-standT-wallT-2*gapW,pcbY,-lEncZ+wallT])
-//            rotate([0,180,0])
-//            rounded_cube_xy([50.80,22.86,lEncZ-wallT],r=1);
+            translate([-standT-wallT-2*gapW-1,pcbY-22.86/2,-12])
+            rotate([0,180,0])
+            rounded_cube_xy([50.80,22.86,10],r=1);
 
             translate([0,standBarY,-lEncZ+2])
             rotate([0,270,0])
@@ -522,7 +533,7 @@ module MSNvB_lEnc_assembly() {
 module MSNvB_top_stl() {
     stl("MSNvB_top");
 
-    //Snap
+    //Snaps
     translate([-lEncX/2,lEncY/2,0])
     for (a = [0,90,180,270]) {
         rotate([0,0,a])
@@ -741,7 +752,7 @@ module MSNvB_assembly() {
 if($preview) {
 //    $vpt = [-82, 50, 71];
 //    $vpr = [76, 0, 237];
-    $explode = 0;
+    $explode =  0;
     MSNvB_lEnc_assembly();
 //    MSNvB_enc_assembly();
 //    MSNvB_assembly();

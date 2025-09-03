@@ -1,8 +1,9 @@
 openscad.echo: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/jhead.scad \
-	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/dip.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/clip.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/teardrops.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/dip.scad \
+	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_BMS.scad \
 	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_antenna.scad \
 	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_lipo.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/e3d.scad \

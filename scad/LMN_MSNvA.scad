@@ -33,6 +33,12 @@
 //#   August 25, 2025                                                           #
 //#      - Cleaned up standShape coding                                         #
 //#                                                                             #
+//#   September 3, 2025                                                         #
+//#      - Adapted improvements from MSNvB                                      #
+//#          - Long snaps for the solar panel frame                             #
+//#          - Grips to ease unfolding the stand                                #
+//#          - Fixed Heltec T114 PCB holders                                    #
+//#                                                                             #
 //###############################################################################
 
 //! These are the assembly instructions for the Mobile Solar Node (Variant A) (MSNvA),
@@ -224,17 +230,30 @@ module MSNvA_lEnc_stl() {
         }
         //Negative
         union() {
-            //Snap
+            //Snaps
             translate([-lEncX/2,lEncY/2,0])
             for (a = [0,90,180,270]) {
                 rotate([0,0,a])
-                for (x = [-lEncX/4,0,lEncX/4]) {
-                    $fn = 64;
-                    translate([x,-lEncY/2+0,-1.6])
-                    scale([6.2,2.2,2.2]) sphere(d=1);
+                hull() {
+                    for (x = [-lEncX/4,lEncX/4]) {
+                        $fn = 64;
+                        translate([x,-lEncY/2+0,-1.6])
+                        scale([6.2,2.2,2.2]) sphere(d=0.8);
+                    }
                 }
             }
             
+             //Grips
+            translate([0,standY-(standY+standR)*tan(solarA)+1.5*standR+lEncRim,-lEncZ/2])
+            rotate([-solarA,0,0])
+            scale([standT,6,0.5*lEncZ])
+                  sphere(d=1);      
+            
+            translate([-lEncX,standY-(standY+standR)*tan(solarA)+1.5*standR+lEncRim,-lEncZ/2])
+            rotate([-solarA,0,0])
+            scale([standT,6,0.5*lEncZ])
+                  sphere(d=1);      
+           
             //Inner space
             difference() {
                 translate([-wallT,0,0]) lEncInnerProf();
@@ -298,21 +317,11 @@ module MSNvA_lEnc_stl() {
             linear_extrude(10)
             polygon(pcbClampProf);
        
-//            translate([-wallT-43,pcbY-23/2,-lEncZ+wallT])
-//            rotate([90,0,90])
-//            linear_extrude(10)
-//            polygon(pcbClampProf);
-       
             translate([-wallT-10,pcbY+23/2,-lEncZ+wallT])
             rotate([90,0,270])
             linear_extrude(10)
             polygon(pcbClampProf);
        
-//            translate([-wallT-33,pcbY+23/2,-lEncZ+wallT])
-//            rotate([90,0,270])
-//            linear_extrude(10)
-//            polygon(pcbClampProf);
-            
             //Lipo
             translate([-lEncX/2+lipoX-21,lipoY-1,-lEncZ+wallT])
             rounded_cube_xy([54,36,6],r=2);  
@@ -357,9 +366,9 @@ module MSNvA_lEnc_stl() {
             translate([-wallT,pcbY,-lEncZ+wallT])
             rotate([0,180,0])
             Heltec_T114_cutout();
-            translate([-wallT-1,pcbY-22.86/2,0])
+            translate([-wallT-1,pcbY-22.86/2,-10])
             rotate([0,180,0])
-            rounded_cube_xy([50.80,22.86,lEncZ-wallT],r=1);
+            rounded_cube_xy([50.80,22.86,10],r=1);
             //Lipo     
             translate([-lEncX/2+lipoX-18,lipoY+2,-lEncZ+wallT+3])
             minkowski() {
@@ -388,7 +397,7 @@ module MSNvA_lEnc_stl() {
         }
     }
 }
-*MSNvA_lEnc_stl();
+MSNvA_lEnc_stl();
 
 // Lower enclosure
 //! 1. Attach the antenna to the enclosure 
@@ -447,14 +456,16 @@ module MSNvA_lEnc_assembly() {
 module MSNvA_top_stl() {
     stl("MSNvA_top");
 
-    //Snap
+    //Snaps
     translate([-lEncX/2,lEncY/2,0])
     for (a = [0,90,180,270]) {
         rotate([0,0,a])
-        for (x = [-lEncX/4,0,lEncX/4]) {
-            $fn = 64;
-            translate([x,-lEncY/2+0,-1.6])
-            scale([6,2,2]) sphere(d=1);
+        hull() {
+            for (x = [-lEncX/4,0,lEncX/4]) {
+                $fn = 64;
+                translate([x,-lEncY/2+0,-1.6])
+                scale([6,2,2]) sphere(d=0.8);
+            }
         }
     }
 
@@ -666,7 +677,7 @@ if($preview) {
 //    $vpt = [-82, 50, 71];
 //    $vpr = [76, 0, 237];
     $explode = 0;
-    MSNvA_lEnc_assembly();
+//    MSNvA_lEnc_assembly();
 //    MSNvA_enc_assembly();
 //    MSNvA_assembly();
 }
