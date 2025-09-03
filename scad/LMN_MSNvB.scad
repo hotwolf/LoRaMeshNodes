@@ -54,10 +54,10 @@ bmsY       =  46;                                                    //BMS Y pos
 bmsZ       =  -lEncZ/2;                                              //BMS Z position
 standY     =  78;                                                    //Y position of the stand pivot    
 standT     =   6;                                                    //Thickness of the stand pivot    
-standBarW  =   12;                                                   //Width of the stand's bar
+standBarW  =  12;                                                    //Width of the stand's bar
 standBarT  =   wallT;                                                //Thickness of the stand's bar
 standBarY  =  36;                                                    //Y position of the stand's bar
-standA     =   90;                                                   //Current angle of the stand
+standA     =   0;                                                    //Current angle of the stand
 batType    = S25R18650;                                              //Battery type
 batCType   = battery_contact(batType);                               //Battery contact type
 batL       = battery_length(batType);                                //Battery length
@@ -447,7 +447,7 @@ module MSNvB_lEnc_stl() {
         }
     }
 }
-*MSNvB_lEnc_stl();
+MSNvB_lEnc_stl();
 
 // Lower enclosure
 //! 1. Clamp the stand on to the enclosure 
