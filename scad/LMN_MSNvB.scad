@@ -433,8 +433,8 @@ module MSNvB_lEnc_stl() {
                     translate([bmsX-13,bmsY-5,bmsZ-4])
                         cube([26,10,20]);
 
-                    translate([bmsX-15.2,bmsY-1.2,bmsZ-4])
-                        cube([30.4,1.0,20]);
+                    translate([bmsX-15.4,bmsY-1.2,bmsZ-4])
+                        cube([30.8,1.2,20]);
                     
                 }
             }
@@ -753,7 +753,7 @@ if($preview) {
 //    $vpt = [-82, 50, 71];
 //    $vpr = [76, 0, 237];
     $explode =  0;
-    MSNvB_lEnc_assembly();
+//    MSNvB_lEnc_assembly();
 //    MSNvB_enc_assembly();
-//    MSNvB_assembly();
+    MSNvB_assembly();
 }

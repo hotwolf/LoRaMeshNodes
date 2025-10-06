@@ -51,6 +51,30 @@ module LoRa_20cm_antenna(wall=3, angle=90) {
    antenna(LoRa_20cm_antenna, wall, angle);   
 }
 
-if($preview) {    
-   antenna(LoRa_20cm_antenna, 3, 90);
+module LoRa_N_antenna(wall=3) {
+    vitamin(str("LoRa_N_antenna: Antenna with N.connector"));
+    
+    //Socket
+    intersection() {
+        translate([0,0,0]) color("Silver") cylinder(h=22, d=15.8);
+        cube([30,13.5,60], center=true);
+    }
+    translate([0,0,wall]) color("Silver") cylinder(h=2.6, d=21.4, $fn=6);
+       
+    translate([0,0, -2])   color("Red") cylinder(h=2, d=22.8);
+    translate([0,0, -4.4]) color("Silver") cylinder(h=2.4, d=22.8);
+    translate([0,0, -8])   color("Silver") cylinder(h=3.6, d=14.1);
+    translate([0,0,-15])   color("Silver") cylinder(h=7,   d=7);
+    translate([0,0,-38])   color("Black")  cylinder(h=23,  d=4);
+    
+    //Antenna
+    translate([0,0, 12.2]) color("Silver") cylinder(h=22.4, d=20);
+    translate([0,0, 34.6]) color("Silver") cylinder(h=40.5, d=23);
+    translate([0,0, 34.6]) color("SlateGray") cylinder(h=400, d=20);
+}
+
+
+if($preview) {
+   *LoRa_N_antenna();
+   //antenna(LoRa_40cm_antenna, 3, 90);
 }

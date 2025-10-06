@@ -31,7 +31,7 @@
 //#                                                                             #
 //###############################################################################
 include <../lib/NopSCADlib/utils/core/core.scad>
-include <../scad/LMN_Config.scad>
+//include <../scad/LMN_Config.scad>
 
 use <../lib/NopSCADlib/vitamins/pcb.scad>
 
@@ -77,5 +77,5 @@ module LiIonBMS() {
 //Heltec_T114_buttons();
 
 if($preview) {    
-    LiIonBMS();
+    *LiIonBMS();
 }

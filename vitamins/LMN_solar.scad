@@ -40,6 +40,7 @@ include <../lib/NopSCADlib/utils/core/core.scad>
 //                                                                   h        t    
 solar_142x88   = ["solar_142x88",  "Solar Panel 142x88mm² 5V 5W",  142,  88,  3, []];
 solar_100x100  = ["solar_100x100", "Solar Panel 100x100mm² 5V 3W", 100, 100,  3, [[25.5,2],[74.5,2],[25.5,98],[74.5,98]]];
+solar_175x175  = ["solar_175x175", "Solar Panel 175x175mm² 6V 5W", 175, 175,  3, [[150.5,97.5],[150.2,115.4],[140.0,97.5],[140.0,115.4]]];
 
 solars         = [solar_142x88, solar_100x100];
 
@@ -81,6 +82,7 @@ module solar_100x100() {
 }
 
 if($preview) {    
-   solar(solar_100x100);
+   *solar(solar_175x175);
+//   solar(solar_100x100);
 //   solar(solar_142x88);
 }

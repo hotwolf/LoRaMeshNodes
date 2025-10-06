@@ -1,5 +1,5 @@
 //###############################################################################
-//# LoRaMeshNodes - Configuration                                               #
+//# LoRaMeshNodes - Statc Solar Node Variant A - Scruton Helix                  #
 //###############################################################################
 //#    Copyright 2025 Dirk Heisswolf                                            #
 //#    This file is part of the LoRaMeshNodes project.                          #
@@ -22,34 +22,49 @@
 //#                                                                             #
 //###############################################################################
 //# Description:                                                                #
-//#   Common configuration                                                      #
+//#   A Scruton helix for Static Solar Node variant A.                          #
 //#                                                                             #
 //###############################################################################
 //# Version History:                                                            #
-//#   July 18, 2025                                                             #
+//#   October 6, 2025                                                           #
 //#      - Initial release                                                      #
 //#                                                                             #
 //###############################################################################
-//include <./target.scad>
-include <../lib/NopSCADlib/lib.scad>
-include <../lib/NopSCADlib/vitamins/antenna.scad>
-include <../lib/NopSCADlib/vitamins/batteries.scad>
-include <../lib/NopSCADlib/vitamins/screws.scad>
-include <../lib/NopSCADlib/vitamins/nuts.scad>
-include <../lib/NopSCADlib/utils/thread.scad>
+include <LMN_Config.scad>
 
-include <../vitamins/LMN_Heltec_T114.scad>
-include <../vitamins/LMN_lipo.scad>
-include <../vitamins/LMN_solar.scad>
-include <../vitamins/LMN_antenna.scad>
-include <../vitamins/LMN_BMS.scad>
-include <../vitamins/LMN_conduits.scad>
-include <../vitamins/LMN_extrusions.scad>
+//Scruton helix for the antenna pole
+//==================================
+module scruton(type=conduit_M40) {
 
-use     <./LMN_Common.scad>
+    wallT  =  0.4;                     //wall thickness
+    poleD  = conduit_outerD(type)+0.4; //pole diameter
+    outerD = 60;                       //outer diameter
+    pitch  = 4*poleD;                  //pitch
+    segH   = pitch;                    //segment height
+    segCnt = 1;                        //number of segments
+    $fn    = 256;
+    
+    difference() {
+        union() {
+             translate([0,0,0]) cylinder(h=segCnt*segH, d=poleD+2*wallT);            
+           
+             linear_extrude(height=segCnt*segH, twist=segCnt*360 )
+             translate([0,0,0]) square([outerD,2*wallT],center=true);
+            
+        }
+        union() {
+            translate([0,0,-10]) cylinder(h=segCnt*segH+20, d=poleD);            
+        }
+    }
+}
+//scruton();
 
-//Common parameters
-solarA = 35;   //Solar panel tilt angle
-wallT  =  3;   //Wall thickness of the enclosure
-gapW   =  0.2; //Gap between moving parts
-edgeR  =  1;   //Rounded edges
+module SSNvA_scrutonM40_stl() {
+    vitamin("SSNvA_scrutonM40");
+    scruton(conduit_M40);
+}
+//SSNvA_scrutonM40_stl();
+
+if($preview) {    
+   *SSNvA_scrutonM40_stl();
+}

@@ -31,7 +31,7 @@
 //#                                                                             #
 //###############################################################################
 include <../lib/NopSCADlib/utils/core/core.scad>
-include <../scad/LMN_Config.scad>
+//include <../scad/LMN_Config.scad>
 
 use <../lib/NopSCADlib/vitamins/pcb.scad>
 
@@ -130,52 +130,58 @@ module Heltec_T114() {
 }
 //Heltec_T114();
 
-module Heltec_T114_cutout() {
+module Heltec_T114_cutout(minimal=false) {
     //Body    
     translate([0,-22.86/2,-6.21])
     rounded_cube_xy([50.80,22.86,6.21],r=1);
     //Display    
     translate([7.9,-17.70/2,0])
-    linear_extrude(8) square([31.25,17.70]);
-    translate([7.9+31.25/2,0,0.4])
-    linear_extrude(16, scale=2) square([31.25,17.70], center=true);
+    linear_extrude(20) square([31.25,17.70]);
+    if (!minimal) {
+        translate([7.9+31.25/2,0,0.4])
+        linear_extrude(16, scale=2) square([31.25,17.70], center=true);
+    }
     //Connetor clearance
     translate([6.87,-17.7/2,-9.68])
     cube([50.8-6.87, 17.7, 9.68]);
     //USB-C
     h = 3.26;
     w = 8.94;
-    r = h/2 - 0.5;  
-    translate([-10,-w/2,-6.21+1.6])
-    rounded_cube_yz([10,w,h],r);
-    hull() {
-        translate([-10,-7,-6.21+1.6+h/2-2])
-        rounded_cube_yz([8,14,4],r);
-        translate([-10,-7-6,-6.21+1.6+h/2-2-6])
-        rounded_cube_yz([2,14+12,4+12],r);
+    r = h/2 - 0.5;
+    if (true) { 
+        translate([-10,-w/2,-6.21+1.6])
+        rounded_cube_yz([10,w,h],r);
+        hull() {
+            translate([-10,-7,-6.21+1.6+h/2-2])
+            rounded_cube_yz([8,14,4],r);
+            translate([-10,-7-6,-6.21+1.6+h/2-2-6])
+            rounded_cube_yz([2,14+12,4+12],r);
+        }
     }
     //Buttons
-    translate([2.5,8,0])
-    cylinder(h=4, r1=2.6, r2=2.1);
-    translate([2.5,-8,0])
-    cylinder(h=4, r1=2.6, r2=2.1);
-    hull() {
+    if (!minimal) {
         translate([2.5,8,0])
-        cylinder(h=1, r=2.4);            
-        translate([5.6,6,0])
-        cylinder(h=1, r=1.4);
-    }
-    hull() {
-        translate([5.6,6,0])
-        cylinder(h=1, r=1.4);
-        translate([5.6,-6,0])
-        cylinder(h=1, r=1.4);
-    }            
-    hull() {
+        cylinder(h=4, r1=2.6, r2=2.1);
         translate([2.5,-8,0])
-        cylinder(h=1, r=2.4);            
-        translate([5.6,-6,0])
-        cylinder(h=1, r=1.4);
+        cylinder(h=4, r1=2.6, r2=2.1);
+        hull() {
+            translate([2.5,8,0])
+            cylinder(h=1, r=2.4);            
+            translate([5.6,6,0])
+            cylinder(h=1, r=1.4);
+        }
+        hull() {
+            translate([5.6,6,0])
+            cylinder(h=1, r=1.4);
+            translate([5.6,-6,0])
+            cylinder(h=1, r=1.4);
+        }            
+        hull() {
+            translate([2.5,-8,0])
+            cylinder(h=1, r=2.4);            
+            translate([5.6,-6,0])
+            cylinder(h=1, r=1.4);
+        }
     }
 }
 *Heltec_T114_cutout();
@@ -220,5 +226,5 @@ module L76K_GNSS() {
 //Heltec_T114_buttons();
 
 if($preview) {    
-    Heltec_T114();
+    *Heltec_T114();
 }

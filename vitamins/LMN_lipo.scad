@@ -92,5 +92,5 @@ module lipo_103450() {
 }
 
 if($preview) {    
-   lipo(lipo_103450);
+   *lipo(lipo_103450);
 }
