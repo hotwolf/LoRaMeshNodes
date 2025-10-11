@@ -35,8 +35,7 @@ include <../lib/NopSCADlib/utils/core/core.scad>
 
 use <../lib/NopSCADlib/vitamins/pcb.scad>
 
-
-LiIonBMS     = [// 0. Type
+LiIonBMS    = [// 0. Type
                "LiIonBMS",
                // 0. Description
                "1S 3.7V battery protection board",
@@ -58,7 +57,7 @@ LiIonBMS     = [// 0. Type
                false,
                //10. List of hole positions
                [],
-               //11. List of components                                                                                       
+               //11. List of components      
                [],
                //12. List of accessories to go on the BOM, SD cards, USB cables, etc. 
                [],
@@ -67,15 +66,48 @@ LiIonBMS     = [// 0. Type
                //14. Optional outline polygon for odd shaped boards
                []];
 
+LiFePo4BMS  = [// 0. Type
+               "LiFePo4BMS",
+               // 0. Description
+               "1S 3.2V battery protection board",
+               // 2. Length
+               30.4,
+               // 3. Width
+               4,
+               // 4. Thickness
+               1.2,
+               // 5. Corner radius
+               0, 
+               // 6. Mounting hole diameter
+               0,
+               // 7. Pad around mounting hole
+               0,
+               // 8. Colour of the substrate
+               "Blue",
+               // 9. True if the parts should be separate BOM items
+               false,
+               //10. List of hole positions
+               [],
+               //11. List of components      
+               [],
+               //12. List of accessories to go on the BOM, SD cards, USB cables, etc. 
+               [],
+               //13. Grid origin if a perfboard
+               [],
+               //14. Optional outline polygon for odd shaped boards
+               []];
 
 //Lithium-Ion BMS Module
 module LiIonBMS() {
             pcb(LiIonBMS); 
 }
-//L76K_GNSS();
 
-//Heltec_T114_buttons();
+//Lithium-Iron-Phosphate BMS Module
+module LiFePo4BMS() {
+            pcb(LiFePo4BMS); 
+}
 
 if($preview) {    
     *LiIonBMS();
+    *LiFePo4BMS();
 }

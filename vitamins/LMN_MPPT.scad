@@ -1,5 +1,5 @@
 //###############################################################################
-//# LoRaMeshNodes - Common Components                                           #
+//# LoRaMeshNodes - MPPT                                                        #
 //###############################################################################
 //#    Copyright 2025 Dirk Heisswolf                                            #
 //#    This file is part of the LoRaMeshNodes project.                          #
@@ -22,34 +22,55 @@
 //#                                                                             #
 //###############################################################################
 //# Description:                                                                #
-//#   Common components which are used throughout this repository.              #
+//#   A model of a MPPT charger board.                                          #
 //#                                                                             #
 //###############################################################################
 //# Version History:                                                            #
-//#   September 27, 2025                                                        #
+//#   October 8, 2025                                                           #
 //#      - Initial release                                                      #
 //#                                                                             #
 //###############################################################################
-include <./LMN_Config.scad>
-//include <../vitamins/LMN_conduits.scad>
+include <../lib/NopSCADlib/utils/core/core.scad>
+//include <../scad/LMN_Config.scad>
 
-//Star profile to fit the inside of the antenna pole
-//==================================================
-module starProfile(type=conduit_M40) {
-    
-    intersection() {
-        union () {
-            for (a=[0:45:135]) {
-                rotate([0,0,a]) square([4,50], center=true);                
-            }
-        }
-        union () {
-            circle(d=conduit_innerD(type));
-            
-        }
-    }    
+use <../lib/NopSCADlib/vitamins/pcb.scad>
+
+SDBK03TA    = [// 0. Type
+               "SDBK03TA",
+               // 0. Description
+               "MPPT Solar Charge Controller",
+               // 2. Length
+               24.3,
+               // 3. Width
+               12,
+               // 4. Thickness
+               1.2,
+               // 5. Corner radius
+               0, 
+               // 6. Mounting hole diameter
+               0,
+               // 7. Pad around mounting hole
+               0,
+               // 8. Colour of the substrate
+               "White",
+               // 9. True if the parts should be separate BOM items
+               false,
+               //10. List of hole positions
+               [],
+               //11. List of components      
+               [],
+               //12. List of accessories to go on the BOM, SD cards, USB cables, etc. 
+               [],
+               //13. Grid origin if a perfboard
+               [],
+               //14. Optional outline polygon for odd shaped boards
+               []];
+
+//Lithium-Ion BMS Module
+module SDBK03TA() {
+            pcb(SDBK03TA); 
 }
-//starProfile();
 
-
-
+if($preview) {    
+    *SDBK03TA();
+}

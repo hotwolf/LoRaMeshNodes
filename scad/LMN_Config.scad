@@ -36,6 +36,7 @@ include <../lib/NopSCADlib/vitamins/antenna.scad>
 include <../lib/NopSCADlib/vitamins/batteries.scad>
 include <../lib/NopSCADlib/vitamins/screws.scad>
 include <../lib/NopSCADlib/vitamins/nuts.scad>
+include <../lib/NopSCADlib/vitamins/zipties.scad>
 include <../lib/NopSCADlib/utils/thread.scad>
 
 include <../vitamins/LMN_Heltec_T114.scad>
@@ -43,6 +44,7 @@ include <../vitamins/LMN_lipo.scad>
 include <../vitamins/LMN_solar.scad>
 include <../vitamins/LMN_antenna.scad>
 include <../vitamins/LMN_BMS.scad>
+include <../vitamins/LMN_MPPT.scad>
 include <../vitamins/LMN_conduits.scad>
 include <../vitamins/LMN_extrusions.scad>
 

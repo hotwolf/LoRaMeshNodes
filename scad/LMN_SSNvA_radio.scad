@@ -1,5 +1,5 @@
 //###############################################################################
-//# LoRaMeshNodes - Statc Solar Node Variant A - Radio                                #
+//# LoRaMeshNodes - Statc Solar Node Variant A - Radio                          #
 //###############################################################################
 //#    Copyright 2025 Dirk Heisswolf                                            #
 //#    This file is part of the LoRaMeshNodes project.                          #
@@ -258,5 +258,5 @@ module SSNvA_radio_assembly() {
 //SSNvA_radio_assembly();
 
 if($preview) {    
-   SSNvA_radio_assembly();
+   *SSNvA_radio_assembly();
 }
