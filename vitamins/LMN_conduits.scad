@@ -41,8 +41,9 @@ include <../lib/NopSCADlib/utils/core/core.scad>
 conduit_M20   = ["conduit_M20",  "Conduit diameter 20mm",  20,  17.5];
 conduit_M25   = ["conduit_M25",  "Conduit diameter 25mm",  25,  22.3];
 conduit_M32   = ["conduit_M32",  "Conduit diameter 32mm",  32,  29.1];
-//conduit_M40   = ["conduit_M40",  "Conduit diameter 40mm",  40,  35.5];
-conduit_M40   = ["conduit_M40",  "Conduit diameter 40mm",  40,  37.2];
+//conduit_M40 = ["conduit_M40",  "Conduit diameter 40mm",  40,  35.5]; //loose fit
+//conduit_M40 = ["conduit_M40",  "Conduit diameter 40mm",  40,  37.2]; //tight fit
+conduit_M40   = ["conduit_M40",  "Conduit diameter 40mm",  40,  36.0];
 
 function conduit_type(type)          = type[0]; //! Conduit type
 function conduit_outerD(type)        = type[2]; //! Conduit outer diameter

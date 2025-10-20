@@ -328,11 +328,13 @@ module SSNvA_battery_assembly() {
   //pose([30, 0, 0], [150,150,0])
     assembly("SSNvA_battery") {
      
+        //$explode=1;
+        
         //Frame
         SSNvA_battery_frame_assembly();
         
         //Battery
-        explode([0,0,0])
+        explode([60,0,0])
         translate([batX,batY,batZ])
         battery(batType);
     
@@ -357,11 +359,13 @@ module SSNvA_battery_assembly() {
             screw_and_washer(M3_pan_screw, 18);
 
         //BMS
+        explode([40,0,0])
         translate([bmsX,bmsY,bmsZ])
         rotate([0,0,90])
             LiFePo4BMS();
             
         //MPPT
+        explode([-40,0,0])
         translate([mpptX,mpptY,mpptZ])
         rotate([0,0,90])
             SDBK03TA();
@@ -384,14 +388,17 @@ module SSNvA_battery_assembly() {
         rotate([0,90,90])
             screw(M6_hex_screw, 50);       
 
+        explode([0,40,0])
         translate([0,26,7])
         rotate([90,30,0])
             SSNvA_battery_screw_handle_stl();
 
+        explode([0,-30,0])
         translate([0,-26,7])
         rotate([0,90,90])
             nut(M6_nut);       
 
+        explode([0,-20,0])
         translate([0,-26,7])
         rotate([270,30,0])
             SSNvA_battery_screw_handle_stl();
@@ -429,5 +436,5 @@ module SSNvA_battery_drill_template_stl(type=conduit_M40) {
 //SSNvA_battery_drill_template_stl();
 
 if($preview) {    
-    SSNvA_battery_assembly();
+    *SSNvA_battery_assembly();
 }

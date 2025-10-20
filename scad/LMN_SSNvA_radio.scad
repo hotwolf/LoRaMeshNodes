@@ -222,6 +222,7 @@ module SSNvA_radio_frame_assembly() {
 //! 1. Attach the cable clamp with two M3 screws
 //! 2. Insert the Heltec T114
 //! 3. Attach the power cable
+//! 4. Tighten cable clamp
 module SSNvA_radio_assembly() {
   //pose([30, 0, 0], [150,150,0])
     assembly("SSNvA_radio") {

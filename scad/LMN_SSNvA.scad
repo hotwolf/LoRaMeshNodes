@@ -32,473 +32,111 @@
 //#                                                                             #
 //###############################################################################
 
-
-//! These are the assembly instructions for the Statc Solar Node (Variant A) (SSNvA),
-//! a solar powered [Meshtastic](https://meshtastic.org) or
-//! [MeshCore](https://meshcore.co.uk) node.
-
 include <LMN_Config.scad>
+include <LMN_SSNvA_scruton.scad>
+include <LMN_SSNvA_antenna.scad>
+include <LMN_SSNvA_radio.scad>
+include <LMN_SSNvA_battery.scad>
+include <LMN_SSNvA_mounts.scad>
 
-//Reusables
-module starProfile() {
-    
-    intersection() {
-        union () {
-            for (a=[0:45:135]) {
-                rotate([0,0,a]) square([4,50], center=true);                
+//! 1. Cut the M40 counduit to the desired length
+//! 2. Drill a 6mm hole through the pole, approx. 10mm above the bottom end
+//! 3. Slide helix segments over the pole
+
+module SSNvA_pole_assembly() {
+    //pose([30, 0, 0], [150,150,0])
+    assembly("SSNvA_pole") {
+        //$explode = 1;
+
+        //Conduit
+        difference() {
+            //Positive
+            union() {
+                translate([0,0,-200])
+                    conduit(conduit_M40, 2000);
             }
-        }
-        union () {
-            circle(d=35.5);
-            
-        }
-    }    
-}
-//starProfile();
-
-//Scruton strake
-module SSNvA_scruton_stl() {
-    vitamin("SSNvA_scruton");
-
-    wallT  =  0.4;           //wall thickness
-    poleD  = 40.4;             //pole diameter
-    outerD = 60;             //outer diameter
-    pitch  = 4*poleD;        //pitch
-    segH   = pitch;          //segment height
-    segCnt = 1;              //number of segments
-    $fn    = 256;
-    
-    difference() {
-        union() {
-             translate([0,0,0]) cylinder(h=segCnt*segH, d=poleD+2*wallT);            
-           
-             linear_extrude(height=segCnt*segH, twist=segCnt*360 )
-             translate([0,0,0]) square([outerD,2*wallT],center=true);
-            
-            
-            
-        }
-        union() {
-            translate([0,0,-10]) cylinder(h=segCnt*segH+20, d=poleD);            
-        }
-    }
-}
-*SSNvA_scruton_stl();
-
-//Antenna enclosure
-module SSNvA_antenna() {
-    difference () {
-        //Positive
-        union() {
-           //Star profile
-           translate([0,0,2]) 
-           linear_extrude(58) 
-               starProfile();
-            
-           translate([0,0,2])
-           rotate([180,0,0]) 
-           linear_extrude(2, scale=0.96) 
-               starProfile();
- 
-            //Antenna shaft
-            translate([0,0,0])   
-                cylinder(h=60, d=34);
-
-            translate([0,0,62])   
-                cylinder(h=6, d1=44, d2=14);
-            difference() {
-                translate([0,0,58])   
-                    cylinder(h=4, d=44);
-                translate([0,0,48])   
-                    cylinder(h=12, d=40.4);
-            }
-            
-            //Male thread
-            threadPitch   = 4;        
-            translate([0,0,-20])   
-            thread(dia     = 26, 
-                   pitch   = threadPitch, 
-                   length  = 20, 
-                   profile = thread_profile(threadPitch / 2.2, threadPitch * 0.25, 60),
-                   center  = false, 
-                   top     = 0, 
-                   bot     = -1, 
-                   starts  = 1, 
-                   solid   = true, 
-                   female  = false);              
+            //Negative
+            union() {
+                translate([-40,-40,200])
+                    cube([80,80,2000]);
+                rotate([30,0,0])
+                    cube([100,100,20],center=true);
+                translate([0,0,-190])
+                rotate([90,0,0])
+                    cylinder(h=60,d=6,center=true);
                 
-                   
-            
-        }
-        //Negative
-        union() {
-            //Antenna shaft
-            translate([0,0,6])   
-                cylinder(h=100, d=23.4);
-            
-            //Antenna mount
-            intersection() {
-                translate([0,0,-2]) color("Silver") cylinder(h=22, d=15.8);
-                cube([30,13.5,60], center=true);
             }
-
-            //Antenna grip holes
-            for (m=[0,1]) {
-                mirror([m,0,0]) {
-                    hull() {
-                        translate([10,-20,6]) cube([40,40,28]);
-                         translate([16,-20,4]) cube([40,40,32]);
-                    }
-                }
+        }
+        
+        //Scruton helix
+        difference() {
+            //Positive
+            union() {
+               explode([0,0,400])                                
+               translate([0,0,40])                
+                     SSNvA_scrutonM40_stl();              
+                explode([0,0,350])                                
+                translate([0,0,-120])                
+                     SSNvA_scrutonM40_stl();                             
             }
-            
-            //Thread
-            rotate([180,0,0])   
-                cylinder(h=40, d=23.4);
-    
-            //Debug
-            *translate([0,-40,-80])
-            cube([80,80,80]);
-                     
-        }
-    }
-}
-*SSNvA_antenna();
-
-//Antenna enclosure STL
-module SSNvA_antenna_part1_stl() {
-    stl("SSNvA_antenna_part1_stl()");
-    
-    difference() {
-        SSNvA_antenna();
-        translate([0,-30,-100])
-            cube([40,60,200]);
-    }
-}
-*SSNvA_antenna_part1_stl();
-
-module SSNvA_antenna_part2_stl() {
-    stl("SSNvA_antenna_part2_stl()");
-    
-    difference() {
-        SSNvA_antenna();
-        translate([-40,-30,-100])
-            cube([40,60,200]);
-    }
-}
-*SSNvA_antenna_part2_stl();
-
-module SSNvA_antenna_top_stl() {
-    stl("SSNvA_antenna_top_stl()");
-
-    difference() {
-        //Positive
-        union() {
-
-            translate([0,0,62])   
-                cylinder(h=4, d=50);
-            translate([0,0,66])   
-                cylinder(h=8, d1=50, d2=21);          
-        }
-        //Negative
-        union() {
-            translate([0,0,58])   
-                cylinder(h=9, d1=66, d2=21);
-            translate([0,0,58])   
-                cylinder(h=20, d=23);
-            translate([0,0,66])   
-                cylinder(h=4,d1=24, d2=23);
-        }
-    }      
-
-}
-*SSNvA_antenna_top_stl();
-
-//! 1. Glue the two parts of the antenna frame together
-module SSNvA_antenna_frame_assembly() {
-  //pose([30, 0, 0], [150,150,0])
-    assembly("SSNvA_antenna_frame") {
-    
-       //$explode = 1;    
-       explode([-20,0,0])  SSNvA_antenna_part1_stl(); 
-       explode([20,0,0]) SSNvA_antenna_part2_stl(); 
-
-    }
-}
-*SSNvA_antenna_frame_assembly();
-
-//! 1. Attach the antenna to the frame.  
-//! 2. Wrap teflon tape around the bottom of the antenna rod.  
-//! 3. Push the top cover over the antenna.  
-module SSNvA_antenna_assembly() {
-  //pose([30, 0, 0], [150,150,0])
-    assembly("SSNvA_antenna") {
-    
-        $explode = 1;    
-            
-        //Antenna frame
-        SSNvA_antenna_frame_assembly();
-    
-        //Antenna  
-        explode([0,0,60]) LoRa_N_antenna(6);
-    
-        //Antenna top cover
-        explode([0,0,120]) SSNvA_antenna_top_stl();
-
-    }
-}
-*SSNvA_antenna_assembly();
-
-//Radio enclosure
-module SSNvA_radio() {
-    difference () {
-        //Positive
-        union() {
-            //Star profile
-            difference() {
-                union() { 
-                    translate([0,0,-2])
-                    linear_extrude(2, scale=0.96) 
-                        starProfile();
-           
-                    translate([0,0,-112]) 
-                    linear_extrude(110) 
-                        starProfile();
-                    
-                    translate([0,0,-112])
-                    rotate([180,0,0]) 
-                    linear_extrude(2, scale=0.96) 
-                        starProfile();
-                }
-                union() { 
-                    translate([0,0,-20])
-                        cylinder(h=30, d=34);
-               }
-           }
-
-            //Female thread
-            threadPitch   = 4;        
-            translate([0,0,-20])
-            intersection() {   
-                thread(dia     = 31, 
-                       pitch   = threadPitch, 
-                       length  = 20, 
-                       profile = thread_profile(threadPitch / 2.2, threadPitch * 0.25, 60),
-                       center  = false, 
-                       top     = 0, 
-                       bot     = -1, 
-                       starts  = 1, 
-                       solid   = true, 
-                       female  = true);              
-                cylinder(h=20, d=34);
+            //Negative
+            union() {
+                rotate([30,0,0])
+                    cube([100,100,20],center=true);
             }
-
-            //Tube
-            translate([0,0,-114])
-                cylinder(h=94, d=34);
-        }
-        //Negative
-        union() {
-           
-            //Tube
-            difference() {
-                union() {
-                    translate([0,0,-110])
-                        cylinder(h=90, d=30);
-               }
-                union() {
-                    translate([-20,-20,-110])
-                        cube([20,40,53]);
-                                                       
-                    translate([0,-20,-53])
-                        cube([20,40,10]);
-
-                }
-            }
-            
-            //Radio grip holes
-            for (m=[0,1]) {
-                mirror([m,0,0]) {
-                    hull() {
-                        translate([10,-20,-110]) cube([40,40,m?78:53]);
-                        translate([16,-20,-112]) cube([40,40,m?82:58]);
-                    }
-                }
-            }
-                        
-            //Heltec T114
-            translate([-8,0,-110])
-            rotate([0,270,0])    
-                Heltec_T114_cutout(true);
-            
-            translate([-8,-11.5,-110])            
-                rounded_cube_yz([26.2,23,51.8],1);
-            translate([-20,-10,-110])            
-                rounded_cube_yz([16,20,60],1);
-           
-            //Cable holder                   
-            translate([3,0,-54])
-                cylinder(h=12, d=6);
-            translate([0,0,-48])
-                cube([6,6,12], center=true);            
-            translate([-20,6,-48])
-            rotate([0,90,0])
-                cylinder(h=40, r=screw_radius(M3_pan_screw));
-            translate([10,6,-48])
-            rotate([0,90,0])
-                cylinder(h=10, d=screw_boss_diameter(M3_pan_screw));
-            translate([-20,-6,-48])
-            rotate([0,90,0])
-                cylinder(h=40, r=screw_radius(M3_pan_screw));
-            translate([10,-6,-48])
-            rotate([0,90,0])
-                cylinder(h=10, d=screw_boss_diameter(M3_pan_screw));
-                      
-            //Cable hole
-            translate([10,0,-120])            
-                cylinder(h=20, d=6);
-
-            //Debug          
-            *translate([0,-40,-80])
-            cube([80,80,80]);
-            
         }
     }
 }
-*SSNvA_radio();
+//SSNvA_pole_assembly();
 
-//Radio cable clamp
-module SSNvA_radio_cable_clamp_stl() {
-    stl("SSNvA_radio_cable_clamp");
-    difference () {
-        union() {
-            translate([-4,-11,-53])
-                rounded_cube_yz([4,22,10],1);
-            translate([0,-3,-53])
-                cube([3,6,10]);
-        }
-        union() {
-            
-            translate([-20,6,-48])
-            rotate([0,90,0])
-                cylinder(h=40, r=screw_radius(M3_pan_screw));
-            translate([-12,6,-48])
-            rotate([0,90,0])
-                cylinder(h=10, r=nut_radius(M3_nut), $fn=6);
-            translate([-20,-6,-48])
-            rotate([0,90,0])
-                cylinder(h=40, r=screw_radius(M3_pan_screw));
-            translate([-12,-6,-48])
-            rotate([0,90,0])
-                cylinder(h=10, r=nut_radius(M3_nut), $fn=6);
-            
-            translate([4.5,-0,-48])
-                cylinder(h=12, d=6, center=true);
-        }
-    }
-}
-*SSNvA_radio_cable_clamp_stl();
-
-module SSNvA_radio_frame_part1_stl() {
-    vitamin("SSNvA_radio_frame_part1");
-    
-    difference() {
-        SSNvA_radio();
-        translate([0,-30,-140])
-            cube([40,60,200]);
-    }   
-}
-*SSNvA_radio_frame_part1_stl();
-
-module SSNvA_radio_frame_part2_stl() {
-    vitamin("SSNvA_radio_frame_part2");
-    
-    difference() {
-        SSNvA_radio();
-        translate([-40,-30,-140])
-            cube([40,60,200]);
-    }   
-}
-*SSNvA_radio_frame_part2_stl();
-
-//! 1. Glue the two parts of the radio frame together
-module SSNvA_radio_frame_assembly() {
-  //pose([30, 0, 0], [150,150,0])
-    assembly("SSNvA_radio_frame") {
-    
-       //$explode = 1;    
-       explode([-20,0,0])  SSNvA_radio_frame_part1_stl(); 
-       explode([20,0,0]) SSNvA_radio_frame_part2_stl(); 
-
-    }
-}
-*SSNvA_radio_frame_assembly();
-
-
-//! 1. Attach the cable clamp with two M3 screws
-//! 2. Insert the Heltec T114
-//! 3. Attach the power cable
-module SSNvA_radio_assembly() {
-  //pose([30, 0, 0], [150,150,0])
-    assembly("SSNvA_radio") {
-    
-        //$explode = 1;    
-        //Radio frame
-        SSNvA_radio_frame_assembly();
-
-        //Cable clamp
-        SSNvA_radio_cable_clamp_stl();
-
-        translate([10,6,-48])
-        rotate([0,90,0])
-            screw_and_washer(M3_pan_screw, 16);
-        translate([-4,6,-48])
-        rotate([0,90,0])
-        explode([0,0,-20])
-            nut(M3_nut);
-        translate([10,-6,-48])
-        rotate([0,90,0])
-            screw_and_washer(M3_pan_screw, 16);
-        translate([-4,-6,-48])
-        rotate([0,90,0])
-        explode([0,0,-20])
-            nut(M3_nut);
-    
-        //Heltec T114
-        translate([-8,0,-110])
-        rotate([0,270,0])    
-        explode([0,0,-40])
-            Heltec_T114();
-    }
-}
-*SSNvA_radio_assembly();
-
-//! 1. Screw antenna frame and radio frame together
-//! 2. Insert the Heltec T114
+// 1. Screw the antenna and the radio frame together
+// 2. Plug the antenna cord onto the Heltec T114
 module SSNvA_top_assembly() {
-  //pose([30, 0, 0], [150,150,0])
+    //pose([30, 0, 0], [150,150,0])
     assembly("SSNvA_top") {
-     
-        //$explode = 1;    
+        //$explode = 1;
+    
         //Antenna
-        explode([0,0,20])
-        SSNvA_antenna_assembly();
-
-        //Antenna
-        explode([0,0,-20])
+        explode([0,0,40])                                
+        translate([0,0,140])
+            SSNvA_antenna_assembly();
+    
+        //Radio
+        explode([0,0,-40])                                
+        translate([0,0,140])
         SSNvA_radio_assembly();
     }
 }
-SSNvA_top_assembly();
+//SSNvA_top_assembly();
 
-
-
-
-//! Finished!
+//! 1. Slide the antenna and radio into the top end of the pole
+//! 2. Attach the power cable of the antenna to the battery assembly
+//! 3. Slide the battery assembly into the bottom end of the pole
+//! 4. Attach the solar panel to the MPPT controller
+//! 5. Attach the panel to the panel mount
+//! 6. Attach the panel mount to the pole with zipties
 module SSNvA_assembly() {
   //pose([30, 0, 0], [150,150,0])
     assembly("SSNvA") {
 
+    $explode=1;
+
+    //Conduit
+    SSNvA_pole_assembly();   
+            
+    //Radio and antenna
+    explode([0,0,200])                                
+    SSNvA_top_assembly();
+
+    //Battery
+    explode([0,0,-160])                                
+    translate([0,0,-200])
+        SSNvA_battery_assembly();
+
+    //Solar panel
+    explode([0,80,0])                                
+    translate([0,0,-150])
+        SSNvA_solar_mount_assembly();
     }
 }
 

@@ -180,7 +180,7 @@ module SSNvA_antenna_assembly() {
   //pose([30, 0, 0], [150,150,0])
     assembly("SSNvA_antenna") {
     
-        $explode = 1;    
+        //$explode = 1;    
             
         //Antenna frame
         SSNvA_antenna_frame_assembly();
@@ -196,5 +196,5 @@ module SSNvA_antenna_assembly() {
 //SSNvA_antenna_assembly();
 
 if($preview) {    
-   *SSNvA_antenna_assembly();
+   //SSNvA_antenna_assembly();
 }
