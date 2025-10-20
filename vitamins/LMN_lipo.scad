@@ -54,7 +54,7 @@ function lipo_radius(type)        = type[5]; //! Corner radius
 function lipo_connector(type)     = type[6]; //! Width of the battery connector
 
 module lipo(type) { //! Draw a battery
-    vitamin(str("LiPo", type[0], "): ", type[1]));
+    vitamin(str("lipo(", type[0], "): ", type[1]));
 
     length      = lipo_length(type);
     width       = lipo_width(type);

@@ -60,7 +60,7 @@ module scruton(type=conduit_M40) {
 //scruton();
 
 module SSNvA_scrutonM40_stl() {
-    vitamin("SSNvA_scrutonM40");
+    stl("SSNvA_scrutonM40");
     scruton(conduit_M40);
 }
 //SSNvA_scrutonM40_stl();

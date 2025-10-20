@@ -1,0 +1,12 @@
+SSNvA_radio_assembly:
+Vitamins:
+  2 Nut M3 x 2.4mm 
+  1 Heltec T144
+  2 Screw M3 pan x 16mm
+  2 Washer  M3 x 7mm x 0.5mm
+
+Printed:
+  1 SSNvA_cable_clamp.stl
+
+Assemblies:
+  1 SSNvA_radio_frame_assembly

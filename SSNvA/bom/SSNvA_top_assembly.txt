@@ -1,0 +1,5 @@
+SSNvA_top_assembly:
+
+Assemblies:
+  1 SSNvA_antenna_assembly
+  1 SSNvA_radio_assembly

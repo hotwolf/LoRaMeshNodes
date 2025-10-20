@@ -113,7 +113,7 @@ module SSNvA_antenna() {
 
 //Antenna enclosure STL
 module SSNvA_antenna_part1_stl() {
-    stl("SSNvA_antenna_part1_stl()");
+    stl("SSNvA_antenna_part1");
     
     difference() {
         SSNvA_antenna();
@@ -124,7 +124,7 @@ module SSNvA_antenna_part1_stl() {
 *SSNvA_antenna_part1_stl();
 
 module SSNvA_antenna_part2_stl() {
-    stl("SSNvA_antenna_part2_stl()");
+    stl("SSNvA_antenna_part2");
     
     difference() {
         SSNvA_antenna();
@@ -135,7 +135,7 @@ module SSNvA_antenna_part2_stl() {
 *SSNvA_antenna_part2_stl();
 
 module SSNvA_antenna_top_stl() {
-    stl("SSNvA_antenna_top_stl()");
+    stl("SSNvA_antenna_top");
 
     difference() {
         //Positive

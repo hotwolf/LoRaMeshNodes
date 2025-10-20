@@ -52,7 +52,7 @@ module LoRa_20cm_antenna(wall=3, angle=90) {
 }
 
 module LoRa_N_antenna(wall=3) {
-    vitamin(str("LoRa_N_antenna: Antenna with N.connector"));
+    vitamin(str("LoRa_N_antenna(): Antenna with N-connector"));
     
     //Socket
     intersection() {

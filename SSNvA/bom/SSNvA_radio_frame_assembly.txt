@@ -1,0 +1,4 @@
+SSNvA_radio_frame_assembly:
+Printed:
+  1 SSNvA_radio_frame_part1.stl
+  1 SSNvA_radio_frame_part2.stl

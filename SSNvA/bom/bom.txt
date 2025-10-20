@@ -1,0 +1,68 @@
+Vitamins:
+             S                  
+             s                  
+             n                  
+             v                  
+             a                  
+                                
+    S        b  S               
+    s        a  s               
+    n        t  n        S  S   
+    v        t  v        s  s   
+    a        e  a        n  n   
+             r           v  v   
+ S  a     S  y  b        a  a   
+ s  n     s     a               
+ n  t     n  c  t     S  r  s   
+ v  e     v  a  t  S  s  a  o   
+ a  n     a  b  e  s  n  d  l  S
+    n        l  r  n  v  i  a  s
+ a  a     b  e  y  v  a  o  r  n
+ n        a        a           v
+ t  f  S  t  c  f     r  f  m  a
+ e  r  s  t  l  r  p  a  r  o   
+ n  a  n  e  a  a  o  d  a  u  t
+ n  m  v  r  m  m  l  i  m  n  o
+ a  e  a  y  p  e  e  o  e  t  p
+ 1|  |  |  |  |  |  |  |  |  |  |  1 Antenna with N-connector
+  |  |  | 1|  |  |  |  |  |  |  |  1 Li-Ion/LiFePo4 32700 3.2v
+  |  |  | 1|  |  |  |  |  |  |  |  1 Battery negative contact
+  |  |  | 1|  |  |  |  |  |  |  |  1 Battery positive contact
+  |  |  |  |  |  | 1|  |  |  |  |  1 Conduit diameter 40mmlength 2000mm
+  |  |  |  | 4|  |  | 2|  |  |  |  6 Nut M3 x 2.4mm 
+  |  |  |  |  |  |  |  |  | 3|  |  3 Nut M4 x 3.2mm 
+  |  |  | 1|  |  |  |  |  |  |  |  1 Nut M6 x 5mm 
+  |  |  |  |  |  |  | 1|  |  |  |  1 Heltec T144
+  |  |  | 1|  |  |  |  |  |  |  |  1 1S 3.2V battery protection board
+  |  |  | 1|  |  |  |  |  |  |  |  1 MPPT Solar Charge Controller
+  |  |  | 2|  |  |  |  |  |  |  |  2 Screw M3 pan x 12mm
+  |  |  |  |  |  |  | 2|  |  |  |  2 Screw M3 pan x 16mm
+  |  |  | 2|  |  |  |  |  |  |  |  2 Screw M3 pan x 18mm
+  |  |  |  |  |  |  |  |  | 3|  |  3 Screw M4 pan x 16mm
+  |  |  | 1|  |  |  |  |  |  |  |  1 Screw M6 hex x 50mm
+  |  |  | 4|  |  |  | 2|  |  |  |  6 Washer  M3 x 7mm x 0.5mm
+  |  |  |  |  |  |  |  |  | 3|  |  3 Washer  M4 x 9mm x 0.8mm
+  |  |  |  |  |  |  |  |  | 2|  |  2 Ziptie 3.6mm x 178mm min length
+
+Printed:
+  | 1|  |  |  |  |  |  |  |  |  |  1 SSNvA_antenna_part1.stl
+  | 1|  |  |  |  |  |  |  |  |  |  1 SSNvA_antenna_part2.stl
+ 1|  |  |  |  |  |  |  |  |  |  |  1 SSNvA_antenna_top.stl
+  |  |  | 2| 2| 2|  | 1|  |  |  |  7 SSNvA_cable_clamp.stl
+  |  |  |  |  |  |  |  | 1|  |  |  1 SSNvA_radio_frame_part1.stl
+  |  |  |  |  |  |  |  | 1|  |  |  1 SSNvA_radio_frame_part2.stl
+  |  |  |  |  |  | 2|  |  |  |  |  2 SSNvA_scrutonM40.stl
+  |  |  |  |  |  |  |  |  | 1|  |  1 SSNvA_solar_mount.stl
+
+Assemblies:
+  1 SSNvA_antenna_assembly
+  1 SSNvA_antenna_frame_assembly
+  1 SSNvA_assembly
+  1 SSNvA_battery_assembly
+  2 SSNvA_battery_cable_clamp_assemblies
+  1 SSNvA_battery_frame_assembly
+  1 SSNvA_pole_assembly
+  1 SSNvA_radio_assembly
+  1 SSNvA_radio_frame_assembly
+  1 SSNvA_solar_mount_assembly
+  1 SSNvA_top_assembly

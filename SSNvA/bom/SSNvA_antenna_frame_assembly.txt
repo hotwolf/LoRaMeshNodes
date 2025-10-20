@@ -1,0 +1,4 @@
+SSNvA_antenna_frame_assembly:
+Printed:
+  1 SSNvA_antenna_part1.stl
+  1 SSNvA_antenna_part2.stl

@@ -1,0 +1,7 @@
+SSNvA_assembly:
+
+Assemblies:
+  1 SSNvA_battery_assembly
+  1 SSNvA_pole_assembly
+  1 SSNvA_solar_mount_assembly
+  1 SSNvA_top_assembly

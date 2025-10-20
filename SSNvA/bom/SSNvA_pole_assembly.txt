@@ -1,0 +1,6 @@
+SSNvA_pole_assembly:
+Vitamins:
+  1 Conduit diameter 40mmlength 2000mm
+
+Printed:
+  2 SSNvA_scrutonM40.stl

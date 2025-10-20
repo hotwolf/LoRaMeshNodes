@@ -51,7 +51,7 @@ function solar_height(type)        = type[4]; //! Solar panel height
 function solar_bumps(type)         = type[5]; //! solder bumps on the backside
 
 module solar(type) { //! Draw a battery
-    vitamin(str("Solar", type[0], "): ", type[1]));
+    vitamin(str("solar(", type[0], "): ", type[1]));
 
     length      = solar_length(type);
     width       = solar_width(type);

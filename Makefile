@@ -66,7 +66,7 @@ help:
 #######################
 # Render node designs #
 #######################
-all:	SSNvA MSNvA
+all:	SSNvA MSNvA MSNvB
 
 SSNvA:	FORCE
 	env | grep PATH

@@ -1,0 +1,3 @@
+SSNvA_battery_frame_assembly:
+Printed:
+  2 SSNvA_cable_clamp.stl

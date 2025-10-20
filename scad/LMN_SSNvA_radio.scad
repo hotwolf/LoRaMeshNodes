@@ -151,9 +151,9 @@ module SSNvA_radio() {
 }
 *SSNvA_radio();
 
-//Radio cable clamp
-module SSNvA_radio_cable_clamp_stl() {
-    stl("SSNvA_radio_cable_clamp");
+//Cable clamp
+module SSNvA_cable_clamp_stl() {
+    stl("SSNvA_cable_clamp");
     difference () {
         union() {
             translate([-4,-11,-53])
@@ -181,10 +181,10 @@ module SSNvA_radio_cable_clamp_stl() {
         }
     }
 }
-*SSNvA_radio_cable_clamp_stl();
+*SSNvA_cable_clamp_stl();
 
 module SSNvA_radio_frame_part1_stl() {
-    vitamin("SSNvA_radio_frame_part1");
+    stl("SSNvA_radio_frame_part1");
     
     difference() {
         SSNvA_radio();
@@ -195,7 +195,7 @@ module SSNvA_radio_frame_part1_stl() {
 *SSNvA_radio_frame_part1_stl();
 
 module SSNvA_radio_frame_part2_stl() {
-    vitamin("SSNvA_radio_frame_part2");
+    stl("SSNvA_radio_frame_part2");
     
     difference() {
         SSNvA_radio();
@@ -211,9 +211,8 @@ module SSNvA_radio_frame_assembly() {
     assembly("SSNvA_radio_frame") {
     
        //$explode = 1;    
-       explode([-20,0,0])  SSNvA_radio_frame_part1_stl(); 
-       explode([20,0,0]) SSNvA_radio_frame_part2_stl(); 
-
+       explode([-20,0,0]) SSNvA_radio_frame_part1_stl(); 
+       explode([20,0,0])  SSNvA_radio_frame_part2_stl(); 
     }
 }
 *SSNvA_radio_frame_assembly();
@@ -232,7 +231,7 @@ module SSNvA_radio_assembly() {
         SSNvA_radio_frame_assembly();
 
         //Cable clamp
-        SSNvA_radio_cable_clamp_stl();
+        SSNvA_cable_clamp_stl();
 
         translate([10,6,-48])
         rotate([0,90,0])

@@ -1,0 +1,19 @@
+SSNvA_battery_assembly:
+Vitamins:
+  1 Li-Ion/LiFePo4 32700 3.2v
+  1 Battery negative contact
+  1 Battery positive contact
+  1 Nut M6 x 5mm 
+  1 1S 3.2V battery protection board
+  1 MPPT Solar Charge Controller
+  2 Screw M3 pan x 12mm
+  2 Screw M3 pan x 18mm
+  1 Screw M6 hex x 50mm
+  4 Washer  M3 x 7mm x 0.5mm
+
+Printed:
+  2 SSNvA_cable_clamp.stl
+
+Assemblies:
+  2 SSNvA_battery_cable_clamp_assemblies
+  1 SSNvA_battery_frame_assembly
