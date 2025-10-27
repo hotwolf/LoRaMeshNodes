@@ -49,9 +49,12 @@ include <../vitamins/LMN_conduits.scad>
 include <../vitamins/LMN_extrusions.scad>
 
 use     <./LMN_Common.scad>
+//Global parameters
+$slack = 0.1;
 
 //Common parameters
 solarA = 35;   //Solar panel tilt angle
 wallT  =  3;   //Wall thickness of the enclosure
 gapW   =  0.2; //Gap between moving parts
 edgeR  =  1;   //Rounded edges
+

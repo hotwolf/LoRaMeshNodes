@@ -48,7 +48,9 @@ Printed:
   | 1|  |  |  |  |  |  |  |  |  |  1 SSNvA_antenna_part1.stl
   | 1|  |  |  |  |  |  |  |  |  |  1 SSNvA_antenna_part2.stl
  1|  |  |  |  |  |  |  |  |  |  |  1 SSNvA_antenna_top.stl
-  |  |  | 2| 2| 2|  | 1|  |  |  |  7 SSNvA_cable_clamp.stl
+  |  |  |  |  | 1|  |  |  |  |  |  1 SSNvA_battery_frame_part1.stl
+  |  |  |  |  | 1|  |  |  |  |  |  1 SSNvA_battery_frame_part2.stl
+  |  |  | 2| 2|  |  | 1|  |  |  |  5 SSNvA_cable_clamp.stl
   |  |  |  |  |  |  |  | 1|  |  |  1 SSNvA_radio_frame_part1.stl
   |  |  |  |  |  |  |  | 1|  |  |  1 SSNvA_radio_frame_part2.stl
   |  |  |  |  |  | 2|  |  |  |  |  2 SSNvA_scrutonM40.stl

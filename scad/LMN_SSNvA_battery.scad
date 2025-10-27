@@ -222,7 +222,7 @@ module SSNvA_battery_frame() {
 //SSNvA_battery_frame();
 
 module SSNvA_battery_frame_part1_stl() {
-    stl("SSNvA_cable_clamp");
+    stl("SSNvA_battery_frame_part1");
     difference() {
         SSNvA_battery_frame();
         translate([0,-50,-50]) cube([100,100,200]);
@@ -231,7 +231,7 @@ module SSNvA_battery_frame_part1_stl() {
 //SSNvA_battery_frame_part1_stl();
 
 module SSNvA_battery_frame_part2_stl() {
-    stl("SSNvA_cable_clamp");
+    stl("SSNvA_battery_frame_part2");
     difference() {
         SSNvA_battery_frame();
         translate([-100,-50,-50]) cube([100,100,200]);

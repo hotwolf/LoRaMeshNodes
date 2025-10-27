@@ -1,3 +1,4 @@
 SSNvA_battery_frame_assembly:
 Printed:
-  2 SSNvA_cable_clamp.stl
+  1 SSNvA_battery_frame_part1.stl
+  1 SSNvA_battery_frame_part2.stl
