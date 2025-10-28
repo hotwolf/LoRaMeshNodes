@@ -12,7 +12,7 @@ Vitamins:
   4 Washer  M3 x 7mm x 0.5mm
 
 Printed:
-  2 SSNvA_cable_clamp.stl
+  2 SSNvA_battery_screw_handle.stl
 
 Assemblies:
   2 SSNvA_battery_cable_clamp_assemblies

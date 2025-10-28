@@ -280,7 +280,7 @@ module SSNvA_battery_cable_clamp_stl() {
 //    SSNvA_battery_cable_clamp_stl();
 
 module SSNvA_battery_screw_handle_stl(screwType=M6_hex_screw) {
-    stl("SSNvA_cable_clamp");
+    stl("SSNvA_battery_screw_handle");
     
     nutType = screw_nut(screwType);
     

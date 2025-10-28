@@ -7,6 +7,7 @@
     "SSNvA_radio_frame_part1.stl": 13.501,
     "SSNvA_radio_frame_part2.stl": 13.455,
     "SSNvA_scrutonM40.stl": 9.531,
-    "SSNvA_battery_frame_part1.stl": 40.986,
-    "SSNvA_battery_frame_part2.stl": 39.883
+    "SSNvA_battery_frame_part1.stl": 40.719,
+    "SSNvA_battery_frame_part2.stl": 39.561,
+    "SSNvA_battery_screw_handle.stl": 6.262
 }
