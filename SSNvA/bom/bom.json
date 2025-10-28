@@ -42,7 +42,7 @@
             }
         },
         "printed": {
-            "SSNvA_cable_clamp.stl": {
+            "SSNvA_battery_cable_clamp.stl": {
                 "count": 2,
                 "colour": "[0, 0.572549, 0]",
                 "camera": "0,0,0,70,0,315,500"

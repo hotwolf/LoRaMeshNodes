@@ -251,7 +251,7 @@ module SSNvA_battery_frame_assembly() {
 //SSNvA_battery_frame_assembly();
 
 module SSNvA_battery_cable_clamp_stl() {
-    stl("SSNvA_cable_clamp");
+    stl("SSNvA_battery_cable_clamp");
     difference() {
         //Positive
         union() {

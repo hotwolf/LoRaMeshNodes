@@ -3,4 +3,4 @@ Vitamins:
   4 Nut M3 x 2.4mm 
 
 Printed:
-  2 SSNvA_cable_clamp.stl
+  2 SSNvA_battery_cable_clamp.stl
