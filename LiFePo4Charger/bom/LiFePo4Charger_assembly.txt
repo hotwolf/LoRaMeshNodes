@@ -1,0 +1,12 @@
+LiFePo4Charger_assembly:
+Vitamins:
+  1 Li-Ion/LiFePo4 32700 3.2v
+  1 Battery negative contact
+  1 Battery positive contact
+  2 Nut M3 x 2.4mm 
+  1 LiFePo4 USB Charger
+  2 Screw M3 dome x 20mm
+
+Printed:
+  1 LiFePoCharger_frame_part1.stl
+  1 LiFePoCharger_frame_part2.stl

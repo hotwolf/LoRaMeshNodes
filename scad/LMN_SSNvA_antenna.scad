@@ -196,5 +196,5 @@ module SSNvA_antenna_assembly() {
 //SSNvA_antenna_assembly();
 
 if($preview) {    
-   //SSNvA_antenna_assembly();
+   SSNvA_antenna_assembly();
 }

@@ -47,6 +47,7 @@ include <../vitamins/LMN_BMS.scad>
 include <../vitamins/LMN_MPPT.scad>
 include <../vitamins/LMN_conduits.scad>
 include <../vitamins/LMN_extrusions.scad>
+include <../vitamins/LMN_USBCharger.scad>
 
 use     <./LMN_Common.scad>
 //Global parameters

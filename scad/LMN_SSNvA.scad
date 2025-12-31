@@ -22,8 +22,7 @@
 //#                                                                             #
 //###############################################################################
 //# Description:                                                                #
-//#   This file contains modules, which are specifiv for the Statc Solar Node   #
-//#   variant A.                                                                #
+//#   This is the main assembly of the Statc Solar Node variant A.              #
 //#                                                                             #
 //###############################################################################
 //# Version History:                                                            #

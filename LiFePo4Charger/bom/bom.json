@@ -1,0 +1,43 @@
+[
+    {
+        "name": "LiFePo4Charger_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {},
+        "vitamins": {
+            "battery(L32700): Li-Ion/LiFePo4 32700 3.2v": {
+                "count": 1
+            },
+            "battery_contact(bcontact, false): Battery negative contact": {
+                "count": 1
+            },
+            "battery_contact(bcontact, true): Battery positive contact": {
+                "count": 1
+            },
+            "pcb(USBCharger): LiFePo4 USB Charger": {
+                "count": 1
+            },
+            "screw(M3_dome_screw, 20): Screw M3 dome x 20mm": {
+                "count": 2
+            },
+            "nut(M3_nut): Nut M3 x 2.4mm ": {
+                "count": 2
+            }
+        },
+        "printed": {
+            "LiFePoCharger_frame_part1.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            },
+            "LiFePoCharger_frame_part2.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    }
+]

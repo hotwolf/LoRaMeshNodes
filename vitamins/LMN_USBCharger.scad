@@ -1,5 +1,5 @@
 //###############################################################################
-//# LoRaMeshNodes - Conduits                                                    #
+//# LoRaMeshNodes - LiFePo4 USB Charger                                         #
 //###############################################################################
 //#    Copyright 2025 Dirk Heisswolf                                            #
 //#    This file is part of the LoRaMeshNodes project.                          #
@@ -22,48 +22,106 @@
 //#                                                                             #
 //###############################################################################
 //# Description:                                                                #
-//#   Plain PVC conduits.                                                       #
+//#   A model of a LiFePo4 USB charger board.                                   #
 //#                                                                             #
 //###############################################################################
 //# Version History:                                                            #
-//#   September 20, 2025                                                        #
+//#   December 29, 2025                                                         #
 //#      - Initial release                                                      #
 //#                                                                             #
 //###############################################################################
 include <../lib/NopSCADlib/utils/core/core.scad>
+//include <../scad/LMN_Config.scad>
 
-//                                                          o    i
-//                                                          u    n
-//                                                          t    n
-//                                                          e    e
-//                                                          r    r
-//                                                          D    D
-conduit_M20   = ["conduit_M20",  "Conduit diameter 20mm",  20,  17.5];
-conduit_M25   = ["conduit_M25",  "Conduit diameter 25mm",  25,  22.3];
-conduit_M32   = ["conduit_M32",  "Conduit diameter 32mm",  32,  29.1];
-//conduit_M40 = ["conduit_M40",  "Conduit diameter 40mm",  40,  35.5]; //loose fit
-//conduit_M40 = ["conduit_M40",  "Conduit diameter 40mm",  40,  37.2]; //tight fit
-conduit_M40   = ["conduit_M40",  "Conduit diameter 40mm",  40,  36.0];
-conduit_DN75  = ["conduit_DN75", "Conduit diameter 40mm",  75,  71.0];
+use <../lib/NopSCADlib/vitamins/pcb.scad>
 
-function conduit_type(type)          = type[0]; //! Conduit type
-function conduit_outerD(type)        = type[2]; //! Conduit outer diameter
-function conduit_innerD(type)        = type[3]; //! Conduit inner diameter
 
-module conduit(type, length) { //! Draw a conduit
-  vitamin(str("conduit(", type[0], ", ", length,"): ", type[1], "length ", length, "mm"));
+USBCharger  = [// 0. Type
+               "USBCharger",
+               // 0. Description
+               "LiFePo4 USB Charger",
+               // 2. Length
+               23,
+               // 3. Width
+               16,
+               // 4. Thickness
+               1.2,
+               // 5. Corner radius
+               0, 
+               // 6. Mounting hole diameter
+               1,
+               // 7. Pad around mounting hole
+               2.0,
+               // 8. Colour of the substrate
+               "Black",
+               // 9. True if the parts should be separate BOM items
+               false,
+               //10. List of hole positions
+               [],
+               //11. List of components
+               [],
+               //12. List of accessories to go on the BOM, SD cards, USB cables, etc. 
+               [],
+               //13. Grid origin if a perfboard
+               [],
+               //14. Optional outline polygon for odd shaped boards
+               []];
 
-    outerD      = conduit_outerD(type);
-    innerD      = conduit_innerD(type);
 
-    color("DarkGray")
-    translate([0,0,0])
-    difference() {
-      translate([0,0,0])   cylinder(h=length,    d=outerD);
-      translate([0,0,-10]) cylinder(h=length+20, d=innerD);
+module USBCharger() {
+    translate([0,0,0]) {
+        //PCB
+        translate([0,0,0])   
+        pcb(USBCharger);
+        //USB-C
+        h = 3.26;
+        w = 8.94;
+        r = h/2 - 0.5;
+        if (true) { 
+            translate([-13,-w/2,0.2])
+            color("silver")
+            rounded_cube_yz([10,w,h],r);
+           }
     }
 }
+*USBCharger();
+
+module USBCharger_cutout() {
+    //Body
+    difference() {
+        union() {
+            translate([0,0,2])
+                cube([23.2,16.4,4],center=true);
+        }
+        union() {
+            translate([-12,8.2-0.6,1.4])
+                cube([24,0.6,1]);
+
+            translate([-12,-8.2,1.4])
+                cube([24,0.6,1]);
+
+        }
+    } 
+    //LED
+    translate([11.5-4.5,-8+3,0])
+        cylinder(h=20,d=2);
+    //USB-C
+    h = 3.26;
+    w = 8.94;
+    r = h/2 - 0.5;
+    if (true) { 
+        translate([-13,-w/2,0.2])
+        rounded_cube_yz([10,w,h],r);
+        hull() {
+            translate([-20,-7,-0.2])
+            rounded_cube_yz([8,14,4],r);
+            translate([-20,-7-6,-0.2-6])
+            rounded_cube_yz([2,14+12,4+12],r);
+        }
+    }
+}
+*USBCharger_cutout();
 
 if($preview) {    
-  *conduit(conduit_M40, 80);
+  *USBCharger();  
 }
