@@ -166,7 +166,7 @@ module LiFePoCharger_frame() {
                    rotate([0,90,0]) 
                        cylinder(h=20, r=screw_head_radius(type));
                     
-                   translate([-24,0,0])
+                   translate([-25,0,0])
                    rotate([30,0,0]) rotate([0,90,0])
                        cylinder(h=20, r=screw_nut_radius(type), $fn=6);
                 }
@@ -232,7 +232,7 @@ module LiFePo4Charger_assembly() {
                    screw(type, 20);
                 
                explode([-60,0,0])
-               translate([-6.4,0,0])
+               translate([-5.4,0,0])
                rotate([30,0,0]) rotate([0,90,0])
                    nut(screw_nut(type));
             }
