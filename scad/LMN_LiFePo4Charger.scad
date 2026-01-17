@@ -91,6 +91,10 @@ module LiFePoCharger_frame() {
         //Negative
         union() {
     
+            //Release slot
+            translate([-20,-10,batPZ+batCT+10])
+                rounded_cube_yz([10,20,batL-20],r=5);
+                 
             //Battery compartment
             translate([0,0,batPZ+batCT])
                 cylinder(h=batNZ-batPZ-2*batCT, d=batD+0.4, center=false);
@@ -102,9 +106,9 @@ module LiFePoCharger_frame() {
                 rounded_cube_xz([batD+0.4,batD+4,batNZ-batPZ-2*batCT],r=2);
     
             //Negative battery contact
-            #translate([batX-batCH/2,batY-batCW/2,batNZ-batCT/2])
+            translate([batX-batCH/2,batY-batCW/2,batNZ-batCT/2])
                 cube([batCH, batCW, batCT]);
-            #translate([batX-batCH/2,batY-2,batNZ])
+            translate([batX-batCH/2,batY-2,batNZ])
                 cube([batCH, 4, 6]);
             translate([batX-batCH/2,batY-4,batNZ-6])
                 cube([batCH, 8, 6]);
@@ -118,9 +122,9 @@ module LiFePoCharger_frame() {
             }
             
             //Positive battery contact
-            #translate([batX-batCH/2,batY-batCW/2,batPZ-batCT/2])
+            translate([batX-batCH/2,batY-batCW/2,batPZ-batCT/2])
                 cube([batCH, batCW, batCT]);
-            #translate([batX-batCH/2,batY-2,batPZ-6])
+            translate([batX-batCH/2,batY-2,batPZ-6])
                 cube([batCH, 4, 6]);
             translate([batX-batCH/2,batY-4,batPZ])
                 cube([batCH, 8, 6]);
@@ -145,9 +149,7 @@ module LiFePoCharger_frame() {
                 translate([-14,pcbY-2,batNZ+2])
                     cube([14,6,4]);
             }
-
-
-            
+      
             translate([-batCH/2,0,batPZ-6])
                 cube([batCH/2,pcbY,4]);
             translate([-batCH/2,pcbY,batPZ-6])

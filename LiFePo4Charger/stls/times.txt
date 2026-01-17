@@ -1,4 +1,4 @@
 {
-    "LiFePoCharger_frame_part1.stl": 19.446,
-    "LiFePoCharger_frame_part2.stl": 19.893
+    "LiFePoCharger_frame_part1.stl": 20.419,
+    "LiFePoCharger_frame_part2.stl": 20.415
 }

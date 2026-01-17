@@ -91,14 +91,14 @@ module USBCharger_cutout() {
     difference() {
         union() {
             translate([0,0,2])
-                cube([23.2,16.4,4],center=true);
+                cube([23.2,16.8,4],center=true);
         }
         union() {
             translate([-12,8.2-0.6,1.4])
-                cube([24,0.6,1]);
+                cube([24,1,1]);
 
-            translate([-12,-8.2,1.4])
-                cube([24,0.6,1]);
+            translate([-12,-8.6,1.4])
+                cube([24,1,1]);
 
         }
     } 

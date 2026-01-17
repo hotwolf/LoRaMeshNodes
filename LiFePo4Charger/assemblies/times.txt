@@ -1,5 +1,5 @@
 {
-    "LiFePo4Charger/assemblies/LiFePo4Charger_assembled.png": 5.145,
-    "LiFePo4Charger/assemblies/LiFePo4Charger_assembly.png": 5.881,
-    "LiFePo4Charger/readme.html": 0.095
+    "LiFePo4Charger/assemblies/LiFePo4Charger_assembled.png": 5.482,
+    "LiFePo4Charger/assemblies/LiFePo4Charger_assembly.png": 6.604,
+    "LiFePo4Charger/readme.html": 0.163
 }
