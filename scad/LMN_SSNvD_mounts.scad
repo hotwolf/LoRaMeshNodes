@@ -129,58 +129,23 @@ module SSNvD_solar_mount_assembly() {
 
 //End cap
 //=======
-//SSNvD_end_cap_profile = [[     boreR,   -2],
-//                         [    outerR,   -2],
-//                         [    outerR,    0],
-//                         [    innerR,    0],
-//                         [    innerR,    4],
-//                         [  innerR-1,    6],
-//                         [  innerR-1,    7],
-//                         [    innerR,    9],
-//                         [    innerR,   10],
-//                         [  innerR-1,   12],
-//                         [  innerR-1,   14],
-//                         [  innerR-2,   14],
-//                         [  innerR-2,   12],
-//                         [  innerR-1,   10],
-//                         [  innerR-1,    9],
-//                         [  innerR-2,    7],
-//                         [  innerR-2,    6],
-//                         [  innerR-1,    4],
-//                         [  innerR-1,    2],
-//                         [     boreR,    0]];
-
-SSNvD_end_cap_profile = [[     boreR,   -3],
-                         [    outerR,   -3],
-                         [    outerR,   -1],
-                         [  innerR-0,   -1],
-                         [  innerR-1,    0],
-                         [  innerR-1,    2],
-                         [    innerR,    3],
-                         [    innerR,    4],
-                         [  innerR-1,    5],
-                         [  innerR-2,    5],
-                         [  innerR-2,    0],
-                         [     boreR,   -1]];
+SSNvD_end_cap_profile = [[    boreR,   0],
+                         [ innerR-3,   2],
+                         [innerR-3,   12],
+                         [innerR-2,   12],
+                         [innerR-0.8, 10],
+                         [innerR-0.8, -0.8],
+                         [    outerR, -0.8],
+                         [    outerR, -3],
+                         [     boreR, -3]];
 *polygon(SSNvD_end_cap_profile);
 
-//SSNvD_end_cap_ring_profile = [[      innerR,   4.8],
-//                              [  innerR-0.2,   4.8],
-//                              [  innerR-0.8,   6],
-//                              [  innerR-0.8,   7],
-//                              [  innerR-0.2,   8.2],
-//                              [      innerR,   8.2],
-//                              [      innerR,   7.3],
-//                              [  innerR-0.4,   6.5],
-//                              [      innerR,   5.7]];
-
-SSNvD_end_cap_ring_profile = [[      outerR,  -1],
+SSNvD_end_cap_ring_profile = [[      outerR,  -0.6],
                               [      outerR,   0],
                               [      innerR,   0],
-                              [      innerR,   2.8],
-                              [  innerR-0.6,   2.2],
-                              [  innerR-0.6,  -0.2],
-                              [  innerR+0.2,  -1]];
+                              [      innerR,   10],
+                              [  innerR-0.6,   10],
+                              [  innerR-0.6,  -0.6]];
 *polygon(SSNvD_end_cap_ring_profile);
 
 module SSNvD_end_cap_stl() {
@@ -192,56 +157,48 @@ module SSNvD_end_cap_stl() {
                 polygon(SSNvD_end_cap_profile);
         }
         union() {
-            for (a=[0:20:160]) {
-                rotate([0,0,a])
-                translate([0,0,4])
-                    cube([40,2,8],center=true);
+            for (a=[0:90:270]) {
+                rotate([0,0,a]) {
+                    hull() {
+                        translate([innerR-0.6,0,3])  sphere(r=2);
+                        translate([innerR-0.6,0,20]) sphere(r=2);
+                    }
+                    rotate([0,0,60])
+                    translate([innerR-0.6,0,3])  sphere(r=2);
 
+                    difference() {
+                        union() {
+                            rotate([0,0,0])
+                            rotate_extrude(angle=60) 
+                            translate([innerR-0.6,3,0]) circle(r=2);
+                        }
+                        union() {
+                            rotate([0,0,56])
+                            translate([innerR-2.6,0,1])  cylinder(h=4,r=0.2);
+                        }
+                    }                                      
+                }
             }
         }
     }
 }
-*SSNvD_end_cap_stl();
+SSNvD_end_cap_stl();
 
 module SSNvD_end_cap_ring_stl() {
     stl("SSNvD_end_cap_ring");
 
-//    difference() {
-//        union() {
-//            rotate_extrude() 
-//                polygon(SSNvD_end_cap_ring_profile);
-//        }
-//        union() {
-//            for (a=[0:60:300]) {
-//                translate([0,0,22.6])
-//                rotate([0,40,a]) {
-//                    translate([0,0,1])
-//                        cube([60,2,2],center=true);
-//                    translate([0,0,0])
-//                    rotate([0,90,0])
-//                        cylinder(h=60,d=2,center=true);
-//
-//                }
-//            }
-//        }
-//    }
-
     rotate_extrude() 
         polygon(SSNvD_end_cap_ring_profile);
 
+    for (a=[0:90:270]) {
+        intersection() {
+            translate([0,0,-1]) cylinder(h=20, r=innerR);
+            rotate([0,0,a])
+            translate([innerR-0.6,0,3]) sphere(r=2);
+        }
+    }
 }
 *SSNvD_end_cap_ring_stl();
-
-//module SSNvD_end_cap_template_stl() {
-//    stl("SSNvD_end_cap_template");
-//
-//    rotate_extrude() {
-//        translate([innerR-0.2,0,0])
-//            square([0.2,5]);
-//        
-//    }   
-//}
-//*SSNvD_end_cap_template_stl();
 
 //Spacer
 //======
