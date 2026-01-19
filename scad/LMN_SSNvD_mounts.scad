@@ -129,15 +129,15 @@ module SSNvD_solar_mount_assembly() {
 
 //End cap
 //=======
-SSNvD_end_cap_profile = [[    boreR,   0],
-                         [ innerR-4,   2],
-                         [ innerR-4,   11],
-                         [ innerR-3,   11],
-                         [ innerR-1,   10],
-                         [ innerR-1, -1],
-                         [   outerR, -1],
-                         [   outerR, -3],
-                         [    boreR, -3]];
+SSNvD_end_cap_profile = [[     boreR,  0],
+                         [  innerR-4,  2],
+                         [  innerR-4, 11],
+                         [  innerR-3, 11],
+                         [innerR-0.9, 10],
+                         [innerR-0.9, -0.9],
+                         [    outerR, -0.9],
+                         [    outerR, -3],
+                         [     boreR, -3]];
 *polygon(SSNvD_end_cap_profile);
 
 SSNvD_end_cap_ring_profile = [[      outerR,  -0.6],
@@ -160,21 +160,21 @@ module SSNvD_end_cap_stl() {
             for (a=[0:90:270]) {
                 rotate([0,0,a]) {
                     hull() {
-                        translate([innerR-0.6,0,3])  sphere(r=2.4);
-                        translate([innerR-0.6,0,20]) sphere(r=2.4);
+                        translate([innerR-0.6,0,3])  sphere(r=2.2);
+                        translate([innerR-0.6,0,20]) sphere(r=2.2);
                     }
-                    #rotate([0,0,60])
-                    translate([innerR-0.6,0,3])  sphere(r=2.4);
+                    rotate([0,0,60])
+                    translate([innerR-0.6,0,3])  sphere(r=2.2);
 
                     difference() {
                         union() {
                             rotate([0,0,0])
                             rotate_extrude(angle=60) 
-                            translate([innerR-0.6,3,0]) circle(r=2.4);
+                            translate([innerR-0.6,3,0]) circle(r=2.2);
                         }
                         union() {
-                            rotate([0,0,56])
-                            translate([innerR-3,0,1])  cylinder(h=4,r=0.2);
+                            rotate([0,0,54])
+                            translate([innerR-3,0,1])  cylinder(h=4,r=0.4);
                         }
                     }                                      
                 }
