@@ -44,7 +44,7 @@ winW    = 455;                             //Width of the window
 spcW    =   4;                             //Width the spacer
 outerR  = conduit_outerD(conduit_M40)/2;   //Outer diameter of the conduit
 innerR  = 37.2/2;                          //Inner diameter of the conduit (tight fit)
-boreR   = 3;                               //End cao bore for the solar power cable
+boreR   = 3.4/2;                           //End cao bore for the solar power cable
  
 $fn = 128;
 
