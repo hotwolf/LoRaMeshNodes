@@ -1,0 +1,9 @@
+SSNvD_assembly:
+Printed:
+  1 SSNvD_end_cap.stl
+
+Assemblies:
+  1 SSNvD_pole_assembly
+  1 SSNvD_solar_mount_assembly
+  2 SSNvD_spacer_assemblies
+  1 SSNvD_top_assembly

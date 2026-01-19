@@ -1,0 +1,274 @@
+[
+    {
+        "name": "SSNvD_spacer_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 2,
+        "assemblies": {},
+        "vitamins": {
+            "ziptie(ziptie_3p6mm): Ziptie 3.6mm x 197mm min length": {
+                "count": 2
+            }
+        },
+        "printed": {
+            "SSNvD_spacer.stl": {
+                "count": 2,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    },
+    {
+        "name": "SSNvD_solar_mount_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {},
+        "vitamins": {
+            "ziptie(ziptie_3p6mm): Ziptie 3.6mm x 178mm min length": {
+                "count": 2
+            },
+            "washer(M4_washer): Washer  M4 x 9mm x 0.8mm": {
+                "count": 3
+            },
+            "screw(M4_pan_screw, 16): Screw M4 pan x 16mm": {
+                "count": 3
+            },
+            "nut(M4_nut): Nut M4 x 3.2mm ": {
+                "count": 3
+            }
+        },
+        "printed": {
+            "SSNvD_solar_mount.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    },
+    {
+        "name": "SSNvD_battery_cable_clamp_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {},
+        "vitamins": {
+            "nut(M3_nut): Nut M3 x 2.4mm ": {
+                "count": 2
+            }
+        },
+        "printed": {
+            "SSNvD_battery_cable_clamp.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    },
+    {
+        "name": "SSNvD_battery_frame_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {},
+        "vitamins": {},
+        "printed": {
+            "SSNvD_battery_frame_part1.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            },
+            "SSNvD_battery_frame_part2.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    },
+    {
+        "name": "SSNvD_battery_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {
+            "SSNvD_battery_frame_assembly": 1,
+            "SSNvD_battery_cable_clamp_assembly": 1
+        },
+        "vitamins": {
+            "battery(L32700): Li-Ion/LiFePo4 32700 3.2v": {
+                "count": 1
+            },
+            "battery_contact(bcontact, false): Battery negative contact": {
+                "count": 1
+            },
+            "battery_contact(bcontact, true): Battery positive contact": {
+                "count": 1
+            },
+            "washer(M3_washer): Washer  M3 x 7mm x 0.5mm": {
+                "count": 2
+            },
+            "screw(M3_pan_screw, 10): Screw M3 pan x 10mm": {
+                "count": 2
+            },
+            "pcb(LiFePo4BMS): 1S 3.2V battery protection board": {
+                "count": 1
+            },
+            "pcb(SDBK03TA): MPPT Solar Charge Controller": {
+                "count": 1
+            }
+        },
+        "printed": {},
+        "routed": {}
+    },
+    {
+        "name": "SSNvD_radio_frame_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {},
+        "vitamins": {},
+        "printed": {
+            "SSNvD_radio_frame_part1.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            },
+            "SSNvD_radio_frame_part2.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    },
+    {
+        "name": "SSNvD_radio_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {
+            "SSNvD_radio_frame_assembly": 1
+        },
+        "vitamins": {
+            "pcb(Heltec_T144): Heltec T144": {
+                "count": 1
+            }
+        },
+        "printed": {},
+        "routed": {}
+    },
+    {
+        "name": "SSNvD_antenna_frame_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {},
+        "vitamins": {},
+        "printed": {
+            "SSNvD_antenna_part1.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            },
+            "SSNvD_antenna_part2.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    },
+    {
+        "name": "SSNvD_antenna_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {
+            "SSNvD_antenna_frame_assembly": 1
+        },
+        "vitamins": {
+            "LoRa_N_antenna(): Antenna with N-connector": {
+                "count": 1
+            }
+        },
+        "printed": {
+            "SSNvD_antenna_top.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    },
+    {
+        "name": "SSNvD_top_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {
+            "SSNvD_antenna_assembly": 1,
+            "SSNvD_radio_assembly": 1,
+            "SSNvD_battery_assembly": 1
+        },
+        "vitamins": {},
+        "printed": {},
+        "routed": {}
+    },
+    {
+        "name": "SSNvD_pole_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {},
+        "vitamins": {
+            "conduit(conduit_M40, 300): Conduit diameter 40mmlength 300mm": {
+                "count": 1
+            }
+        },
+        "printed": {
+            "SSNvD_end_cap_ring.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    },
+    {
+        "name": "SSNvD_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {
+            "SSNvD_pole_assembly": 1,
+            "SSNvD_top_assembly": 1,
+            "SSNvD_solar_mount_assembly": 1,
+            "SSNvD_spacer_assembly": 2
+        },
+        "vitamins": {},
+        "printed": {
+            "SSNvD_end_cap.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    }
+]

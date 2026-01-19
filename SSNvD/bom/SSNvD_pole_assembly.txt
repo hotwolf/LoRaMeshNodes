@@ -1,0 +1,6 @@
+SSNvD_pole_assembly:
+Vitamins:
+  1 Conduit diameter 40mmlength 300mm
+
+Printed:
+  1 SSNvD_end_cap_ring.stl

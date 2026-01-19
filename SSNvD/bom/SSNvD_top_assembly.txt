@@ -1,0 +1,6 @@
+SSNvD_top_assembly:
+
+Assemblies:
+  1 SSNvD_antenna_assembly
+  1 SSNvD_battery_assembly
+  1 SSNvD_radio_assembly

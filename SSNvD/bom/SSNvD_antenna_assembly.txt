@@ -1,0 +1,9 @@
+SSNvD_antenna_assembly:
+Vitamins:
+  1 Antenna with N-connector
+
+Printed:
+  1 SSNvD_antenna_top.stl
+
+Assemblies:
+  1 SSNvD_antenna_frame_assembly

@@ -1,0 +1,9 @@
+SSNvD_solar_mount_assembly:
+Vitamins:
+  3 Nut M4 x 3.2mm 
+  3 Screw M4 pan x 16mm
+  3 Washer  M4 x 9mm x 0.8mm
+  2 Ziptie 3.6mm x 178mm min length
+
+Printed:
+  1 SSNvD_solar_mount.stl

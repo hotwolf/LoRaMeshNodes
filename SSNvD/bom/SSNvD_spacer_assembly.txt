@@ -1,0 +1,6 @@
+SSNvD_spacer_assemblies:
+Vitamins:
+  2 Ziptie 3.6mm x 197mm min length
+
+Printed:
+  2 SSNvD_spacer.stl
