@@ -51,7 +51,7 @@ module LoRa_20cm_antenna(wall=3, angle=90) {
    antenna(LoRa_20cm_antenna, wall, angle);   
 }
 
-module LoRa_N_antenna(wall=3) {
+module LoRa_N_antenna(wall=3, alfa=false) {
     vitamin(str("LoRa_N_antenna(): Antenna with N-connector"));
     
     //Socket
@@ -68,13 +68,27 @@ module LoRa_N_antenna(wall=3) {
     translate([0,0,-38])   color("Black")  cylinder(h=23,  d=4);
     
     //Antenna
-    translate([0,0, 12.2]) color("Silver") cylinder(h=22.4, d=20);
-    translate([0,0, 34.6]) color("Silver") cylinder(h=40.5, d=23);
-    translate([0,0, 34.6]) color("SlateGray") cylinder(h=400, d=20);
+    if (alfa) {
+        //Alfa antenna
+        translate([0,0, 12.2]) color("Silver") cylinder(h=22.4, d=20);
+        translate([0,0, 34]) color("Silver") cylinder(h=8, d=22);
+        translate([0,0, 42]) color("black") cylinder(h=60, d=21);
+        translate([0,0, 102]) color("black") cylinder(h=60, d1=21, d2=0);
+        intersection() {
+            translate([0,0, 42]) color("black") cylinder(h=152, d=21);
+            translate([-3.1,-10.5,42]) color("black") rounded_cube_yz([6.2,21,152],r=4);
+        }
+    } else {
+        //Ziisor antenna
+        translate([0,0, 12.2]) color("Silver") cylinder(h=22.4, d=20);
+        translate([0,0, 34.6]) color("Silver") cylinder(h=40.5, d=23);
+        translate([0,0, 34.6]) color("SlateGray") cylinder(h=400, d=20);
+    }
 }
 
 
 if($preview) {
-   *LoRa_N_antenna();
-   //antenna(LoRa_40cm_antenna, 3, 90);
+   *LoRa_N_antenna(alfa=false);
+   *LoRa_N_antenna(alfa=true);
+   *antenna(LoRa_20cm_antenna, 3, 90);
 }

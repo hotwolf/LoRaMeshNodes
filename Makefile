@@ -71,6 +71,15 @@ all:	SSNvA MSNvA MSNvB
 SSNvA:	FORCE
 	env | grep PATH
 	$(PYTHON) $(NOPSCADLIB_DIR)/scripts/make_all.py SSNvA
+SSNvB:	FORCE
+	env | grep PATH
+	$(PYTHON) $(NOPSCADLIB_DIR)/scripts/make_all.py SSNvB
+SSNvC:	FORCE
+	env | grep PATH
+	$(PYTHON) $(NOPSCADLIB_DIR)/scripts/make_all.py SSNvC
+SSNvD:	FORCE
+	env | grep PATH
+	$(PYTHON) $(NOPSCADLIB_DIR)/scripts/make_all.py SSNvD
 MSNvA:  FORCE
 	env | grep PATH
 	$(PYTHON) $(NOPSCADLIB_DIR)/scripts/make_all.py MSNvA

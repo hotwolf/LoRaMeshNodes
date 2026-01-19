@@ -1,5 +1,5 @@
 //###############################################################################
-//# LoRaMeshNodes - Statc Solar Node Variant A - Radio                          #
+//# LoRaMeshNodes - Statc Solar Node Variant D - Radio                          #
 //###############################################################################
 //#    Copyright 2025 Dirk Heisswolf                                            #
 //#    This file is part of the LoRaMeshNodes project.                          #
@@ -22,19 +22,18 @@
 //#                                                                             #
 //###############################################################################
 //# Description:                                                                #
-//#   A radio (Heltec T114) mount for the Statc Solar Node variant A.           #
+//#   A radio (Heltec T114) mount for the Statc Solar Node variant D.           #
 //#                                                                             #
 //###############################################################################
 //# Version History:                                                            #
-//#   October 6, 2025                                                           #
+//#   January 17, 2026                                                          #
 //#      - Initial release                                                      #
 //#                                                                             #
 //###############################################################################
-
 include <LMN_Config.scad>
 
 //Radio enclosure
-module SSNvA_radio() {
+module SSNvD_radio() {
     difference () {
         //Positive
         union() {
@@ -45,11 +44,11 @@ module SSNvA_radio() {
                     linear_extrude(2, scale=0.96) 
                         starProfile();
            
-                    translate([0,0,-112]) 
-                    linear_extrude(110) 
+                    translate([0,0,-121]) 
+                    linear_extrude(119) 
                         starProfile();
                     
-                    translate([0,0,-112])
+                    translate([0,0,-121])
                     rotate([180,0,0]) 
                     linear_extrude(2, scale=0.96) 
                         starProfile();
@@ -57,10 +56,12 @@ module SSNvA_radio() {
                 union() { 
                     translate([0,0,-20])
                         cylinder(h=30, d=34);
+                    translate([0,0,-124])
+                        cylinder(h=30, d=34);
                }
-           }
+            }
 
-            //Female thread
+            //Upper female thread
             threadPitch   = 4;        
             translate([0,0,-20])
             intersection() {   
@@ -77,9 +78,26 @@ module SSNvA_radio() {
                 cylinder(h=20, d=34);
             }
 
+            //Lower female thread
+            //threadPitch   = 4;        
+            translate([0,0,-123])
+            intersection() {   
+                thread(dia     = 31, 
+                       pitch   = threadPitch, 
+                       length  = 20, 
+                       profile = thread_profile(threadPitch / 2.2, threadPitch * 0.25, 60),
+                       center  = false, 
+                       top     = 0, 
+                       bot     = -1, 
+                       starts  = 1, 
+                       solid   = true, 
+                       female  = true);              
+                cylinder(h=20, d=34);
+            }
+
             //Tube
-            translate([0,0,-114])
-                cylinder(h=94, d=34);
+            translate([0,0,-103])
+                cylinder(h=83, d=34);
         }
         //Negative
         union() {
@@ -87,16 +105,12 @@ module SSNvA_radio() {
             //Tube
             difference() {
                 union() {
-                    translate([0,0,-110])
-                        cylinder(h=90, d=30);
-               }
+                    translate([0,0,-100])
+                        cylinder(h=80, d=30);
+                }
                 union() {
-                    translate([-20,-20,-110])
-                        cube([20,40,53]);
-                                                       
-                    translate([0,-20,-53])
-                        cube([20,40,10]);
-
+                    translate([-20,-20,-100])
+                        cube([20,40,58]);
                 }
             }
             
@@ -104,159 +118,95 @@ module SSNvA_radio() {
             for (m=[0,1]) {
                 mirror([m,0,0]) {
                     hull() {
-                        translate([10,-20,-110]) cube([40,40,m?78:53]);
-                        translate([16,-20,-112]) cube([40,40,m?82:58]);
+                        translate([10,-20,-100]) cube([40,40,78]);
+                        translate([16,-20,-102]) cube([40,40,82]);
                     }
                 }
             }
                         
             //Heltec T114
-            translate([-8,0,-110])
-            rotate([0,270,0])    
-                Heltec_T114_cutout(true);
-            
-            translate([-8,-11.5,-110])            
+            difference() {
+                translate([-8,0,-100])
+                rotate([0,270,0])    
+                    Heltec_T114_cutout(true);
+                translate([-30,-30,-124])
+                    cube([60,60,20]);               
+            }
+                
+            translate([-8,-11.5,-100])            
                 rounded_cube_yz([26.2,23,51.8],1);
-            translate([-20,-10,-110])            
+            translate([-20,-10,-100])            
                 rounded_cube_yz([16,20,60],1);
-           
-            //Cable holder                   
-            translate([3,0,-54])
-                cylinder(h=12, d=6);
-            translate([0,0,-48])
-                cube([6,6,12], center=true);            
-            translate([-20,6,-48])
-            rotate([0,90,0])
-                cylinder(h=40, r=screw_radius(M3_pan_screw));
-            translate([10,6,-48])
-            rotate([0,90,0])
-                cylinder(h=10, d=screw_boss_diameter(M3_pan_screw));
-            translate([-20,-6,-48])
-            rotate([0,90,0])
-                cylinder(h=40, r=screw_radius(M3_pan_screw));
-            translate([10,-6,-48])
-            rotate([0,90,0])
-                cylinder(h=10, d=screw_boss_diameter(M3_pan_screw));
-                      
+                                 
             //Cable hole
-            translate([10,0,-120])            
-                cylinder(h=20, d=6);
+            translate([0,-11,-110])            
+                //cylinder(h=20, d=6);
+                rounded_cube_xy([10,22,20],r=4);
 
             //Debug          
             *translate([0,-40,-80])
-            cube([80,80,80]);
-            
+            cube([80,80,80]);            
         }
     }
 }
-*SSNvA_radio();
+*SSNvD_radio();
 
-//Cable clamp
-module SSNvA_cable_clamp_stl() {
-    stl("SSNvA_cable_clamp");
-    difference () {
-        union() {
-            translate([-4,-11,-53])
-                rounded_cube_yz([4,22,10],1);
-            translate([0,-3,-53])
-                cube([3,6,10]);
-        }
-        union() {
-            
-            translate([-20,6,-48])
-            rotate([0,90,0])
-                cylinder(h=40, r=screw_radius(M3_pan_screw));
-            translate([-12,6,-48])
-            rotate([0,90,0])
-                cylinder(h=10, r=nut_radius(M3_nut), $fn=6);
-            translate([-20,-6,-48])
-            rotate([0,90,0])
-                cylinder(h=40, r=screw_radius(M3_pan_screw));
-            translate([-12,-6,-48])
-            rotate([0,90,0])
-                cylinder(h=10, r=nut_radius(M3_nut), $fn=6);
-            
-            translate([4.5,-0,-48])
-                cylinder(h=12, d=6, center=true);
-        }
-    }
-}
-*SSNvA_cable_clamp_stl();
-
-module SSNvA_radio_frame_part1_stl() {
-    stl("SSNvA_radio_frame_part1");
+module SSNvD_radio_frame_part1_stl() {
+    stl("SSNvD_radio_frame_part1");
     
     difference() {
-        SSNvA_radio();
+        SSNvD_radio();
         translate([0,-30,-140])
             cube([40,60,200]);
     }   
 }
-SSNvA_radio_frame_part1_stl();
+*SSNvD_radio_frame_part1_stl();
 
-module SSNvA_radio_frame_part2_stl() {
-    stl("SSNvA_radio_frame_part2");
+module SSNvD_radio_frame_part2_stl() {
+    stl("SSNvD_radio_frame_part2");
     
     difference() {
-        SSNvA_radio();
+        SSNvD_radio();
         translate([-40,-30,-140])
             cube([40,60,200]);
     }   
 }
-*SSNvA_radio_frame_part2_stl();
+*SSNvD_radio_frame_part2_stl();
 
 //! 1. Glue the two parts of the radio frame together
-module SSNvA_radio_frame_assembly() {
+module SSNvD_radio_frame_assembly() {
   //pose([30, 0, 0], [150,150,0])
-    assembly("SSNvA_radio_frame") {
+    assembly("SSNvD_radio_frame") {
     
        //$explode = 1;    
-       explode([-20,0,0]) SSNvA_radio_frame_part1_stl(); 
-       explode([20,0,0])  SSNvA_radio_frame_part2_stl(); 
+       explode([-20,0,0]) SSNvD_radio_frame_part1_stl(); 
+       explode([20,0,0])  SSNvD_radio_frame_part2_stl(); 
     }
 }
-*SSNvA_radio_frame_assembly();
+*SSNvD_radio_frame_assembly();
 
 
 //! 1. Attach the cable clamp with two M3 screws
 //! 2. Insert the Heltec T114
 //! 3. Attach the power cable
 //! 4. Tighten cable clamp
-module SSNvA_radio_assembly() {
+module SSNvD_radio_assembly() {
   //pose([30, 0, 0], [150,150,0])
-    assembly("SSNvA_radio") {
+    assembly("SSNvD_radio") {
     
         //$explode = 1;    
         //Radio frame
-        SSNvA_radio_frame_assembly();
-
-        //Cable clamp
-        SSNvA_cable_clamp_stl();
-
-        translate([10,6,-48])
-        rotate([0,90,0])
-            screw_and_washer(M3_pan_screw, 16);
-        translate([-4,6,-48])
-        rotate([0,90,0])
-        explode([0,0,-20])
-            nut(M3_nut);
-        translate([10,-6,-48])
-        rotate([0,90,0])
-            screw_and_washer(M3_pan_screw, 16);
-        translate([-4,-6,-48])
-        rotate([0,90,0])
-        explode([0,0,-20])
-            nut(M3_nut);
+        SSNvD_radio_frame_assembly();
     
         //Heltec T114
-        translate([-8,0,-110])
+        translate([-8,0,-100])
         rotate([0,270,0])    
         explode([0,0,-40])
             Heltec_T114();
     }
 }
-//SSNvA_radio_assembly();
+//SSNvD_radio_assembly();
 
 if($preview) {    
-   *SSNvA_radio_assembly();
+   *SSNvD_radio_assembly();
 }
