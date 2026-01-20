@@ -1,5 +1,5 @@
 {
-    "SSNvA_solar_mount.stl": 2.912,
+    "SSNvA_solar_mount.stl": 2.25,
     "SSNvA_antenna_part1.stl": 12.983,
     "SSNvA_antenna_part2.stl": 10.492,
     "SSNvA_antenna_top.stl": 2.289,

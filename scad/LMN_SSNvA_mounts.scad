@@ -92,7 +92,7 @@ module SSNvA_solar_mount_stl() {
         }
     }
 }
-SSNvA_solar_mount_stl();
+*SSNvA_solar_mount_stl();
 
 //! 1. Inset M4 nuts
 //! 2. Attach solar penel
