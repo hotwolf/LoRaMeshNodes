@@ -42,8 +42,9 @@ LoRa_20cm_antenna   =  ["LoRa_20cm_antenna",
                         20.6,                      //! Length of the straight part
                         [5.3, 26, 1.7, 8.5, 2],    //! Hinge post width, z value of the pin, pin diameter, width reduction and slot width
                         [13.1, 13, 6.5],             //! Grip d, h, h2
-                        [[97.6, 0.7, 0.6],         //! List of ring z, thickness, depths
-                         [99, 0.7, 0.6]],          //! Space for left panel, washers and nuts when screwed on fully.
+                        [[0, 0, 0]],         //! List of ring z, thickness, depths
+//                        [[97.6, 0.7, 0.6],         //! List of ring z, thickness, depths
+//                         [99, 0.7, 0.6]],          //! Space for left panel, washers and nuts when screwed on fully.
                         6.45];                     //! Panel hole radius
 
 
@@ -90,5 +91,5 @@ module LoRa_N_antenna(wall=3, alfa=false) {
 if($preview) {
    *LoRa_N_antenna(alfa=false);
    *LoRa_N_antenna(alfa=true);
-   *antenna(LoRa_20cm_antenna, 3, 90);
+   antenna(LoRa_20cm_antenna, 3, 90);
 }
