@@ -173,8 +173,8 @@ module SSNvD_end_cap_stl() {
                             translate([innerR-0.6,3,0]) circle(r=2.2);
                         }
                         union() {
-                            rotate([0,0,54])
-                            translate([innerR-3,0,1])  cylinder(h=4,r=0.4);
+                            rotate([0,0,52])
+                            translate([innerR-3,0,1])  cylinder(h=4,r=0.8);
                         }
                     }                                      
                 }
