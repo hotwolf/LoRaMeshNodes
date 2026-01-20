@@ -1,12 +1,13 @@
 openscad.echo: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/jhead.scad \
-	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/dip.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/clip.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/teardrops.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/dip.scad \
 	/home/dirk/Projects/LoRaMeshNodes/scad/LMN_SSNvA_mounts.scad \
 	/home/dirk/Projects/LoRaMeshNodes/scad/LMN_SSNvA_antenna.scad \
 	/home/dirk/Projects/LoRaMeshNodes/scad/LMN_SSNvA_scruton.scad \
 	/home/dirk/Projects/LoRaMeshNodes/scad/LMN_Common.scad \
+	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_USBCharger.scad \
 	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_extrusions.scad \
 	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_BMS.scad \
 	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_antenna.scad \
@@ -44,7 +45,6 @@ openscad.echo: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/stepper_motors.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/ssrs.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/spool.scad \
-	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/spools.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/sk_bracket.scad \
 	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_MPPT.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/sheet.scad \
@@ -53,6 +53,8 @@ openscad.echo: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/shaft_coupling.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/shaft_couplings.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/circlip.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/tubing.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/bearing_block.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/o_ring.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/bearing_blocks.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/battery.scad \
@@ -81,18 +83,15 @@ openscad.echo: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/led.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/leds.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/component.scad \
-	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/screws.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/linear_bearing.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/spades.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/swiss_clip.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/belts.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/global.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/bom.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/iec.scad \
-	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/tubing.scad \
-	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/bearing_block.scad \
-	/home/dirk/Projects/LoRaMeshNodes/scad/LMN_SSNvA.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/screws.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/ht_pipe.scad \
-	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/linear_bearing.scad \
-	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/spades.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/light_strips.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/d_connectors.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/antenna.scad \
@@ -108,6 +107,10 @@ openscad.echo: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/layout.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/psus.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/pcbs.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/pcb.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/fan.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/bldc_motors.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/hot_end.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/pillar.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/maths.scad \
 	scad/bom.scad \
@@ -125,13 +128,12 @@ openscad.echo: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/green_terminal.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/display.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/potentiometer.scad \
-	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/pcb.scad \
-	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/fan.scad \
-	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/bldc_motors.scad \
-	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/hot_end.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/rockers.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/printed/fan_guard.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/microswitches.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/spools.scad \
+	/home/dirk/Projects/LoRaMeshNodes/scad/LMN_SSNvC_yagi.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/panel_meters.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/iecs.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/magnet.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/psu.scad \
@@ -179,7 +181,6 @@ openscad.echo: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/light_strip.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/mains_socket.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/modules.scad \
-	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/panel_meters.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/panel_meter.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/pillars.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/sector.scad \

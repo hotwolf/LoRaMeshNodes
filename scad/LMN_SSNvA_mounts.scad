@@ -77,7 +77,7 @@ module SSNvA_solar_mount_stl() {
                 rotate([0,0,a+60])
                 translate([solarSO,0,4]) {
                     cylinder(h=60,r=screw_clearance_radius(M4_pan_screw));
-                    rotate([0,0,30]) cylinder(h=22,r=nut_radius(M4_nut),$fn=6);
+                    rotate([0,0,60]) cylinder(h=22,r=nut_radius(M4_nut),$fn=6);
                 }
             }
 
@@ -92,7 +92,7 @@ module SSNvA_solar_mount_stl() {
         }
     }
 }
-//SSNvA_solar_mount_stl();
+SSNvA_solar_mount_stl();
 
 //! 1. Inset M4 nuts
 //! 2. Attach solar penel

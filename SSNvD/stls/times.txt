@@ -7,8 +7,8 @@
     "SSNvD_battery_cable_clamp.stl": 6.283,
     "SSNvD_radio_frame_part1.stl": 20.792,
     "SSNvD_radio_frame_part2.stl": 20.27,
-    "SSNvD_solar_mount.stl": 5.943,
-    "SSNvD_end_cap.stl": 204.056,
-    "SSNvD_end_cap_ring.stl": 65.318,
-    "SSNvD_spacer.stl": 2.674
+    "SSNvD_solar_mount.stl": 6.852,
+    "SSNvD_end_cap.stl": 269.541,
+    "SSNvD_end_cap_ring.stl": 70.457,
+    "SSNvD_spacer.stl": 3.024
 }

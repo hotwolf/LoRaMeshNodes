@@ -1,9 +1,10 @@
 SSNvA/stls/SSNvA_radio_frame_part2.stl: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/jhead.scad \
-	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/dip.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/clip.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/teardrops.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/dip.scad \
 	/home/dirk/Projects/LoRaMeshNodes/scad/LMN_Common.scad \
+	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_USBCharger.scad \
 	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_extrusions.scad \
 	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_BMS.scad \
 	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_antenna.scad \

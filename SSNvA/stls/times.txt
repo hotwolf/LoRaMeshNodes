@@ -1,14 +1,14 @@
 {
-    "SSNvA_solar_mount.stl": 2.384,
-    "SSNvA_antenna_part1.stl": 8.833,
-    "SSNvA_antenna_part2.stl": 8.852,
-    "SSNvA_antenna_top.stl": 1.958,
-    "SSNvA_cable_clamp.stl": 0.93,
-    "SSNvA_radio_frame_part1.stl": 13.501,
-    "SSNvA_radio_frame_part2.stl": 13.455,
-    "SSNvA_scrutonM40.stl": 9.531,
-    "SSNvA_battery_frame_part1.stl": 40.684,
-    "SSNvA_battery_frame_part2.stl": 39.518,
-    "SSNvA_battery_screw_handle.stl": 6.371,
-    "SSNvA_battery_cable_clamp.stl": 1.746
+    "SSNvA_solar_mount.stl": 2.912,
+    "SSNvA_antenna_part1.stl": 12.983,
+    "SSNvA_antenna_part2.stl": 10.492,
+    "SSNvA_antenna_top.stl": 2.289,
+    "SSNvA_cable_clamp.stl": 1.612,
+    "SSNvA_radio_frame_part1.stl": 20.026,
+    "SSNvA_radio_frame_part2.stl": 17.67,
+    "SSNvA_scrutonM40.stl": 14.228,
+    "SSNvA_battery_frame_part1.stl": 58.921,
+    "SSNvA_battery_frame_part2.stl": 54.011,
+    "SSNvA_battery_screw_handle.stl": 8.655,
+    "SSNvA_battery_cable_clamp.stl": 2.277
 }

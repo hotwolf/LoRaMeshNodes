@@ -34,8 +34,8 @@ include <LMN_Config.scad>
 
 //Variabes     
 poleD   = conduit_outerD(conduit_M40)+0.4; //Pole diameter
-solarD  = 55.2;                            //Diameter of the solar panel holder
-solarSO = solarD/2-7;                      //Screw offset of the solar panel holder
+solarD  = 68;                              //Diameter of the solar panel holder
+solarSO = solarD/2-9;                      //Screw offset of the solar panel holder
 aluW    = 20;                              //Width of the aluminium profile
 aluT    =  5.2;                            //Thickness of the aluminium profile
 roofA   = 22;                              //Roof angle
@@ -65,7 +65,7 @@ module SSNvD_solar_mount_stl() {
                 rotate([0,90,0])
                     cylinder(h=2,d=solarD);
                 
-                translate([0,-poleD/2-1,-solarD/2-4])
+                translate([0,-poleD/2-1,-solarD/2-2])
                     cube([poleD/4,poleD+2,solarD+4]);
             }
         }
@@ -77,15 +77,16 @@ module SSNvD_solar_mount_stl() {
             //Screw holes
             for(a=[0:120:240]) {
                 rotate([0,90,0])
-                rotate([0,0,a+60])
+                rotate([0,0,a+30])
                 translate([solarSO,0,4]) {
                     cylinder(h=60,r=screw_clearance_radius(M4_pan_screw));
-                    rotate([0,0,30]) cylinder(h=22,r=nut_radius(M4_nut),$fn=6);
+                    rotate([0,0,30])
+                    cylinder(h=22,r=nut_radius(M4_nut),$fn=6);
                 }
             }
 
             //Ziptie guides
-            for(h=[-23,8]) {
+            for(h=[-16,8]) {
                 translate([0,0,h])
                 rotate_extrude() {
                     translate([poleD/2+2,0,0])
@@ -95,7 +96,7 @@ module SSNvD_solar_mount_stl() {
         }
     }
 }
-//SSNvD_solar_mount_stl();
+SSNvD_solar_mount_stl();
 
 //! 1. Inset M4 nuts
 //! 2. Attach solar penel
