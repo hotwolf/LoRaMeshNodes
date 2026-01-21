@@ -1,6 +1,15 @@
 SSNvD/stls/SSNvD_battery_cable_clamp.stl: \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/jhead.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/clip.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/teardrops.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/dip.scad \
+	/home/dirk/Projects/LoRaMeshNodes/scad/LMN_Common.scad \
+	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_USBCharger.scad \
+	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_extrusions.scad \
+	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_BMS.scad \
 	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_antenna.scad \
 	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_lipo.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/e3d.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/pcb_utils.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/splines.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/rounded_triangle.scad \
@@ -35,6 +44,7 @@ SSNvD/stls/SSNvD_battery_cable_clamp.stl: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/spool.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/spools.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/sk_bracket.scad \
+	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_MPPT.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/sheet.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/offset.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/sheets.scad \
@@ -49,6 +59,7 @@ SSNvD/stls/SSNvD_battery_cable_clamp.stl: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/geared_steppers.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/springs.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/pillar.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/polyholes.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/transformers.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/potentiometers.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/wire.scad \
@@ -63,6 +74,7 @@ SSNvD/stls/SSNvD_battery_cable_clamp.stl: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/radial.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/radials.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/microswitch.scad \
+	/home/dirk/Projects/LoRaMeshNodes/vitamins/LMN_conduits.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/blowers.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/circlips.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/axials.scad \
@@ -73,6 +85,7 @@ SSNvD/stls/SSNvD_battery_cable_clamp.stl: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/swiss_clip.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/belts.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/global.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/bom.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/iec.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/ht_pipe.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/linear_bearing.scad \
@@ -113,6 +126,7 @@ SSNvD/stls/SSNvD_battery_cable_clamp.stl: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/display.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/potentiometer.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/rockers.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/printed/fan_guard.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/microswitches.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/iecs.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/magnet.scad \
@@ -150,6 +164,7 @@ SSNvD/stls/SSNvD_battery_cable_clamp.stl: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/insert.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/ldr.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/ldrs.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/sphere.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/box_section.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/leadnuts.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/leadnut.scad \
@@ -166,6 +181,7 @@ SSNvD/stls/SSNvD_battery_cable_clamp.stl: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/sector.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/button.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/pillow_block.scad \
+	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/rounded_rectangle.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/antennas.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/pillow_blocks.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/sk_brackets.scad \

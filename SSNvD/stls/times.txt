@@ -1,14 +1,14 @@
 {
-    "SSNvD_antenna_part1.stl": 9.42,
-    "SSNvD_antenna_part2.stl": 9.147,
-    "SSNvD_antenna_top.stl": 2.307,
-    "SSNvD_battery_frame_part1.stl": 32.558,
-    "SSNvD_battery_frame_part2.stl": 31.546,
-    "SSNvD_battery_cable_clamp.stl": 6.283,
-    "SSNvD_radio_frame_part1.stl": 20.792,
-    "SSNvD_radio_frame_part2.stl": 20.27,
-    "SSNvD_solar_mount.stl": 4.859,
-    "SSNvD_end_cap.stl": 180.106,
-    "SSNvD_end_cap_ring.stl": 52.659,
-    "SSNvD_spacer.stl": 2.055
+    "SSNvD_antenna_part1.stl": 11.051,
+    "SSNvD_antenna_part2.stl": 10.858,
+    "SSNvD_antenna_top.stl": 3.121,
+    "SSNvD_battery_frame_part1.stl": 36.983,
+    "SSNvD_battery_frame_part2.stl": 41.597,
+    "SSNvD_battery_cable_clamp.stl": 7.963,
+    "SSNvD_radio_frame_part1.stl": 29.386,
+    "SSNvD_radio_frame_part2.stl": 23.491,
+    "SSNvD_solar_mount.stl": 5.41,
+    "SSNvD_end_cap.stl": 200.869,
+    "SSNvD_end_cap_ring.stl": 58.458,
+    "SSNvD_spacer.stl": 2.262
 }
