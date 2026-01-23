@@ -253,10 +253,10 @@ module MNvA_uEnc_stl() {
             translate([lipoX+2,lipoY+40,lEncZ-wallT-3])
                 rounded_cube_xy([55,3,3],r=1);
                 
-             translate([lEncX-55+2,pcbY+8.6,lEncZ-wallT-4])
-                rounded_cube_xy([48,3,4],r=1);
-             translate([lEncX-55+2,pcbY-11.6,lEncZ-wallT-4])
-                rounded_cube_xy([48,3,4],r=1);            
+             translate([lEncX-46,pcbY+8.6,lEncZ-wallT-4])
+                rounded_cube_xy([32,3,4],r=1);
+             translate([lEncX-46,pcbY-11.6,lEncZ-wallT-4])
+                rounded_cube_xy([32,3,4],r=1);            
         }
         //Negative
         union() {
