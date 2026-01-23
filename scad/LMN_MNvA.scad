@@ -364,7 +364,7 @@ module MNvA_assembly() {
 if($preview) {
 //    $vpt = [-82, 50, 71];
 //    $vpr = [76, 0, 237];
-    $explode = 1;
+    //$explode = 1;
     *MNvA_lEnc_assembly();
     MNvA_assembly();
 }
