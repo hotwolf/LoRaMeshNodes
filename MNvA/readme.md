@@ -1,18 +1,18 @@
 <a name="TOP"></a>
 # LoRaMeshNodes
-These are the assembly instructions for the Mobile Solar Node (Variant A) (MSNvA),
-a portable solar powered [Meshtastic](https://meshtastic.org) or
+These are the assembly instructions for the Mobile Node (Variant A) (MNvA),
+a portable [Meshtastic](https://meshtastic.org) or
 [MeshCore](https://meshcore.co.uk) node.
 
-![Main Assembly](assemblies/MSNvA_assembled.png)
+![Main Assembly](assemblies/MNvA_assembled.png)
 
 <span></span>
 
 ---
 ## Table of Contents
 1. [Parts list](#Parts_list)
-1. [MSNvA LEnc Assembly](#MSNvA_lEnc_assembly)
-1. [MSNvA Assembly](#MSNvA_assembly)
+1. [MNvA LEnc Assembly](#MNvA_lEnc_assembly)
+1. [MNvA Assembly](#MNvA_assembly)
 
 <span></span>
 [Top](#TOP)
@@ -20,7 +20,7 @@ a portable solar powered [Meshtastic](https://meshtastic.org) or
 ---
 <a name="Parts_list"></a>
 ## Parts list
-| <span style="writing-mode: vertical-rl; text-orientation: mixed;">MSNvA&nbsp;LEnc</span> | <span style="writing-mode: vertical-rl; text-orientation: mixed;">MSNvA</span> | <span style="writing-mode: vertical-rl; text-orientation: mixed;">TOTALS</span> |  |
+| <span style="writing-mode: vertical-rl; text-orientation: mixed;">MNvA&nbsp;LEnc</span> | <span style="writing-mode: vertical-rl; text-orientation: mixed;">MNvA</span> | <span style="writing-mode: vertical-rl; text-orientation: mixed;">TOTALS</span> |  |
 |---:|---:|---:|:---|
 |  |  | | **Vitamins** |
 | &nbsp;&nbsp;.&nbsp; | &nbsp;&nbsp;1&nbsp; |  &nbsp;&nbsp;1&nbsp; | &nbsp;&nbsp; Antenna 20cm LoRa Antenna |
@@ -41,8 +41,8 @@ a portable solar powered [Meshtastic](https://meshtastic.org) or
 [Top](#TOP)
 
 ---
-<a name="MSNvA_lEnc_assembly"></a>
-## MSNvA LEnc Assembly
+<a name="MNvA_lEnc_assembly"></a>
+## MNvA LEnc Assembly
 ### Vitamins
 |Qty|Description|
 |---:|:----------|
@@ -58,24 +58,18 @@ a portable solar powered [Meshtastic](https://meshtastic.org) or
 
 
 ### Assembly instructions
-![MSNvA_lEnc_assembly](assemblies/MSNvA_lEnc_assembly.png)
+![MNvA_lEnc_assembly](assemblies/MNvA_lEnc_assembly.png)
 
-1. Attach the antenna to the enclosure 
-2. Connect it to the Heltec T114 board
-3. Insert buttons
-4. Insert Heltec T114 board
-5. Connect and insert the GNSS module (optional)
-6. Attach the battery with two zip ties
-7. Connect the battery to the Heltec T114 board
+Insert nuts during print
 
-![MSNvA_lEnc_assembled](assemblies/MSNvA_lEnc_assembled.png)
+![MNvA_lEnc_assembled](assemblies/MNvA_lEnc_assembled.png)
 
 <span></span>
 [Top](#TOP)
 
 ---
-<a name="MSNvA_assembly"></a>
-## MSNvA Assembly
+<a name="MNvA_assembly"></a>
+## MNvA Assembly
 ### Vitamins
 |Qty|Description|
 |---:|:----------|
@@ -97,24 +91,18 @@ a portable solar powered [Meshtastic](https://meshtastic.org) or
 
 ### Sub-assemblies
 
-| 1 x MSNvA_lEnc_assembly |
+| 1 x MNvA_lEnc_assembly |
 |---|
-| ![MSNvA_lEnc_assembled](assemblies/MSNvA_lEnc_assembled_tn.png) 
+| ![MNvA_lEnc_assembled](assemblies/MNvA_lEnc_assembled_tn.png) 
 
 
 
 ### Assembly instructions
-![MSNvA_assembly](assemblies/MSNvA_assembly.png)
+![MNvA_assembly](assemblies/MNvA_assembly.png)
 
-Slide on the protective cover for transportation.
-
-![MSNvA_assembled](assemblies/MSNvA_assembled.png)
-
-<span></span>
-[Top](#TOP)
-
----
 Insert components, attach top and fasten screws.
+
+![MNvA_assembled](assemblies/MNvA_assembled.png)
 
 <span></span>
 [Top](#TOP)

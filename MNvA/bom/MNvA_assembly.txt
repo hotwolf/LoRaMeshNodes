@@ -1,4 +1,4 @@
-MSNvA_assembly:
+MNvA_assembly:
 Vitamins:
   1 Antenna 20cm LoRa Antenna
   1 Lithium-Polymer-Akku 3,7V 3000mAh
@@ -12,4 +12,4 @@ Printed:
   1 MNvA_uEnc.stl
 
 Assemblies:
-  1 MSNvA_lEnc_assembly
+  1 MNvA_lEnc_assembly

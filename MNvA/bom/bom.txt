@@ -1,11 +1,10 @@
 Vitamins:
     M
-    s
     n
     v
     a
- M   
- s  l
+     
+ M  l
  n  e
  v  n
  a  c
@@ -23,5 +22,5 @@ Printed:
  1|  |  1 MNvA_uEnc.stl
 
 Assemblies:
-  1 MSNvA_assembly
-  1 MSNvA_lEnc_assembly
+  1 MNvA_assembly
+  1 MNvA_lEnc_assembly

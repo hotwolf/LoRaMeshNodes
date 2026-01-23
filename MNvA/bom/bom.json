@@ -1,6 +1,6 @@
 [
     {
-        "name": "MSNvA_lEnc_assembly",
+        "name": "MNvA_lEnc_assembly",
         "big": null,
         "ngb": false,
         "zoomed": 0,
@@ -21,13 +21,13 @@
         "routed": {}
     },
     {
-        "name": "MSNvA_assembly",
+        "name": "MNvA_assembly",
         "big": null,
         "ngb": false,
         "zoomed": 0,
         "count": 1,
         "assemblies": {
-            "MSNvA_lEnc_assembly": 1
+            "MNvA_lEnc_assembly": 1
         },
         "vitamins": {
             "lipo(755060): Lithium-Polymer-Akku 3,7V 3000mAh": {

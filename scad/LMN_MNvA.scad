@@ -27,22 +27,13 @@
 //#                                                                             #
 //###############################################################################
 //# Version History:                                                            #
-//#   July 18, 2025                                                             #
+//#   January 23, 2026                                                          #
 //#      - Initial release                                                      #
-//#                                                                             #
-//#   August 25, 2025                                                           #
-//#      - Cleaned up standShape coding                                         #
-//#                                                                             #
-//#   September 3, 2025                                                         #
-//#      - Adapted improvements from MSNvB                                      #
-//#          - Long snaps for the solar panel frame                             #
-//#          - Grips to ease unfolding the stand                                #
-//#          - Fixed Heltec T114 PCB holders                                    #
 //#                                                                             #
 //###############################################################################
 
-//! These are the assembly instructions for the Mobile Solar Node (Variant A) (MSNvA),
-//! a portable solar powered [Meshtastic](https://meshtastic.org) or
+//! These are the assembly instructions for the Mobile Node (Variant A) (MNvA),
+//! a portable [Meshtastic](https://meshtastic.org) or
 //! [MeshCore](https://meshcore.co.uk) node.
 
 include <LMN_Config.scad>
@@ -297,7 +288,7 @@ module MNvA_lEnc_assembly() {
     //pose([ 1.83, 50.00, 71.00 ], [ 55.70, 0.00, 25.90 ], exploded = true)
     //pose([ 1.83, 50.00, 71.00 ], [ 55.70, 0.00, 25.90 ], exploded = false)
     //pose([-82, 50, 71], [76, 0, 237])
-    assembly("MSNvA_lEnc") {
+    assembly("MNvA_lEnc") {
  
         exploded = is_undef($explode) ? 0 : $explode; // 1 for exploded view
  
@@ -325,7 +316,7 @@ module MNvA_assembly() {
     //pose([ 1.83, 50.00, 71.00 ], [ 55.70, 0.00, 25.90 ], exploded = true)
     //pose([ 1.83, 50.00, 71.00 ], [ 55.70, 0.00, 25.90 ], exploded = false)
     //pose([-82, 50, 71], [76, 0, 237])
-    assembly("MSNvA") {
+    assembly("MNvA") {
 
         //Lower enclosure
         MNvA_lEnc_assembly($explode=0);
@@ -359,6 +350,7 @@ module MNvA_assembly() {
 
         //Screw
         for (pos=screwPos) {
+            explode([0,0,50])
             translate([pos.x,pos.y,lEncZ-screw_head_height(screwT)])
                 screw(screwT, 10);
         }
@@ -367,12 +359,12 @@ module MNvA_assembly() {
 //$explode = 1;
 //$vpt = [-82, 50, 71];
 //$vpr = [76, 0, 237];
-//MSNvA_assembly();
+//MNvA_assembly();
   
 if($preview) {
 //    $vpt = [-82, 50, 71];
 //    $vpr = [76, 0, 237];
-    $explode = 1;
+    //$explode = 1;
     *MNvA_lEnc_assembly();
     MNvA_assembly();
 }
