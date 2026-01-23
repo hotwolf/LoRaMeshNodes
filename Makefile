@@ -86,9 +86,12 @@ MSNvA:  FORCE
 MSNvB:  FORCE
 	env | grep PATH
 	$(PYTHON) $(NOPSCADLIB_DIR)/scripts/make_all.py MSNvB
-MSNvB:  FORCE
+MNvA:  FORCE
 	env | grep PATH
-	$(PYTHON) $(NOPSCADLIB_DIR)/scripts/make_all.py MSNvB
+	$(PYTHON) $(NOPSCADLIB_DIR)/scripts/make_all.py MNvA
+MNvB:  FORCE
+	env | grep PATH
+	$(PYTHON) $(NOPSCADLIB_DIR)/scripts/make_all.py MNvB
 LiFePo4Charger:	 FORCE
 	env | grep PATH
 	$(PYTHON) $(NOPSCADLIB_DIR)/scripts/make_all.py LiFePo4Charger

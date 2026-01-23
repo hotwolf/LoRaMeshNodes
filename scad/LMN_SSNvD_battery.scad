@@ -253,7 +253,7 @@ module SSNvD_battery_cable_clamp_stl() {
         }        
     }
 }
-*translate([0,0,-160]) SSNvD_battery_cable_clamp_stl();
+translate([0,0,-160]) SSNvD_battery_cable_clamp_stl();
 
 //! Insert two M3 waschers into the cable clamp
 module SSNvD_battery_cable_clamp_assembly() {

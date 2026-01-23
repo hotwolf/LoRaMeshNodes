@@ -1,0 +1,15 @@
+MSNvA_assembly:
+Vitamins:
+  1 Antenna 20cm LoRa Antenna
+  1 Lithium-Polymer-Akku 3,7V 3000mAh
+  1 Nut M6.25 x 1.8mm 
+  1 Heltec T144
+  2 Screw M3 cap x 10mm
+  1 Washer star M6.4 x 0.6mm
+
+Printed:
+  1 MNvA_buttons.stl
+  1 MNvA_uEnc.stl
+
+Assemblies:
+  1 MSNvA_lEnc_assembly
