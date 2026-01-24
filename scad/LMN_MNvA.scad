@@ -152,13 +152,13 @@ module MNvA_lEnc_stl() {
             rotate([90,0,0])
                 cylinder(h=10,d=6.3);
             hull() {
-                translate([wallT,antY-2-18,wallT+micro]) 
-                    cube([12,18,lEncZ-2*wallT-2]);
-                translate([wallT+2,antY-2-18,wallT+micro]) 
-                    cube([10,18,lEncZ-2*wallT]);
+                translate([wallT,antY-2-17,wallT+micro]) 
+                    cube([12,17,lEncZ-2*wallT-2]);
+                translate([wallT+2,antY-2-17,wallT+micro]) 
+                    cube([10,173,lEncZ-2*wallT]);
             }
-            translate([wallT+2,antY-2-18,wallT+6]) 
-                cube([20,18,lEncZ-2*wallT]);
+            translate([wallT+2,antY-2-17,wallT+6]) 
+                cube([20,17,lEncZ-2*wallT]);
                   
             hull() {
                 for (y=[0,10]) {
@@ -191,13 +191,13 @@ module MNvA_lEnc_stl() {
                 Heltec_T114_cutout();
             
             hull() {
-                translate([lEncX-wallT-1,pcbY+22.86/2,wallT])
+                translate([lEncX-wallT-0,pcbY+22.86/2,wallT])
                 rotate([0,0,180])
-                rounded_cube_xy([50.80,22.86,lEncZ-2*wallT-2],r=1);       
+                rounded_cube_xy([51.80,22.86,lEncZ-2*wallT-2],r=1);       
     
-                translate([lEncX-wallT-3,pcbY+22.86/2,wallT+micro])
+                translate([lEncX-wallT-2,pcbY+22.86/2,wallT+micro])
                 rotate([0,0,180])
-                rounded_cube_xy([48.80,22.86,lEncZ-2*wallT],r=1);       
+                rounded_cube_xy([49.80,22.86,lEncZ-2*wallT],r=1);       
             }
             translate([lEncX-2*lEncR-51.4,pcbY-22.86/2,wallT+6+micro])
                 cube([60,lipoY+51-pcbY+22.86/2,lEncZ-2*wallT-6]);
@@ -229,7 +229,8 @@ module MNvA_lEnc_stl() {
         }
     }
 }
-*MNvA_lEnc_stl();
+*clip(ymin=30)
+MNvA_lEnc_stl();
 
 //Upper enclosure
 module MNvA_uEnc_stl() {
