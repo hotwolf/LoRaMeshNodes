@@ -155,7 +155,7 @@ module MNvA_lEnc_stl() {
                 translate([wallT,antY-2-17,wallT+micro]) 
                     cube([12,17,lEncZ-2*wallT-2]);
                 translate([wallT+2,antY-2-17,wallT+micro]) 
-                    cube([10,173,lEncZ-2*wallT]);
+                    cube([10,17,lEncZ-2*wallT]);
             }
             translate([wallT+2,antY-2-17,wallT+6]) 
                 cube([20,17,lEncZ-2*wallT]);
@@ -229,7 +229,7 @@ module MNvA_lEnc_stl() {
         }
     }
 }
-*clip(ymin=20)
+clip(ymin=20)
 MNvA_lEnc_stl();
 
 //Upper enclosure
@@ -271,7 +271,7 @@ module MNvA_uEnc_stl() {
         }
     }
 }
-*MNvA_lEnc_stl();
+MNvA_lEnc_stl();
 
 //Printed buttons
 module MNvA_buttons_stl() {
@@ -365,7 +365,7 @@ module MNvA_assembly() {
 if($preview) {
 //    $vpt = [-82, 50, 71];
 //    $vpr = [76, 0, 237];
-    $explode = 1;
+    //$explode = 1;
     *MNvA_lEnc_assembly();
     MNvA_assembly();
 }
