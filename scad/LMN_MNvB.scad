@@ -1,7 +1,7 @@
 //###############################################################################
-//# LoRaMeshNodes - Mobile Node Variant A                                       #
+//# LoRaMeshNodes - Mobile Node Variant B                                       #
 //###############################################################################
-//#    Copyright 2026 Dirk Heisswolf                                            #
+//#    Copyright 2025 -2026 Dirk Heisswolf                                      #
 //#    This file is part of the LoRaMeshNodes project.                          #
 //#                                                                             #
 //#    This project is free software: you can redistribute it and/or modify     #
@@ -23,11 +23,11 @@
 //###############################################################################
 //# Description:                                                                #
 //#   This file contains modules, which are specifiv for the Mobile Node        #
-//#   variant A.                                                                #
+//#   variant B.                                                                #
 //#                                                                             #
 //###############################################################################
 //# Version History:                                                            #
-//#   January 23, 2026                                                          #
+//#   January 26, 2026                                                          #
 //#      - Initial release                                                      #
 //#                                                                             #
 //###############################################################################
@@ -39,26 +39,28 @@
 include <LMN_Config.scad>
 
 //Parameters
-lEncC     = wallT;             //Lower enclosure chamfer
-lEncX     = 132+2*lEncC;       //Lower enclosure X dimension
-lEncY     =  60+2*lEncC;       //Lower enclosure Y dimension
-lEncZ     =  11+2*lEncC;       //Lower enclosure Z dimension
-lEncR     =  10;               //Lower enclosure corner radius
-pcbY      =  37;               //PCB Y position
-lipoX     =  17;               //Lipo X position (from center)
-lipoY     = lEncC;             //Lipo Y position
-antX      =   5.5+lEncC;       //Ant X position
-antY      =  33;               //Ant Y position
-antZ      = lEncZ/2;           //Ant Z position
-gripX     = lEncX-3*lEncC;     //Grip hole X position (lower right corner)
-gripY     =   3*lEncC;         //Grip hole Y position (lower right corner)
-gripW     =  42;               //Grip hole Y width
-//gripW   =  36;               //Grip hole Y width
-gripH     =  12;               //Grip hole Y height
-screwT    = M3_dome_screw;      //Screw type
-nutT      = screw_nut(screwT); //Nut type
-screwPos  = [[lEncR,lEncR],
-             [lEncX-8,lEncY-13.6]];
+batT      = S25R18650;               //Battery type
+batD      = battery_diameter(batT);  //Battery diameter
+batL      = battery_length(batT);    //Battery length
+batX      =  batL/2+wallT+0.5;       //Battery X position (from center)
+batY      =  batD/2+2;               //Battery Y position
+batZ      =  batD/2+2;               //Battery Z position
+bmsX      =   batX;                     //BMS X position
+bmsY      = batD+wallT+1;              //BMS Y position
+bmsZ      =  batZ;               //BMS Z position
+lEncC     = wallT;                   //Lower enclosure chamfer
+lEncX     = batL+2*wallT+1+8;          //Lower enclosure X dimension
+lEncY     =  60+2*lEncC;             //Lower enclosure Y dimension
+lEncZ     =  11+2*lEncC;             //Lower enclosure Z dimension
+lEncR     =  5;                     //Lower enclosure corner radius
+pcbY      =  38;                     //PCB Y position
+antX      =   5.5+lEncC;             //Ant X position
+antY      =  32;                     //Ant Y position
+antZ      = lEncZ/2;                 //Ant Z position
+screwT    = M3_dome_screw;           //Screw type
+nutT      = screw_nut(screwT);       //Nut type
+screwPos  = [[20,50],
+             [lEncX-wallT-4,wallT+4]];
              //[lEncX-lEncR,lEncY-13.6],
              //[84,22]];
             
@@ -67,7 +69,7 @@ micro = 0.001;
 module opening(d=0) {
     minR = 4;
     
-    offset(delta=d, chamfer=false) {
+    *offset(delta=d, chamfer=false) {
         hull() {
             translate([lEncR,lEncR,0])
                 circle(r=lEncR-lEncC-1);
@@ -81,11 +83,11 @@ module opening(d=0) {
         hull() {           
             translate([screwPos[1].x,screwPos[1].y,0])
                 circle(r=minR);
-            translate([lipoX+minR-2,screwPos[1].y,0])
+            translate([batX+minR-2,screwPos[1].y,0])
                 circle(r=minR);
             translate([screwPos[1].x,gripY+gripH+lEncC+minR+1,0])
                 circle(r=minR);
-            translate([lipoX-2,gripY+gripH+lEncC+1,0])
+            translate([batX-2,gripY+gripH+lEncC+1,0])
                 square([minR,minR]);
         }
         translate([gripX-gripW-lEncC-1,gripY+gripH+lEncC-minR+1,0])
@@ -93,7 +95,7 @@ module opening(d=0) {
             square([minR,minR]);
             translate([minR,0,0]) circle(r=minR);
         }
-        translate([lipoX-minR-2,antY-0.6,0])
+        translate([batX-minR-2,antY-0.6,0])
         difference () {
             square([minR,minR]);
             translate([0,minR,0]) circle(r=minR);
@@ -102,20 +104,27 @@ module opening(d=0) {
 }
 *translate([0,0,20]) opening();
 
-//Lower enclosure
-module MNvA_lEnc_stl() {
-    stl("MNvA_lEnc");
-
+//Enclosure shape
+module enclosure() {
+  
     difference() {
         //Positive       
         union() {
             
             //Enclosure shape
-            hull() {
+            *hull() {
                 translate([lEncC,lEncC,0])
                     rounded_cube_xy([lEncX-2*lEncC,lEncY-2*lEncC,lEncZ],r=lEncR-lEncC);
                 translate([0,0,lEncC])
-                    rounded_cube_xy([lEncX,lEncY,lEncZ-2*lEncC],r=lEncR);
+                    rounded_cube_xy([lEncX,lEncY,lEncZ-2*lEncC],r=lEncR);                   
+                translate([lEncC,lEncC,0])
+                    rounded_cube_xy([lEncX-2*lEncC,batD/2,batD-2+2*lEncC],r=lEncR-lEncC);
+                translate([0,0,lEncC])
+                    rounded_cube_xy([lEncX,batD/2+lEncC,batD-2],r=lEncR);
+                
+                  
+                
+                
             }
          }
         //Negative
@@ -123,24 +132,7 @@ module MNvA_lEnc_stl() {
 
             //Enclosure shape
 
-            //Grip hole
-            translate([gripX-gripW,gripY,-10])
-                rounded_cube_xy([gripW,gripH,lEncZ+20],r=gripH/2-lEncC);
-            
-            hull() {
-                translate([gripX-gripW-lEncC,gripY-lEncC,-1])
-                    rounded_cube_xy([gripW+2*lEncC,gripH+2*lEncC,1],r=gripH/2-0.01);               
-                translate([gripX-gripW,gripY,0])
-                    rounded_cube_xy([gripW,gripH,lEncC],r=gripH/2-lEncC);
-            }
-            
-            hull() {
-                translate([gripX-gripW-lEncC,gripY-lEncC,lEncZ])
-                    rounded_cube_xy([gripW+2*lEncC,gripH+2*lEncC,1],r=gripH/2-0.01);               
-                translate([gripX-gripW,gripY,lEncZ-lEncC])
-                    rounded_cube_xy([gripW,gripH,lEncC],r=gripH/2-lEncC);
-            }
-            
+              
             //Antenna
             antOffs = 28.4;
             
@@ -157,8 +149,8 @@ module MNvA_lEnc_stl() {
                 translate([wallT+2,antY-2-17,wallT+micro]) 
                     cube([10,17,lEncZ-2*wallT]);
             }
-            translate([wallT+2,antY-2-17,wallT+6]) 
-                cube([20,17,lEncZ-2*wallT]);
+            translate([wallT,batY,wallT]) 
+                cube([14,antY-batY-2,lEncZ-2*wallT]);
                   
             hull() {
                 for (y=[0,10]) {
@@ -190,26 +182,17 @@ module MNvA_lEnc_stl() {
             rotate([0,180,0])
                 Heltec_T114_cutout();
             
-            hull() {
-                translate([lEncX-wallT,pcbY+22.86/2,wallT])
+                translate([lEncX-wallT-0,pcbY+22.86/2,wallT])
                 rotate([0,0,180])
-                //rounded_cube_xy([51.80,22.86,lEncZ-2*wallT-2],r=1);       
-                rounded_cube_xy([51.80,22.86,7],r=1);       
-    
-                translate([lEncX-wallT-2,pcbY+22.86/2,wallT+micro])
-                rotate([0,0,180])
-                rounded_cube_xy([49.80,22.86,lEncZ-2*wallT],r=1);       
-            }
-            translate([lEncX-2*lEncR-51.4,pcbY-22.86/2,wallT+3+micro])
-                cube([60,lipoY+51-pcbY+22.86/2,lEncZ-2*wallT-3]);
-            
+                rounded_cube_xy([51.80,22.86,lEncZ-2*wallT-2],r=1);       
+                
             //Battery
-            translate([lipoX,lipoY,wallT])
+            translate([batX,batY,wallT])
                 rounded_cube_yz([64,51,6],r=2);
             hull() {
-                translate([lipoX,lipoY,wallT+2])
+                translate([batX,batY,wallT+2])
                     cube([64,51,lEncZ-2*wallT-4]);
-                translate([lipoX,lipoY+2,wallT+2+micro])
+                translate([batX,batY+2,wallT+2+micro])
                     cube([64,49,lEncZ-2*wallT-2]);
             }
 
@@ -219,29 +202,39 @@ module MNvA_lEnc_stl() {
                     cylinder(h=nut_thickness(nutT)+0.2, r=nut_radius(nutT)+0.1, $fn=6);
                 translate([pos.x,pos.y,wallT])
                      cylinder(h=40, r=screw_clearance_radius(screwT)+0.4);
-                translate([pos.x,pos.y,lEncZ-wallT-2.2]) 
+               translate([pos.x,pos.y,lEncZ-wallT-2.2]) 
                     cylinder(h=2, r1=screw_clearance_radius(screwT)+1, r2=screw_head_radius(screwT)+1); 
                 translate([pos.x,pos.y,lEncZ-wallT-0.2]) 
                     cylinder(h=1, r=screw_head_radius(screwT)+1);
             }
                   
             //Opening
-            translate([0,0,lEncZ-wallT]) linear_extrude(10) opening(0.2);   
+            translate([0,0,lEncZ-wallT]) linear_extrude(10) opening(-0.2);   
         }
     }
 }
-*clip(ymin=40)
-MNvA_lEnc_stl();
+clip(xmin=20)
+enclosure(); 
+
+//Lower enclosure
+module MNvB_lEnc_stl() {
+    stl("MNvB_lEnc");
+
+
+
+}
+clip(ymin=20)
+*MNvB_lEnc_stl();
 
 //Upper enclosure
-module MNvA_uEnc_stl() {
-    stl("MNvA_uEnc");
+module MNvB_uEnc_stl() {
+    stl("MNvB_uEnc");
 
     difference() {
         //Positive
         union() {
             //Opening
-            translate([0,0,lEncZ-wallT]) linear_extrude(wallT) opening(-0.2);   
+            translate([0,0,lEncZ-wallT]) linear_extrude(wallT) opening(0);   
 
             //Screws
             for (pos=screwPos) {
@@ -250,9 +243,9 @@ module MNvA_uEnc_stl() {
             }
                 
             //Spacers
-            translate([lipoX+2,lipoY+5,lEncZ-wallT-3])
+            translate([batX+2,batY+5,lEncZ-wallT-3])
                 rounded_cube_xy([55,3,3],r=1);               
-            translate([lipoX+2,lipoY+40,lEncZ-wallT-3])
+            translate([batX+2,batY+40,lEncZ-wallT-3])
                 rounded_cube_xy([55,3,3],r=1);
                 
              translate([lEncX-46,pcbY+8.6,lEncZ-wallT-4])
@@ -267,38 +260,38 @@ module MNvA_uEnc_stl() {
                 translate([pos.x,pos.y,lEncZ-screw_head_height(screwT)-0.2])
                     cylinder(h=10, r=screw_head_radius(screwT)+0.4);
                 translate([pos.x,pos.y,wallT])
-                     cylinder(h=20, r=screw_clearance_radius(screwT)+0.4);
+                     cylinder(h=20, r=screw_clearance_radius(screwT));
             }
         }
     }
 }
-*MNvA_uEnc_stl();
+*MNvB_lEnc_stl();
 
 //Printed buttons
-module MNvA_buttons_stl() {
-    stl("MNvA_buttons");
+module MNvB_buttons_stl() {
+    stl("MNvB_buttons");
    
    translate([lEncX-wallT,pcbY,wallT])
     rotate([0,180,0])
     Heltec_T114_buttons(wallT+0.4);
 }
-*MNvA_buttons_stl();
+*MNvB_buttons_stl();
 
 //Lower enclosure assembly
 //! Insert nuts during print
-module MNvA_lEnc_assembly() {
+module MNvB_lEnc_assembly() {
     //pose([ 1.83, 50.00, 71.00 ], [ 55.70, 0.00, 25.90 ], exploded = true)
     //pose([ 1.83, 50.00, 71.00 ], [ 55.70, 0.00, 25.90 ], exploded = false)
     //pose([-82, 50, 71], [76, 0, 237])
-    assembly("MNvA_lEnc") {
+    assembly("MNvB_lEnc") {
  
         exploded = is_undef($explode) ? 0 : $explode; // 1 for exploded view
  
         //Enclosure
         if (exploded) {
-            clip(zmax=8) MNvA_lEnc_stl();
+            clip(zmax=8) MNvB_lEnc_stl();
         } else {
-           MNvA_lEnc_stl(); 
+           MNvB_lEnc_stl(); 
         }
         
         //Nuts
@@ -310,32 +303,37 @@ module MNvA_lEnc_assembly() {
     }
 }
 //$explode = 1;
-*MNvA_lEnc_assembly();
+*MNvB_lEnc_assembly();
 
 //Main assembly
 //! Insert components, attach top and fasten screws.
-module MNvA_assembly() {
+module MNvB_assembly() {
     //pose([ 1.83, 50.00, 71.00 ], [ 55.70, 0.00, 25.90 ], exploded = true)
     //pose([ 1.83, 50.00, 71.00 ], [ 55.70, 0.00, 25.90 ], exploded = false)
     //pose([-82, 50, 71], [76, 0, 237])
-    assembly("MNvA") {
+    assembly("MNvB") {
 
         //Lower enclosure
-        MNvA_lEnc_assembly($explode=0);
+        *MNvB_lEnc_assembly($explode=0);
         
         //Upper enclosure
-        explode([0,0,90])
-        MNvA_uEnc_stl();
+        *explode([0,0,90])
+        MNvB_uEnc_stl();
         
         //Buttons
         explode([0,0,20])
-        MNvA_buttons_stl();
+        MNvB_buttons_stl();
         
-        //LiPo battery
+        //Battery
         explode([0,0,40])
-        translate([lipoX,lipoY,wallT])
-        rotate([0,0,0])
-        lipo_755060();
+        translate([batX,batY,batZ])
+        rotate([0,90,0])
+        battery(batT);
+ 
+        //BMS
+        translate([bmsX,bmsY,bmsZ])
+        rotate([90,0,0])
+        LiIonBMS();
 
         //Antenna
         explode([0,40,0])
@@ -343,8 +341,9 @@ module MNvA_assembly() {
         rotate([270,0,0])
         LoRa_20cm_antenna(wallT, 90);
 
+
         //PCB
-        *explode([0,0,30])
+        explode([0,0,30])
         translate([lEncX-wallT,pcbY,wallT])
         rotate([0,180,0])
         Heltec_T114();
@@ -360,12 +359,12 @@ module MNvA_assembly() {
 //$explode = 1;
 //$vpt = [-82, 50, 71];
 //$vpr = [76, 0, 237];
-//MNvA_assembly();
+//MNvB_assembly();
   
 if($preview) {
 //    $vpt = [-82, 50, 71];
 //    $vpr = [76, 0, 237];
     //$explode = 1;
-    *MNvA_lEnc_assembly();
-    MNvA_assembly();
+    *MNvB_lEnc_assembly();
+    MNvB_assembly();
 }

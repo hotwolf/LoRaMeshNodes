@@ -1,5 +1,5 @@
 //###############################################################################
-//# LoRaMeshNodes - Configuration for Mobile Node Variant A                     #
+//# LoRaMeshNodes - Configuration for Mobile Node Variant B                     #
 //###############################################################################
 //#    Copyright 2026 Dirk Heisswolf                                            #
 //#    This file is part of the LoRaMeshNodes project.                          #
@@ -26,7 +26,7 @@
 //#                                                                             #
 //###############################################################################
 //# Version History:                                                            #
-//#   January 21, 2026                                                          #
+//#   January 26, 2026                                                          #
 //#      - Initial release                                                      #
 //#                                                                             #
 //###############################################################################
