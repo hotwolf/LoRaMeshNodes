@@ -45,7 +45,7 @@
             "pcb(Heltec_T144): Heltec T144": {
                 "count": 1
             },
-            "screw(M3_cap_screw, 10): Screw M3 cap x 10mm": {
+            "screw(M3_dome_screw, 10): Screw M3 dome x 10mm": {
                 "count": 2
             }
         },

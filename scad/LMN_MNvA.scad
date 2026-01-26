@@ -55,7 +55,7 @@ gripY     =   3*lEncC;         //Grip hole Y position (lower right corner)
 gripW     =  42;               //Grip hole Y width
 //gripW   =  36;               //Grip hole Y width
 gripH     =  12;               //Grip hole Y height
-screwT    = M3_cap_screw;      //Screw type
+screwT    = M3_dome_screw;      //Screw type
 nutT      = screw_nut(screwT); //Nut type
 screwPos  = [[lEncR,lEncR],
              [lEncX-8,lEncY-13.6]];
@@ -327,7 +327,7 @@ module MNvA_assembly() {
         MNvA_uEnc_stl();
         
         //Buttons
-        explode([0,0,10])
+        explode([0,0,20])
         MNvA_buttons_stl();
         
         //LiPo battery
@@ -365,7 +365,7 @@ module MNvA_assembly() {
 if($preview) {
 //    $vpt = [-82, 50, 71];
 //    $vpr = [76, 0, 237];
-    //$explode = 1;
+    $explode = 1;
     *MNvA_lEnc_assembly();
     MNvA_assembly();
 }

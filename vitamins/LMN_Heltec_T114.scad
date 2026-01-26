@@ -215,7 +215,7 @@ module Heltec_T114_buttons(h=wallT) {
         translate([0,-12,h]) cube([6,24,10]);
     }
 }
-Heltec_T114_buttons();
+*Heltec_T114_buttons();
 
 //L76K GNSS Module
 module L76K_GNSS() {
