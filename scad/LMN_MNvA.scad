@@ -229,7 +229,7 @@ module MNvA_lEnc_stl() {
         }
     }
 }
-*clip(ymin=30)
+*clip(ymin=20)
 MNvA_lEnc_stl();
 
 //Upper enclosure
@@ -279,7 +279,7 @@ module MNvA_buttons_stl() {
    
    translate([lEncX-wallT,pcbY,wallT])
     rotate([0,180,0])
-    Heltec_T114_buttons();
+    Heltec_T114_buttons(wallT+0.4);
 }
 *MNvA_buttons_stl();
 

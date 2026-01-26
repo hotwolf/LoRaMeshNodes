@@ -1,7 +1,7 @@
 {
-    "MNvA/readme.html": 0.107,
-    "MNvA/assemblies/MNvA_lEnc_assembled.png": 10.978,
-    "MNvA/assemblies/MNvA_lEnc_assembly.png": 21.108,
-    "MNvA/assemblies/MNvA_assembled.png": 11.492,
-    "MNvA/assemblies/MNvA_assembly.png": 20.78
+    "MNvA/readme.html": 0.115,
+    "MNvA/assemblies/MNvA_lEnc_assembled.png": 10.166,
+    "MNvA/assemblies/MNvA_lEnc_assembly.png": 23.816,
+    "MNvA/assemblies/MNvA_assembled.png": 12.832,
+    "MNvA/assemblies/MNvA_assembly.png": 20.636
 }
