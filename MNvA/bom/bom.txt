@@ -18,6 +18,7 @@ Vitamins:
 Printed:
  1|  |  1 MNvA_buttons.stl
   | 1|  1 MNvA_lEnc.stl
+ 1|  |  1 MNvA_uEnc.stl
 
 Assemblies:
   1 MNvA_assembly

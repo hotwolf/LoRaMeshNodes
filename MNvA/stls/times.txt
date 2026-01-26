@@ -1,4 +1,5 @@
 {
     "MNvA_lEnc.stl": 18.92,
-    "MNvA_buttons.stl": 1.862
+    "MNvA_buttons.stl": 1.862,
+    "MNvA_uEnc.stl": 2.962
 }

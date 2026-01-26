@@ -1,5 +1,5 @@
 {
-    "MNvA/readme.html": 0.131,
+    "MNvA/readme.html": 0.108,
     "MNvA/assemblies/MNvA_lEnc_assembled.png": 10.395,
     "MNvA/assemblies/MNvA_lEnc_assembly.png": 24.72,
     "MNvA/assemblies/MNvA_assembled.png": 13.281,

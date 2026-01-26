@@ -33,7 +33,8 @@ a portable [Meshtastic](https://meshtastic.org) or
 |  |  | | **3D printed parts** |
 | &nbsp;&nbsp;.&nbsp; | &nbsp;&nbsp;1&nbsp; |  &nbsp;&nbsp;1&nbsp; | &nbsp;&nbsp;MNvA_buttons.stl |
 | &nbsp;&nbsp;1&nbsp; | &nbsp;&nbsp;.&nbsp; |  &nbsp;&nbsp;1&nbsp; | &nbsp;&nbsp;MNvA_lEnc.stl |
-| &nbsp;&nbsp;1&nbsp; | &nbsp;&nbsp;1&nbsp; | &nbsp;&nbsp;2&nbsp; | &nbsp;&nbsp;Total 3D printed parts count |
+| &nbsp;&nbsp;.&nbsp; | &nbsp;&nbsp;1&nbsp; |  &nbsp;&nbsp;1&nbsp; | &nbsp;&nbsp;MNvA_uEnc.stl |
+| &nbsp;&nbsp;1&nbsp; | &nbsp;&nbsp;2&nbsp; | &nbsp;&nbsp;3&nbsp; | &nbsp;&nbsp;Total 3D printed parts count |
 
 <span></span>
 [Top](#TOP)
@@ -80,9 +81,9 @@ Insert nuts during print
 
 ### 3D Printed parts
 
-| 1 x [MNvA_buttons.stl](stls/MNvA_buttons.stl) |
-|---|
-| ![MNvA_buttons.stl](stls/MNvA_buttons.png) 
+| 1 x [MNvA_buttons.stl](stls/MNvA_buttons.stl) | 1 x [MNvA_uEnc.stl](stls/MNvA_uEnc.stl) |
+|---|---|
+| ![MNvA_buttons.stl](stls/MNvA_buttons.png) | ![MNvA_uEnc.stl](stls/MNvA_uEnc.png) 
 
 
 
