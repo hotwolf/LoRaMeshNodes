@@ -12,6 +12,7 @@ Vitamins:
  1|  |  1 Lithium-Polymer-Akku 3,7V 3000mAh
   | 2|  2 Nut M3 x 2.4mm 
  1|  |  1 Nut M6.25 x 1.8mm 
+ 1|  |  1 Heltec T144
  2|  |  2 Screw M3 dome x 10mm
  1|  |  1 Washer star M6.4 x 0.6mm
 

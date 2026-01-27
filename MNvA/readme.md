@@ -24,12 +24,13 @@ a portable [Meshtastic](https://meshtastic.org) or
 |---:|---:|---:|:---|
 |  |  | | **Vitamins** |
 | &nbsp;&nbsp;.&nbsp; | &nbsp;&nbsp;1&nbsp; |  &nbsp;&nbsp;1&nbsp; | &nbsp;&nbsp; Antenna 20cm LoRa Antenna |
+| &nbsp;&nbsp;.&nbsp; | &nbsp;&nbsp;1&nbsp; |  &nbsp;&nbsp;1&nbsp; | &nbsp;&nbsp; Heltec T144 |
 | &nbsp;&nbsp;.&nbsp; | &nbsp;&nbsp;1&nbsp; |  &nbsp;&nbsp;1&nbsp; | &nbsp;&nbsp; Lithium-Polymer-Akku 3,7V 3000mAh |
 | &nbsp;&nbsp;2&nbsp; | &nbsp;&nbsp;.&nbsp; |  &nbsp;&nbsp;2&nbsp; | &nbsp;&nbsp; Nut M3 x 2.4mm  |
 | &nbsp;&nbsp;.&nbsp; | &nbsp;&nbsp;1&nbsp; |  &nbsp;&nbsp;1&nbsp; | &nbsp;&nbsp; Nut M6.25 x 1.8mm  |
 | &nbsp;&nbsp;.&nbsp; | &nbsp;&nbsp;2&nbsp; |  &nbsp;&nbsp;2&nbsp; | &nbsp;&nbsp; Screw M3 dome x 10mm |
 | &nbsp;&nbsp;.&nbsp; | &nbsp;&nbsp;1&nbsp; |  &nbsp;&nbsp;1&nbsp; | &nbsp;&nbsp; Washer star M6.4 x 0.6mm |
-| &nbsp;&nbsp;2&nbsp; | &nbsp;&nbsp;6&nbsp; | &nbsp;&nbsp;8&nbsp; | &nbsp;&nbsp;Total vitamins count |
+| &nbsp;&nbsp;2&nbsp; | &nbsp;&nbsp;7&nbsp; | &nbsp;&nbsp;9&nbsp; | &nbsp;&nbsp;Total vitamins count |
 |  |  | | **3D printed parts** |
 | &nbsp;&nbsp;.&nbsp; | &nbsp;&nbsp;1&nbsp; |  &nbsp;&nbsp;1&nbsp; | &nbsp;&nbsp;MNvA_buttons.stl |
 | &nbsp;&nbsp;1&nbsp; | &nbsp;&nbsp;.&nbsp; |  &nbsp;&nbsp;1&nbsp; | &nbsp;&nbsp;MNvA_lEnc.stl |
@@ -73,6 +74,7 @@ Insert nuts during print
 |Qty|Description|
 |---:|:----------|
 |1| Antenna 20cm LoRa Antenna|
+|1| Heltec T144|
 |1| Lithium-Polymer-Akku 3,7V 3000mAh|
 |1| Nut M6.25 x 1.8mm |
 |2| Screw M3 dome x 10mm|

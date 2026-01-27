@@ -41,14 +41,14 @@ include <LMN_Config.scad>
 //Parameters
 lEncC     = wallT;             //Lower enclosure chamfer
 lEncX     = 132+2*lEncC;       //Lower enclosure X dimension
-lEncY     =  60+1.6*lEncC;       //Lower enclosure Y dimension
+lEncY     =  60+2*lEncC;       //Lower enclosure Y dimension
 lEncZ     =  11+2*lEncC;       //Lower enclosure Z dimension
 lEncR     =  10;               //Lower enclosure corner radius
 pcbY      =  37;               //PCB Y position
 lipoX     =  17;               //Lipo X position (from center)
 lipoY     = lEncC;             //Lipo Y position
 antX      =   5.5+lEncC;       //Ant X position
-antY      =  33;               //Ant Y position
+antY      =  34;               //Ant Y position
 antZ      = lEncZ/2;           //Ant Z position
 gripX     = lEncX-3*lEncC;     //Grip hole X position (lower right corner)
 gripY     =   3*lEncC;         //Grip hole Y position (lower right corner)
@@ -198,7 +198,7 @@ module MNvA_lEnc_stl() {
                         translate([antX+74,antY+antOffs,antZ])
                             sphere(d=13.4);
                         translate([antX+120,antY+antOffs,antZ])
-                            sphere(d=6.4);
+                            sphere(d=7.2);
                     }
                 }
             }
@@ -208,7 +208,7 @@ module MNvA_lEnc_stl() {
                     translate([0,y,0]) {                
                         translate([antX+84,antY+antOffs,antZ])
                         rotate([0,90,0])
-                            cylinder(h=82,d=6.4);
+                            cylinder(h=82,d=7.2);
                     }
                 }
              }
@@ -228,8 +228,8 @@ module MNvA_lEnc_stl() {
                 rotate([0,0,180])
                 rounded_cube_xy([49.80,22.86,lEncZ-2*wallT],r=1);       
             }
-            translate([lEncX-2*lEncR-51.4,pcbY-22.86/2,wallT+2+micro])
-                cube([60,lipoY+51-pcbY+22.86/2,lEncZ-2*wallT-2]);
+            translate([lEncX-2*lEncR-51.4,pcbY-22.86/2,wallT+3+micro])
+                cube([60,lipoY+51-pcbY+22.86/2,lEncZ-2*wallT-3]);
             
             translate([lEncX-64,pcbY-7,wallT])
                 cube([16,14,10]);
@@ -261,8 +261,8 @@ module MNvA_lEnc_stl() {
         }
     }
 }
-//clip(ymin=40)
-MNvA_lEnc_stl();
+//clip(xmin=80)
+*MNvA_lEnc_stl();
 
 //Upper enclosure
 module MNvA_uEnc_stl() {
@@ -385,7 +385,7 @@ module MNvA_assembly() {
         LoRa_20cm_antenna(wallT, 90);
 
         //PCB
-        *explode([0,0,30])
+        explode([0,0,30])
         translate([lEncX-wallT,pcbY,wallT])
         rotate([0,180,0])
         Heltec_T114();
