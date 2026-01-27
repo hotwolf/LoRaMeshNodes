@@ -1,4 +1,4 @@
-MNvA/stls/MNvA_uEnc.stl: \
+MNvA/stls/MNvA_buttons.stl: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/jhead.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/clip.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/teardrops.scad \
