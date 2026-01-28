@@ -198,7 +198,7 @@ module MNvA_lEnc_stl() {
                         translate([antX+74,antY+antOffs,antZ])
                             sphere(d=13.4);
                         translate([antX+120,antY+antOffs,antZ])
-                            sphere(d=7.6);
+                            sphere(d=7.8);
                     }
                 }
             }
@@ -208,7 +208,7 @@ module MNvA_lEnc_stl() {
                     translate([0,y,0]) {                
                         translate([antX+84,antY+antOffs,antZ])
                         rotate([0,90,0])
-                            cylinder(h=82,d=7.6);
+                            cylinder(h=82,d=7.8);
                     }
                 }
              }
