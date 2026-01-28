@@ -228,7 +228,7 @@ module MNvA_lEnc_stl() {
                 rotate([0,0,180])
                 rounded_cube_xy([49.80,22.86,lEncZ-2*wallT],r=1);       
             }
-            translate([lEncX-2*lEncR-51.4,pcbY-22.86/2,wallT+3+micro])
+            translate([lEncX-2*lEncR-53,pcbY-22.86/2,wallT+3+micro])
                 cube([60,lipoY+51-pcbY+22.86/2,lEncZ-2*wallT-3]);
             
             translate([lEncX-64,pcbY-7,wallT])
