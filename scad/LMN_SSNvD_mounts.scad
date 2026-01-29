@@ -174,7 +174,7 @@ module SSNvD_end_cap_stl() {
                             translate([innerR-0.6,3,0]) circle(r=2.2);
                         }
                         union() {
-                            rotate([0,0,52])
+                            #rotate([0,0,52])
                             translate([innerR-3,0,1])  cylinder(h=4,r=0.6);
                         }
                     }                                      
@@ -184,7 +184,7 @@ module SSNvD_end_cap_stl() {
     }
 }
 //clip(xmin=0)
-*SSNvD_end_cap_stl();
+SSNvD_end_cap_stl();
 
 module SSNvD_end_cap_ring_stl() {
     stl("SSNvD_end_cap_ring");
