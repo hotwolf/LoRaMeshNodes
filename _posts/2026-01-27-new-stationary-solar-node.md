@@ -17,5 +17,3 @@ The antenna holder and the solar panel mount can be swapped by the SSNvA ones.
 ![SSNvD]({{ site.url }}/images/2026-01-27-SSNvD_4.png)
 
 ![SSNvD]({{ site.url }}/images/2026-01-27-SSNvD_5.png)
-
-![SSNvD]({{ site.url }}/images/2026-01-27-SSNvD_1.png)
