@@ -1,0 +1,6 @@
+MNvB_lEnc_assembly:
+Vitamins:
+  2 Nut M3 x 2.4mm 
+
+Printed:
+  1 MNvB_lEnc.stl

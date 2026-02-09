@@ -1,0 +1,27 @@
+Vitamins:
+    M
+    n
+    v
+    b
+     
+ M  l
+ n  e
+ v  n
+ b  c
+ 1|  |  1 Antenna 20cm LoRa Antenna
+ 1|  |  1 Cell Samsung 25R 18650 LION
+  | 2|  2 Nut M3 x 2.4mm 
+ 1|  |  1 Nut M6.25 x 1.8mm 
+ 1|  |  1 Heltec T144
+ 1|  |  1 1S 3.7V battery protection board
+ 2|  |  2 Screw M3 dome x 10mm
+ 1|  |  1 Washer star M6.4 x 0.6mm
+
+Printed:
+ 1|  |  1 MNvB_buttons.stl
+  | 1|  1 MNvB_lEnc.stl
+ 1|  |  1 MNvB_uEnc.stl
+
+Assemblies:
+  1 MNvB_assembly
+  1 MNvB_lEnc_assembly

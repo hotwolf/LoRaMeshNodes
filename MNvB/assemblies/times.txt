@@ -1,0 +1,7 @@
+{
+    "MNvB/assemblies/MNvB_lEnc_assembled.png": 2.573,
+    "MNvB/assemblies/MNvB_lEnc_assembly.png": 13.358,
+    "MNvB/assemblies/MNvB_assembled.png": 4.216,
+    "MNvB/assemblies/MNvB_assembly.png": 16.913,
+    "MNvB/readme.html": 0.161
+}

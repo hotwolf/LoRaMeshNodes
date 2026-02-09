@@ -1,0 +1,69 @@
+[
+    {
+        "name": "MNvB_lEnc_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {},
+        "vitamins": {
+            "nut(M3_nut): Nut M3 x 2.4mm ": {
+                "count": 2
+            }
+        },
+        "printed": {
+            "MNvB_lEnc.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    },
+    {
+        "name": "MNvB_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {
+            "MNvB_lEnc_assembly": 1
+        },
+        "vitamins": {
+            "battery(S25R18650): Cell Samsung 25R 18650 LION": {
+                "count": 1
+            },
+            "pcb(LiIonBMS): 1S 3.7V battery protection board": {
+                "count": 1
+            },
+            "antenna(LoRa_20cm_antenna): Antenna 20cm LoRa Antenna": {
+                "count": 1
+            },
+            "nut(ant_nut): Nut M6.25 x 1.8mm ": {
+                "count": 1
+            },
+            "star_washer(ant_washer_washer): Washer star M6.4 x 0.6mm": {
+                "count": 1
+            },
+            "pcb(Heltec_T144): Heltec T144": {
+                "count": 1
+            },
+            "screw(M3_dome_screw, 10): Screw M3 dome x 10mm": {
+                "count": 2
+            }
+        },
+        "printed": {
+            "MNvB_uEnc.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            },
+            "MNvB_buttons.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    }
+]

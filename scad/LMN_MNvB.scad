@@ -42,8 +42,8 @@ include <LMN_Config.scad>
 batT      = S25R18650;               //Battery type
 batD      = battery_diameter(batT);  //Battery diameter
 batL      = battery_length(batT);    //Battery length
-batX      =  batL/2+wallT+0.5;       //Battery X position (from center)
-batY      =  batD/2+2;               //Battery Y position
+batX      =  batL/2+wallT+0.4;        //Battery X position (from center)
+batY      =  batD/2+3;               //Battery Y position
 batZ      =  batD/2+2;               //Battery Z position
 bmsX      =   batX;                  //BMS X position
 bmsY      = batD+wallT+1;            //BMS Y position
@@ -53,7 +53,7 @@ encX      = batL+2*wallT+1+8;        //Enclosure X dimension
 encY      =  60+2*encC;              //Enclosure Y dimension
 encZ      =  11+2*encC;              //Enclosure Z dimension
 encR      =  5;                      //Enclosure corner radius
-lEncZ     =  batZ;                   //Lower enclosure Z dimension
+lEncZ     =  wallT+10;               //Lower enclosure Z dimension
 pcbY      =  38;                     //PCB Y position
 antX      =   5.5+encC;              //Ant X position
 antY      =  32;                     //Ant Y position
@@ -69,286 +69,215 @@ micro = 0.001;
 inf   = 100;
 
 //Enclosure shape
-module enclosure() {
-  
-    difference() {
-        //Positive       
-        union() {
-            
-            //Enclosure shape
-            *%hull() {
-                translate([encC,encC,0])
-                    rounded_cube_xy([encX-2*encC,encY-2*encC,encZ],r=encR-encC);
-                translate([0,0,encC])
-                    rounded_cube_xy([encX,encY,encZ-2*encC],r=encR);                   
-                translate([encC,encC,0])
-                    rounded_cube_xy([encX-2*encC,batD/2,batD-2+2*encC],r=encR-encC);
-                translate([0,0,encC])
-                    rounded_cube_xy([encX,batD/2+encC,batD-2],r=encR);
-                
-                  
-                
-                
-            }
-         }
-        //Negative
-        union() {
-
-            //Enclosure shape
-
-              
-            //Antenna
-            antOffs = 28.4;
-            
-            translate([antX,antY+antOffs,antZ])
-            rotate([90,0,0])
-                cylinder(h=antOffs,d=13);
-            
-            translate([antX,antY,antZ])
-            rotate([90,0,0])
-                cylinder(h=10,d=6.8);
-            #hull() {
-                translate([wallT,antY-2-17,wallT+micro]) 
-                    cube([12,17,encZ-2*wallT-2]);
-                translate([wallT+2,antY-2-17,wallT+micro]) 
-                    cube([10,17,encZ-2*wallT]);
-            }
-            translate([wallT,batY,wallT]) 
-                cube([14,antY-batY-2,encZ-2*wallT]);
-                  
-            hull() {
-                for (y=[0,10]) {
-                    translate([0,y,0]) {
-                
-                        translate([antX,antY+antOffs,antZ])
-                            sphere(d=13.4);
-                        
-                        translate([antX-10,antY+antOffs,antZ])
-                        rotate([0,90,0])
-                            cylinder(h=84,d=13.4);
-                        
-                        //hull() {
-                            translate([antX+74,antY+antOffs,antZ])
-                                sphere(d=13.4);
-                            translate([antX+120,antY+antOffs,antZ])
-                                sphere(d=6.4);
-                        //}
-                        
-                        translate([antX+84,antY+antOffs,antZ])
-                        rotate([0,90,0])
-                            cylinder(h=82,d=6.4);
-                    }
-                }
-            }
-            
-            //PCB
-            #translate([encX-wallT+1,pcbY,wallT])
-            rotate([0,180,0])
-                Heltec_T114_cutout();
-            
-            #translate([encX-wallT+1,pcbY+22.86/2,wallT])
-            rotate([0,0,180])
-            rounded_cube_xy([52.80,22.86,encZ-2*wallT-1],r=1);       
-                
-            //Battery
-            #translate([batX,batY,batZ])
-            rotate([0,90,0])
-                cylinder(h=batL+1, d=batD+0.4, center=true);
-            
-            
-            *translate([batX,batY,wallT])
-                rounded_cube_yz([64,51,6],r=2);
-            *hull() {
-                translate([batX,batY,wallT+2])
-                    cube([64,51,encZ-2*wallT-4]);
-                translate([batX,batY+2,wallT+2+micro])
-                    cube([64,49,encZ-2*wallT-2]);
-            }
-
-            //Screws
-            for (pos=screwPos) {
-                translate([pos.x,pos.y,encZ-wallT-8])
-                    cylinder(h=nut_thickness(nutT)+0.2, r=nut_radius(nutT)+0.1, $fn=6);
-                translate([pos.x,pos.y,wallT])
-                     cylinder(h=40, r=screw_clearance_radius(screwT)+0.4);
-               translate([pos.x,pos.y,encZ-wallT-2.2]) 
-                    cylinder(h=2, r1=screw_clearance_radius(screwT)+1, r2=screw_head_radius(screwT)+1); 
-                translate([pos.x,pos.y,encZ-wallT-0.2]) 
-                    cylinder(h=1, r=screw_head_radius(screwT)+1);
-            }
-                  
-           
-        }
-    }
-}
-//clip(xmin=20)
-*enclosure(); 
-
-//Lower enclosure
-module MNvB_lEnc_stl() {
-    stl("MNvB_enc");
+module enclosure(fix=0) {
     //Antenna
-            antOffs = 28.4;
-
-
+    antOffs = 28.0;
+ 
     difference() {
         //Positive       
         union() {
 
             //Enclosure shape
             difference() {
-                hull() {
-                    translate([encC,encC,0])
-                        rounded_cube_xy([encX-2*encC,encY-2*encC,encZ],r=encR-encC);
-                    translate([0,0,encC])
-                        rounded_cube_xy([encX,encY,encZ-2*encC],r=encR);                   
-                }
-            #translate([antX,antY+antOffs,antZ]) 
-                cylinder(h=10,d=6.6);
-            }
+                union() {
+                    hull() {
+                        translate([encC,encC,0])
+                            rounded_cube_xy([encX-2*encC,encY-2*encC,encZ],r=encR-encC);
+                        translate([0,0,encC])
+                            rounded_cube_xy([encX,encY,encZ-2*encC],r=encR);
+                        *translate([encC,encC,0])
+                            rounded_cube_xy([encX-2*encC,batY-encC,batD+2*encC-2],r=encR-encC);
+                        *translate([0,0,encC])
+                            rounded_cube_xy([encX,batY,batD-2],r=encR);
+                        *translate([encC,batY,batY])
+                        rotate([0,90,0])
+                            cylinder(h=encX-2*encC, d=batD+4);
+                        
+                        *translate([0,batY,batY])
+                        rotate([0,90,0])
+                            cylinder(h=encX, d=batD+4-2*encC);
+                    }
 
+                    hull() {
+ 
+                        clip(ymax=batY) {
+                            translate([encC,encC,0])
+                                rounded_cube_xy([encX-2*encC,encY-2*encC,batD+2*encC-1],r=encR-encC);
+                            translate([0,0,encC])
+                                rounded_cube_xy([encX,encY,batD-1],r=encR);
+                        }
+
+                    }
+                                            
+                    intersection() {                   
+                        hull() {
+                            translate([encC,batY,batY])
+                            rotate([0,90,0])
+                                cylinder(h=encX-2*encC, d=batD+4);
+                
+                            translate([0,batY,batY])
+                            rotate([0,90,0])
+                                cylinder(h=encX, d=batD+4-2*encC);
+                        }
+                        hull() {
+                            translate([encC,encC,0])
+                                rounded_cube_xy([encX-2*encC,30-encC,batD+2*encC],r=encR-encC);
+                            translate([0,0,encC])
+                                rounded_cube_xy([encX,30,batD],r=encR);
+                        }
+                    }                            
+                }
+            }
         }
         //Negative
         union() {
-
-            //Edge
-            translate([-inf,-inf,lEncZ])
-                cube([2*inf,2*inf,inf]);
-            hull() {            
-                translate([wallT/3,wallT/3,lEncZ])
-                    rounded_cube_xy([encX-2*wallT/3,encY-2*wallT/3,1],r=encR-wallT/3);        
-    
-                translate([2*wallT/3,2*wallT/3,lEncZ-wallT/3])
-                    rounded_cube_xy([encX-4*wallT/3,encY-4*wallT/3,wallT/3],r=encR-2*wallT/3);        
-            }
-
             //Antenna
+            antOffs = 28.0;
+
             translate([antX,antY+antOffs,antZ])
             rotate([90,0,0])
-                cylinder(h=antOffs,d=13);
+                cylinder(h=antOffs,d=13.4);
             
             translate([antX,antY,antZ])
             rotate([90,0,0])
                 cylinder(h=10,d=6.8);
-
-            translate([wallT,batY,wallT]) 
-                cube([12,antY-batY-2,encZ-2*wallT]);
-
-            translate([wallT+14,batY,wallT+3]) 
-                cube([14,34,10]);
-
-            translate([wallT+10,batY,wallT+3]) 
-                cube([14,antY-batY-2,10]);
-                  
+            
+             translate([wallT-0.1,antY-2-9,wallT+micro]) 
+                cube([12,9,encZ-2*wallT-2+fix]);
+           
+            translate([wallT-0.1,antY-2-9,wallT+4]) 
+                cube([20,9,6+fix]);
+             
             hull() {
-                for (y=[0,10]) {
-                    translate([0,y,0]) {
-                
-                        translate([antX,antY+antOffs,antZ])
-                            sphere(d=13.4);
-                        
-                        translate([antX-10,antY+antOffs,antZ])
-                        rotate([0,90,0])
-                            cylinder(h=84,d=13.4);
-                        
-                        //hull() {
-                            translate([antX+74,antY+antOffs,antZ])
-                                sphere(d=13.4);
-                            translate([antX+120,antY+antOffs,antZ])
-                                sphere(d=6.4);
-                        //}
-                        
-                        translate([antX+84,antY+antOffs,antZ])
-                        rotate([0,90,0])
-                            cylinder(h=82,d=6.4);
-                    }
-                }
+                translate([antX,antY+antOffs,antZ])
+                rotate([0,0,180])
+                rotate([0,90,0])
+                    cylinder(h=wallT+13.4/2,d=13.4);
+    
+                translate([antX,antY+antOffs,antZ-13.4/2])     
+                rotate([0,0,180])
+                rotate_extrude(angle=90) square([8,13.4]);
             }
+            
+            translate([antX,antY+antOffs,antZ-13.4/2])    
+            rotate([0,0,0])
+            rotate_extrude(angle=90) square([13-4/2,13.4]);
+           
+            translate([antX,antY+antOffs,antZ-13.4/2])     
+            cylinder(h=13.4, r=13.4/2);
+               
+            translate([antX-10,antY+antOffs,antZ])
+            rotate([0,90,0])
+                cylinder(h=100,d=13.4+micro);         
+            *translate([antX-10,antY+antOffs,antZ])
+            rotate([0,90,0])
+            rotate_extrude() {
+                square([13.4/2,100]);        
+            }
+            
+            translate([antX-10,antY+antOffs+10,antZ])
+            rotate([0,90,0])
+                cylinder(h=100,d=13.4);
+             translate([antX-10,antY+antOffs,antZ-13.4/2])
+                cube([100,10,13.4]);
 
             //PCB
             translate([encX-wallT,pcbY,wallT])
             rotate([0,180,0])
                 Heltec_T114_cutout();
             
-            translate([encX-wallT,pcbY+22.86/2,wallT])
-            rotate([0,0,180])
-                rounded_cube_xy([52.80,22.86,encZ-2*wallT-1],r=1);       
-
-            translate([encX-wallT,pcbY+28/2,wallT+3])
-            rotate([0,0,180])
-                cube([54,32,encZ-2*wallT-1]);       
+            hull() {
+                translate([encX-wallT-0.6,pcbY+22.86/2,wallT])
+                rotate([0,0,180])
+                //rounded_cube_xy([51.80,22.86,encZ-2*wallT-2],r=1);       
+                rounded_cube_xy([51.80,22.86,7],r=1);       
+    
+                translate([encX-wallT-2,pcbY+22.86/2,wallT])
+                rotate([0,0,180])
+                rounded_cube_xy([49.80,22.86,10],r=1);       
+            }
+            translate([encX-2*encR-47,pcbY-22.86/2,wallT+3])
+                cube([53,batY+40-pcbY+22.86/2,7+fix]);
+            
+            translate([encX-64,pcbY-7,wallT])
+                cube([16,14,10+fix]);
+            translate([encX-64,pcbY-14,wallT+4])
+                cube([8,18,6+fix]);
 
             //Battery
             translate([batX,batY,batZ])
             rotate([0,90,0])
-                cylinder(h=batL+1, d=batD+0.4, center=true);
-
-            translate([batX-(batL+1)/2,batY,wallT+1])
-                cube([batL+1,batD/2+5,batD/2]);
+                cylinder(h=66,d=19,center=true);
+            translate([batX,batY+19/2,batZ])
+                cube([66,6,8],center=true);
             
             //Screws
             for (pos=screwPos) {
-                #translate([pos.x,pos.y,encZ-wallT-8])
+                translate([pos.x,pos.y,encZ-wallT-8])
                 rotate([0,0,30])
                     cylinder(h=nut_thickness(nutT)+0.2, r=nut_radius(nutT)+0.1, $fn=6);
                 translate([pos.x,pos.y,wallT])
                      cylinder(h=40, r=screw_clearance_radius(screwT)+0.4);
-               translate([pos.x,pos.y,encZ-wallT-2.2]) 
+                *translate([pos.x,pos.y,encZ-wallT-2.2]) 
                     cylinder(h=2, r1=screw_clearance_radius(screwT)+1, r2=screw_head_radius(screwT)+1); 
                 translate([pos.x,pos.y,encZ-wallT-0.2]) 
-                    cylinder(h=1, r=screw_head_radius(screwT)+1);
+                    cylinder(h=20, r=screw_head_radius(screwT)+1);
             }
             
-            
-
         }
     }
 }
+*enclosure();
+
+//Enclosure split
+module split(gap=0) {
+
+    difference() {
+        //Top
+        union() {
+            hull() {
+                translate([gap,gap,lEncZ+wallT/3])
+                    rounded_cube_xy([encX-2*gap,encY-2*gap,40],r=encR);
+            
+                translate([wallT/3+gap,wallT/3+gap,lEncZ])
+                    rounded_cube_xy([encX-2*wallT/3-2*gap,encY-2*wallT/3-2*gap,40],r=encR);
+            }
+            translate([-10,-10,lEncZ+wallT/3])
+                cube([encX+20,encY+20,40]);
+        }
+        //Bottom
+        union() {
+            translate([antX,antY+gap,antZ])
+            rotate([90,0,0])
+                cylinder(h=2+2*gap,d=13.4+gap);         
+        } 
+    }        
+}
+*split();
+
+//Lower enclosure
+module MNvB_lEnc_stl() {
+    stl("MNvB_lEnc");
+
+    difference() {
+        enclosure(micro);
+        split();
+    }
+    
+}
+//clip(xmin=60)
 *MNvB_lEnc_stl();
 
 //Upper enclosure
 module MNvB_uEnc_stl() {
     stl("MNvB_uEnc");
 
-    difference() {
-        //Positive
-        union() {
-
-            //Screws
-            for (pos=screwPos) {
-                translate([pos.x,pos.y,encZ-wallT-2]) 
-                    cylinder(h=2, r1=screw_clearance_radius(screwT)+0.9, r2=screw_head_radius(screwT)+0.9);
-            }
-                
-            //Spacers               
-             translate([encX-46,pcbY+8.6,encZ-wallT-4])
-                rounded_cube_xy([32,3,4],r=1);
-             translate([encX-46,pcbY-11.6,encZ-wallT-4])
-                rounded_cube_xy([32,3,4],r=1);            
-
-
-
-
-        }
-        //Negative
-        union() {
-
-
-
-
-
-
-
-            //Screws
-            for (pos=screwPos) {
-                translate([pos.x,pos.y,encZ-screw_head_height(screwT)-0.2])
-                    cylinder(h=10, r=screw_head_radius(screwT)+0.4);
-                translate([pos.x,pos.y,wallT])
-                     cylinder(h=20, r=screw_clearance_radius(screwT));
-            }
-        }
+     intersection() {
+        enclosure();
+        split(0.2);
     }
 }
+//clip(xmax=20)
 *MNvB_uEnc_stl();
 
 //Printed buttons
@@ -403,7 +332,7 @@ module MNvB_assembly() {
         MNvB_lEnc_assembly($explode=0);
         
         //Upper enclosure
-        *explode([0,0,90])
+        explode([0,0,90])
         MNvB_uEnc_stl();
         
         //Buttons
@@ -452,5 +381,6 @@ if($preview) {
 //    $vpr = [76, 0, 237];
     //$explode = 1;
     *MNvB_lEnc_assembly();
+    //clip(xmax=20)
     MNvB_assembly();
 }
