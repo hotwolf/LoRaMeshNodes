@@ -42,7 +42,7 @@ include <LMN_Config.scad>
 batT      = S25R18650;               //Battery type
 batD      = battery_diameter(batT);  //Battery diameter
 batL      = battery_length(batT);    //Battery length
-batX      =  batL/2+wallT+0.4;        //Battery X position (from center)
+batX      =  batL/2+wallT+0.0;        //Battery X position (from center)
 batY      =  batD/2+3;               //Battery Y position
 batZ      =  batD/2+2;               //Battery Z position
 bmsX      =   batX;                  //BMS X position
@@ -142,11 +142,11 @@ module enclosure(fix=0) {
             rotate([90,0,0])
                 cylinder(h=10,d=6.8);
             
-             translate([wallT-0.1,antY-2-9,wallT+micro]) 
-                cube([12,9,encZ-2*wallT-2+fix]);
+            translate([wallT-0.5,antY-10-9,wallT]) 
+                cube([12,15,12.3]);
            
-            translate([wallT-0.1,antY-2-9,wallT+4]) 
-                cube([20,9,6+fix]);
+            translate([wallT-0.5,antY-4-9,wallT+4]) 
+                cube([16,9,6+fix]);
              
             hull() {
                 translate([antX,antY+antOffs,antZ])
@@ -209,7 +209,7 @@ module enclosure(fix=0) {
             rotate([0,90,0])
                 cylinder(h=66,d=19,center=true);
             translate([batX,batY+19/2,batZ])
-                cube([66,6,8],center=true);
+                cube([66,10,8.3],center=true);
             
             //Screws
             for (pos=screwPos) {
@@ -249,7 +249,7 @@ module split(gap=0) {
         union() {
             translate([antX,antY+gap,antZ])
             rotate([90,0,0])
-                cylinder(h=2+2*gap,d=13.4+gap);         
+                cylinder(h=4+2*gap,d=13.4+gap);         
         } 
     }        
 }
