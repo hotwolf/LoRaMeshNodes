@@ -48,7 +48,8 @@ pcbY      =  37;               //PCB Y position
 lipoX     =  17;               //Lipo X position (from center)
 lipoY     = lEncC;             //Lipo Y position
 antX      =   5.5+lEncC;       //Ant X position
-antY      =  34;               //Ant Y position
+//antY    =  34;           //Ant Y position
+antY      =  34+0.9;           //Ant Y position
 antZ      = lEncZ/2;           //Ant Z position
 gripX     = lEncX-3*lEncC;     //Grip hole X position (lower right corner)
 gripY     =   3*lEncC;         //Grip hole Y position (lower right corner)
@@ -142,7 +143,8 @@ module MNvA_lEnc_stl() {
             }
             
             //Antenna
-            antOffs = 28.0;
+//          antOffs = 28.0;
+            antOffs = 28.0-0.9;
             
             translate([antX,antY+antOffs,antZ])
             rotate([90,0,0])

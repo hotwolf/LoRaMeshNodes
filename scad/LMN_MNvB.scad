@@ -56,7 +56,7 @@ encR      =  5;                      //Enclosure corner radius
 lEncZ     =  wallT+10;               //Lower enclosure Z dimension
 pcbY      =  38;                     //PCB Y position
 antX      =   5.5+encC;              //Ant X position
-antY      =  32;                     //Ant Y position
+antY      =  32.9;                     //Ant Y position
 antZ      = encZ/2;                  //Ant Z position
 screwT    = M3_dome_screw;           //Screw type
 nutT      = screw_nut(screwT);       //Nut type
@@ -132,7 +132,7 @@ module enclosure(fix=0) {
         //Negative
         union() {
             //Antenna
-            antOffs = 28.0;
+            antOffs = 27.1;
 
             translate([antX,antY+antOffs,antZ])
             rotate([90,0,0])
@@ -145,8 +145,8 @@ module enclosure(fix=0) {
             translate([wallT-0.5,antY-10-9,wallT]) 
                 cube([12,15,12.3]);
            
-            translate([wallT-0.5,antY-4-9,wallT+4]) 
-                cube([16,9,6+fix]);
+            translate([wallT-0.5,antY-4-9,wallT+3]) 
+                cube([16,9,7+fix]);
              
             hull() {
                 translate([antX,antY+antOffs,antZ])
@@ -201,20 +201,20 @@ module enclosure(fix=0) {
             
             translate([encX-64,pcbY-7,wallT])
                 cube([16,14,10+fix]);
-            translate([encX-64,pcbY-14,wallT+4])
-                cube([8,18,6+fix]);
+            translate([encX-64,pcbY-14,wallT+3])
+                cube([8,18,7+fix]);
 
             //Battery
             translate([batX,batY,batZ])
             rotate([0,90,0])
-                cylinder(h=66,d=19,center=true);
-            translate([batX,batY+19/2,batZ])
-                cube([66,10,8.3],center=true);
+                cylinder(h=66,d=20,center=true);
+            translate([batX,batY+19/2+0.25,batZ-0.5])
+                cube([66,14,9.3],center=true);
             
             //Screws
             for (pos=screwPos) {
                 translate([pos.x,pos.y,encZ-wallT-8])
-                rotate([0,0,30])
+                rotate([0,0,0])
                     cylinder(h=nut_thickness(nutT)+0.2, r=nut_radius(nutT)+0.1, $fn=6);
                 translate([pos.x,pos.y,wallT])
                      cylinder(h=40, r=screw_clearance_radius(screwT)+0.4);
@@ -311,7 +311,7 @@ module MNvB_lEnc_assembly() {
         for (pos=screwPos) {
             explode([0,0,10])
             translate([pos.x,pos.y,encZ-wallT-8])
-            rotate([0,0,30])
+            rotate([0,0,0])
                 nut(nutT);
         }
     }
@@ -328,7 +328,7 @@ module MNvB_assembly() {
     assembly("MNvB") {
 
         //Lower enclosure
-        //clip(xmax=20)
+        //clip(zmax=8)
         MNvB_lEnc_assembly($explode=0);
         
         //Upper enclosure
@@ -381,6 +381,6 @@ if($preview) {
 //    $vpr = [76, 0, 237];
     //$explode = 1;
     *MNvB_lEnc_assembly();
-    //clip(xmax=20)
+    //clip(xmax=20,ymax=28)
     MNvB_assembly();
 }
