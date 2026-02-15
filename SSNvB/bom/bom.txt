@@ -1,0 +1,64 @@
+Vitamins:
+          S                  
+          s                  
+          n                  
+          v                  
+          b                  
+                             
+          b  S               
+          a  s               
+          t  n           S   
+          t  v           s   
+          e  b           n   
+          r              v   
+ S     S  y  b           b   
+ s     s     a               
+ n     n  c  t        S  r  S
+ v     v  a  t  S  S  s  a  s
+ b     b  b  e  s  s  n  d  n
+          l  r  n  n  v  i  v
+ a     b  e  y  v  v  b  o  b
+ n     a        b  b         
+ t  S  t  c  f        r  f  s
+ e  s  t  l  r  c  p  a  r  o
+ n  n  e  a  a  o  i  d  a  l
+ n  v  r  m  m  r  p  i  m  a
+ a  b  y  p  e  e  e  o  e  r
+ 1|  |  |  |  |  |  |  |  |  |  1 Antenna with N-connector
+  |  | 1|  |  |  |  |  |  |  |  1 Li-Ion/LiFePo4 32700 3.2v
+  |  | 1|  |  |  |  |  |  |  |  1 Battery negative contact
+  |  | 1|  |  |  |  |  |  |  |  1 Battery positive contact
+  |  |  |  |  |  | 1|  |  |  |  1 Conduit diameter 40mmlength 480mm
+  |  |  |  |  |  |  |  |  | 3|  3 Flexible Solar Panel 198x100mm² 6V 1W
+  |  |  | 2|  |  |  |  |  |  |  2 Nut M3 x 2.4mm 
+  |  |  |  |  |  |  | 1|  |  |  1 Heltec T144
+  |  | 1|  |  |  |  |  |  |  |  1 1S 3.2V battery protection board
+  |  | 1|  |  |  |  |  |  |  |  1 MPPT Solar Charge Controller
+  |  | 2|  |  |  |  |  |  |  |  2 Screw M3 pan x 10mm
+  |  | 2|  |  |  |  |  |  |  |  2 Washer  M3 x 7mm x 0.5mm
+
+Printed:
+  |  |  |  |  |  | 2|  |  |  |  2 SSNvB_EndcapThread.stl
+ 1|  |  |  |  |  |  |  |  |  |  1 SSNvB_antenna.stl
+  | 1|  |  |  |  |  |  |  |  |  1 SSNvB_antennaMountFastener.stl
+  |  |  |  |  |  | 1|  |  |  |  1 SSNvB_antennaMountThread.stl
+  |  |  | 1|  |  |  |  |  |  |  1 SSNvB_battery_cable_clamp.stl
+  |  |  |  | 1|  |  |  |  |  |  1 SSNvB_battery_frame_part1.stl
+  |  |  |  | 1|  |  |  |  |  |  1 SSNvB_battery_frame_part2.stl
+  |  |  |  |  |  | 2|  |  |  |  2 SSNvB_encMount.stl
+  | 1|  |  |  |  |  |  |  |  |  1 SSNvB_lEndcap.stl
+  |  |  |  |  |  |  |  | 1|  |  1 SSNvB_radio_frame_part1.stl
+  |  |  |  |  |  |  |  | 1|  |  1 SSNvB_radio_frame_part2.stl
+  | 1|  |  |  |  |  |  |  |  |  1 SSNvB_uEndcap.stl
+
+Assemblies:
+  1 SSNvB_antenna_assembly
+  1 SSNvB_assembly
+  1 SSNvB_battery_assembly
+  1 SSNvB_battery_cable_clamp_assembly
+  1 SSNvB_battery_frame_assembly
+  1 SSNvB_core_assembly
+  1 SSNvB_pipe_assembly
+  1 SSNvB_radio_assembly
+  1 SSNvB_radio_frame_assembly
+  1 SSNvB_solar_assembly

@@ -32,7 +32,7 @@
 //#                                                                             #
 //###############################################################################
 
-//! These are the assembly instructions for the Mobile Node (Variant A) (MNvA),
+//! These are the assembly instructions for the Mobile Node Variant B (MNvB),
 //! a portable [Meshtastic](https://meshtastic.org) or
 //! [MeshCore](https://meshcore.co.uk) node.
 

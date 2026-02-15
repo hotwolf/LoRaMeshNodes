@@ -1,0 +1,234 @@
+[
+    {
+        "name": "SSNvB_pipe_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {},
+        "vitamins": {
+            "conduit(conduit_DN75, 480): Conduit diameter 40mmlength 480mm": {
+                "count": 1
+            }
+        },
+        "printed": {
+            "SSNvB_EndcapThread.stl": {
+                "count": 2,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            },
+            "SSNvB_antennaMountThread.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            },
+            "SSNvB_encMount.stl": {
+                "count": 2,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    },
+    {
+        "name": "SSNvB_solar_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {
+            "SSNvB_pipe_assembly": 1
+        },
+        "vitamins": {
+            "flex_solar(flex_solar_198x100,75): Flexible Solar Panel 198x100mm\u00b2 6V 1W": {
+                "count": 3
+            }
+        },
+        "printed": {},
+        "routed": {}
+    },
+    {
+        "name": "SSNvB_battery_cable_clamp_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {},
+        "vitamins": {
+            "nut(M3_nut): Nut M3 x 2.4mm ": {
+                "count": 2
+            }
+        },
+        "printed": {
+            "SSNvB_battery_cable_clamp.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    },
+    {
+        "name": "SSNvB_battery_frame_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {},
+        "vitamins": {},
+        "printed": {
+            "SSNvB_battery_frame_part1.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            },
+            "SSNvB_battery_frame_part2.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    },
+    {
+        "name": "SSNvB_battery_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {
+            "SSNvB_battery_frame_assembly": 1,
+            "SSNvB_battery_cable_clamp_assembly": 1
+        },
+        "vitamins": {
+            "battery(L32700): Li-Ion/LiFePo4 32700 3.2v": {
+                "count": 1
+            },
+            "battery_contact(bcontact, false): Battery negative contact": {
+                "count": 1
+            },
+            "battery_contact(bcontact, true): Battery positive contact": {
+                "count": 1
+            },
+            "washer(M3_washer): Washer  M3 x 7mm x 0.5mm": {
+                "count": 2
+            },
+            "screw(M3_pan_screw, 10): Screw M3 pan x 10mm": {
+                "count": 2
+            },
+            "pcb(LiFePo4BMS): 1S 3.2V battery protection board": {
+                "count": 1
+            },
+            "pcb(SDBK03TA): MPPT Solar Charge Controller": {
+                "count": 1
+            }
+        },
+        "printed": {},
+        "routed": {}
+    },
+    {
+        "name": "SSNvB_radio_frame_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {},
+        "vitamins": {},
+        "printed": {
+            "SSNvB_radio_frame_part1.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            },
+            "SSNvB_radio_frame_part2.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    },
+    {
+        "name": "SSNvB_radio_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {
+            "SSNvB_radio_frame_assembly": 1
+        },
+        "vitamins": {
+            "pcb(Heltec_T144): Heltec T144": {
+                "count": 1
+            }
+        },
+        "printed": {},
+        "routed": {}
+    },
+    {
+        "name": "SSNvB_antenna_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {},
+        "vitamins": {
+            "LoRa_N_antenna(): Antenna with N-connector": {
+                "count": 1
+            }
+        },
+        "printed": {
+            "SSNvB_antenna.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    },
+    {
+        "name": "SSNvB_core_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {
+            "SSNvB_antenna_assembly": 1,
+            "SSNvB_radio_assembly": 1,
+            "SSNvB_battery_assembly": 1
+        },
+        "vitamins": {},
+        "printed": {},
+        "routed": {}
+    },
+    {
+        "name": "SSNvB_assembly",
+        "big": null,
+        "ngb": false,
+        "zoomed": 0,
+        "count": 1,
+        "assemblies": {
+            "SSNvB_core_assembly": 1,
+            "SSNvB_solar_assembly": 1
+        },
+        "vitamins": {},
+        "printed": {
+            "SSNvB_antennaMountFastener.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            },
+            "SSNvB_uEndcap.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            },
+            "SSNvB_lEndcap.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            }
+        },
+        "routed": {}
+    }
+]

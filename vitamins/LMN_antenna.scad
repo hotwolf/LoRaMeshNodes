@@ -82,7 +82,7 @@ module LoRa_N_antenna(wall=3, alfa=false) {
         //Ziisor antenna
         translate([0,0, 12.2]) color("Silver") cylinder(h=22.4, d=20);
         translate([0,0, 34.6]) color("Silver") cylinder(h=40.5, d=23);
-        translate([0,0, 34.6]) color("SlateGray") cylinder(h=400, d=20);
+        translate([0,0, 34.6]) color("SlateGray") cylinder(h=260, d=20);
     }
 }
 

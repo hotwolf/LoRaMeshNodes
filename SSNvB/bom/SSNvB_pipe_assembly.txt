@@ -1,0 +1,8 @@
+SSNvB_pipe_assembly:
+Vitamins:
+  1 Conduit diameter 40mmlength 480mm
+
+Printed:
+  2 SSNvB_EndcapThread.stl
+  1 SSNvB_antennaMountThread.stl
+  2 SSNvB_encMount.stl

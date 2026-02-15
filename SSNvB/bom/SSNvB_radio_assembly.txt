@@ -1,0 +1,6 @@
+SSNvB_radio_assembly:
+Vitamins:
+  1 Heltec T144
+
+Assemblies:
+  1 SSNvB_radio_frame_assembly

@@ -1,0 +1,4 @@
+SSNvB_battery_frame_assembly:
+Printed:
+  1 SSNvB_battery_frame_part1.stl
+  1 SSNvB_battery_frame_part2.stl

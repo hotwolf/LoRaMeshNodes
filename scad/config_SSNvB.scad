@@ -1,5 +1,5 @@
 //###############################################################################
-//# LoRaMeshNodes - Conduits                                                    #
+//# LoRaMeshNodes - Configuration for Statc Solar Node Variant A                #
 //###############################################################################
 //#    Copyright 2025 Dirk Heisswolf                                            #
 //#    This file is part of the LoRaMeshNodes project.                          #
@@ -22,49 +22,11 @@
 //#                                                                             #
 //###############################################################################
 //# Description:                                                                #
-//#   Plain PVC conduits.                                                       #
-//#                                                                             #
+//#   Variant specific configuration                                            #
+///#                                                                             #
 //###############################################################################
 //# Version History:                                                            #
-//#   September 20, 2025                                                        #
+//#   July 18, 2025                                                             #
 //#      - Initial release                                                      #
 //#                                                                             #
 //###############################################################################
-include <../lib/NopSCADlib/utils/core/core.scad>
-
-//                                                          o    i
-//                                                          u    n
-//                                                          t    n
-//                                                          e    e
-//                                                          r    r
-//                                                          D    D
-conduit_M20   = ["conduit_M20",  "Conduit diameter 20mm",  20,  17.5];
-conduit_M25   = ["conduit_M25",  "Conduit diameter 25mm",  25,  22.3];
-conduit_M32   = ["conduit_M32",  "Conduit diameter 32mm",  32,  29.1];
-//conduit_M40 = ["conduit_M40",  "Conduit diameter 40mm",  40,  35.5]; //loose fit
-//conduit_M40 = ["conduit_M40",  "Conduit diameter 40mm",  40,  37.2]; //tight fit
-conduit_M40   = ["conduit_M40",  "Conduit diameter 40mm",  40,  36.0];
-conduit_DN75  = ["conduit_DN75", "Conduit diameter 40mm",  75,  71.6];
-
-function conduit_type(type)          = type[0]; //! Conduit type
-function conduit_outerD(type)        = type[2]; //! Conduit outer diameter
-function conduit_innerD(type)        = type[3]; //! Conduit inner diameter
-
-module conduit(type, length) { //! Draw a conduit
-  vitamin(str("conduit(", type[0], ", ", length,"): ", type[1], "length ", length, "mm"));
-
-    outerD      = conduit_outerD(type);
-    innerD      = conduit_innerD(type);
-
-    color("DarkGray")
-    translate([0,0,0])
-    difference() {
-      translate([0,0,0])   cylinder(h=length,    d=outerD);
-      translate([0,0,-10]) cylinder(h=length+20, d=innerD);
-    }
-}
-
-if($preview) {    
-  *conduit(conduit_M40, 80);
-  *conduit(conduit_DN75, 80);
-}

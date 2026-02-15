@@ -1,0 +1,6 @@
+SSNvB_solar_assembly:
+Vitamins:
+  3 Flexible Solar Panel 198x100mm² 6V 1W
+
+Assemblies:
+  1 SSNvB_pipe_assembly

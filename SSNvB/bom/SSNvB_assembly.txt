@@ -1,0 +1,9 @@
+SSNvB_assembly:
+Printed:
+  1 SSNvB_antennaMountFastener.stl
+  1 SSNvB_lEndcap.stl
+  1 SSNvB_uEndcap.stl
+
+Assemblies:
+  1 SSNvB_core_assembly
+  1 SSNvB_solar_assembly
