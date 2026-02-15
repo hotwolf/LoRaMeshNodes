@@ -1,4 +1,4 @@
-SSNvB/stls/SSNvB_encMount.stl: \
+SSNvB/stls/SSNvB_uEndcap.stl: \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/vitamins/jhead.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/clip.scad \
 	/home/dirk/Projects/LoRaMeshNodes/lib/NopSCADlib/utils/core/teardrops.scad \

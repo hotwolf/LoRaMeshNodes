@@ -1,6 +1,6 @@
 SSNvB_pipe_assembly:
 Vitamins:
-  1 Conduit diameter 40mmlength 480mm
+  1 Conduit diameter 40mmlength 470mm
 
 Printed:
   2 SSNvB_EndcapThread.stl

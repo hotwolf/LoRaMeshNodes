@@ -188,7 +188,7 @@ module SSNvB_battery_frame_part1_stl() {
     stl("SSNvB_battery_frame_part1");
     difference() {
         SSNvB_battery_frame();
-        translate([0,-50,-150]) cube([100,100,200]);
+        translate([0,-50,-180]) cube([100,100,200]);
     }
 }
 *SSNvB_battery_frame_part1_stl();
@@ -197,7 +197,7 @@ module SSNvB_battery_frame_part2_stl() {
     stl("SSNvB_battery_frame_part2");
     difference() {
         SSNvB_battery_frame();
-        translate([-100,-50,-150]) cube([100,100,200]);
+        translate([-100,-50,-180]) cube([100,100,200]);
     }
 }
 *SSNvB_battery_frame_part2_stl();
