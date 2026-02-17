@@ -73,7 +73,7 @@ module maleThread(condT=condT,di=64,do=innerD,l=40,top=0,bot=0) {
     outerD         = conduit_outerD(condT);  //Outer diameter of the conduit
     threadPitch    = 4;
     difference() {
-        thread(dia     = do-5, 
+        thread(dia     = do-5.4, 
                pitch   = threadPitch, 
                length  = l, 
                profile = thread_profile(threadPitch / 2.2, threadPitch * 0.25, 60),
@@ -196,9 +196,9 @@ module SSNvB_EndcapThread_stl() {
              cylinder(h=3, d=innerD);
      }
 }
-//clip(xmin=0)
+*clip(xmin=0)
 //rotate([180,0,0])
-*SSNvB_EndcapThread_stl();
+SSNvB_EndcapThread_stl();
 
 //Antenna mount thread
 module SSNvB_antennaMountThread_stl() {
@@ -291,21 +291,24 @@ module SSNvB_antennaMountFastener_stl() {
         }
         union() {
            translate([0,0,-10]) 
-                cylinder(h=40, d=22);                    
+                cylinder(h=40, d=24);                    
+           translate([0,0,13]) 
+                cylinder(h=3, d1=24,d2=30);                    
         }
     }
 }
-*SSNvB_antennaMountFastener_stl();
+*clip(xmin=0)
+SSNvB_antennaMountFastener_stl();
  
 //Enclosure mount
 module SSNvB_encMount_stl() {
     stl("SSNvB_encMount");
 
     w=20;
-    connectorShape=[[ 0, 2],
-                    [ 6, 4],   
-                    [ 6,-4],   
-                    [ 0,-2]];    
+    connectorShape=[[ 0, 4],
+                    [ 6, 2],   
+                    [ 6,-2],   
+                    [ 0,-4]];    
 
     difference() {
         //Positive
@@ -339,9 +342,9 @@ module SSNvB_encMount_stl() {
         }
     }
 }
-*SSNvB_encMount_stl();
+SSNvB_encMount_stl();
 
-//Antenna mount fastener
+//Optional cable guide
 module SSNvB_cableGuide_stl() {
    stl("SSNvB_cableGuide");
  

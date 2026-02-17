@@ -108,7 +108,7 @@
 ### Assembly instructions
 ![SSNvB_solar_assembly](assemblies/SSNvB_solar_assembly_tn.png)
 
-1. Solder wires onto the lolar pannels terminals
+1. Solder wires onto the solar panels terminals
 2. Glue solar panels around the pipe 
 
 ![SSNvB_solar_assembled](assemblies/SSNvB_solar_assembled_tn.png)

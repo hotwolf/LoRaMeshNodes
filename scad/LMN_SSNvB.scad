@@ -147,7 +147,7 @@ module SSNvB_pipe_assembly() {
 }
 *SSNvB_pipe_assembly();
 
-//! 1. Solder wires onto the lolar pannels terminals
+//! 1. Solder wires onto the solar panels terminals
 //! 2. Glue solar panels around the pipe 
 module SSNvB_solar_assembly() {
     //pose([30, 0, 0], [150,150,0])
