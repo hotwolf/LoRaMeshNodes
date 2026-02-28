@@ -129,13 +129,20 @@ module SSNvB_pipe_assembly() {
             SSNvB_EndcapThread_stl();
         
         //Enclosure mount
-        translate([0,0,150])
-        rotate([0,0,220]) {
-            rotate([0,180,0])
-            explode([0,40,20])
-                SSNvB_encMount_stl();
-            explode([0,40,20])
-                SSNvB_encMount_stl();
+        //translate([0,0,150])
+        //rotate([0,0,220]) {
+        //   rotate([0,180,0])
+        //    explode([0,40,20])
+        //        SSNvB_encMount_stl();
+        //    explode([0,40,20])
+        //        SSNvB_encMount_stl();
+        //}
+        rotate([0,0,35]) {
+            explode([0,-20, 10]) SSNvB_UIEncMount_stl();
+            explode([0,-20,-10]) SSNvB_LIEncMount_stl();
+            explode([0,-40, 20]) SSNvB_UOEncMount_stl();
+            explode([0,-40,-20]) SSNvB_LOEncMount_stl();
+        
         }
         
         //Cable guides

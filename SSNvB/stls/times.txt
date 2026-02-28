@@ -4,11 +4,14 @@
     "SSNvB_battery_frame_part1.stl": 34.217,
     "SSNvB_battery_frame_part2.stl": 33.682,
     "SSNvB_battery_cable_clamp.stl": 2.392,
-    "SSNvB_antenna.stl": 20.346,
-    "SSNvB_uEndcap.stl": 12.659,
-    "SSNvB_lEndcap.stl": 21.547,
-    "SSNvB_EndcapThread.stl": 17.251,
-    "SSNvB_antennaMountThread.stl": 28.574,
-    "SSNvB_antennaMountFastener.stl": 12.147,
-    "SSNvB_encMount.stl": 3.039
+    "SSNvB_antenna.stl": 26.026,
+    "SSNvB_uEndcap.stl": 16.742,
+    "SSNvB_lEndcap.stl": 26.926,
+    "SSNvB_EndcapThread.stl": 18.537,
+    "SSNvB_antennaMountThread.stl": 32.622,
+    "SSNvB_antennaMountFastener.stl": 14.379,
+    "SSNvB_UIEncMount.stl": 3.532,
+    "SSNvB_LIEncMount.stl": 3.686,
+    "SSNvB_UOEncMount.stl": 3.51,
+    "SSNvB_LOEncMount.stl": 3.598
 }

@@ -22,8 +22,23 @@
                 "colour": "[0, 0.572549, 0]",
                 "camera": "0,0,0,70,0,315,500"
             },
-            "SSNvB_encMount.stl": {
-                "count": 2,
+            "SSNvB_UIEncMount.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            },
+            "SSNvB_LIEncMount.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            },
+            "SSNvB_UOEncMount.stl": {
+                "count": 1,
+                "colour": "[0, 0.572549, 0]",
+                "camera": "0,0,0,70,0,315,500"
+            },
+            "SSNvB_LOEncMount.stl": {
+                "count": 1,
                 "colour": "[0, 0.572549, 0]",
                 "camera": "0,0,0,70,0,315,500"
             }

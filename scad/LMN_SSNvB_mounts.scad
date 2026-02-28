@@ -303,7 +303,7 @@ SSNvB_antennaMountFastener_stl();
 //Enclosure mount
 module SSNvB_encMount_stl() {
     stl("SSNvB_encMount");
-
+    
     w=20;
     connectorShape=[[ 0, 4],
                     [ 6, 2],   
@@ -342,7 +342,181 @@ module SSNvB_encMount_stl() {
         }
     }
 }
-SSNvB_encMount_stl();
+*SSNvB_encMount_stl();
+
+
+
+//Inner enclosure mount profile
+module SSNvB_conProfile(w=30) {
+
+    polygon([[-w*3/6,   0],
+             [-w*2/6, w/4],
+             [-w*1/6, w/4],
+             [     0,   0],
+             [ w*1/6,-w/4],
+             [ w*2/6,-w/4],
+             [ w*3/6,   0],
+             [ w*3/6,-400],
+             [-w*3/6,-400]]);
+
+}
+*SSNvB_conProfile();
+
+//Inner enclosure mount profile
+module SSNvB_innerMountProfile(w=20,d=10,o=0) {
+    r=outerD/2;
+
+    translate([0,-sqrt(r^2-(w/2)^2),0])
+    //difference() {
+        polygon([[    -w/2+o,   0],
+                 [     w/2-o,   0],
+                 [ d/2+w/2-o,-d+o],
+                 [-d/2-w/2+o,-d+o]]);   
+    //    translate([0,sqrt(r^2-(w/2)^2),0])
+    //        circle(r=r);
+    //}
+}
+
+//upper inner enclosure mount
+module SSNvB_UIEncMount_stl() {
+    stl("SSNvB_UIEncMount");
+
+    translate([0,0,0]) {
+        intersection() {
+                  
+           difference() {
+               translate([0,0,140]) linear_extrude(150) SSNvB_innerMountProfile();
+               union() {
+                   translate([0,0,-10]) cylinder(h=400,d=outerD);                
+                    for(z=[180:30:290]) {
+                        translate([-40,-outerD/2-6,z-4])
+                            rounded_cube_yz([80,4,8],r=1.5);
+                    }
+                }
+           }
+            
+            translate([0,0,150])
+            rotate([270,0,180])
+                linear_extrude(outerD)
+                    SSNvB_conProfile();
+        
+        }        
+    }  
+}
+*SSNvB_UIEncMount_stl();
+
+//Lower inner enclosure mount
+module SSNvB_LIEncMount_stl() {
+    stl("SSNvB_LIEncMount");
+
+    translate([0,0,0]) {
+        intersection() {
+        
+            difference() {
+                hull() {
+                    translate([0,0,10])  linear_extrude(10)  SSNvB_innerMountProfile(o=2);
+                    translate([0,0,20]) linear_extrude(160) SSNvB_innerMountProfile();
+                }       
+                union() {
+                    translate([0,0,-10]) cylinder(h=200,d=outerD);                
+                    for(z=[40:30:150]) {
+                        translate([-40,-outerD/2-6,z-4])
+                            rounded_cube_yz([80,4,8],r=1.5);
+                    }
+                }   
+            }
+            
+            translate([0,0,150])
+            rotate([90,0,0])
+                linear_extrude(outerD)
+                    SSNvB_conProfile();
+            
+        }
+    }
+}
+*SSNvB_LIEncMount_stl();
+
+//Outer enclosure mount profile
+module SSNvB_outerMountProfile(w=20,d=10) {
+    r=outerD/2;
+    h=6;
+
+   translate([0,-sqrt(r^2-(w/2)^2),0])
+   difference() {
+       polygon([[     -w/2-5,-2],
+                 [     w/2+5,-2],
+                 [ d/2+w/2+4,-d],
+                 [ d/2+w/2+4,-d-h],
+                 [-d/2-w/2-4,-d-h],
+                 [-d/2-w/2-4,-d]]);   
+        offset(delta=0.2)
+        polygon([[    -w/2, 0],
+                 [     w/2, 0],
+                 [ d/2+w/2,-d],
+                 [-d/2-w/2,-d]]);
+   }   
+}
+
+//Upper Outer enclosure mount
+module SSNvB_UOEncMount_stl() {
+    stl("SSNvB_UOEncMount");
+ 
+     translate([0,0,0]) {
+        intersection() {
+                  
+           difference() {
+               translate([0,0,140]) linear_extrude(150) SSNvB_outerMountProfile();
+               union() {
+                   translate([0,0,-10]) cylinder(h=400,d=outerD);                
+                    for(z=[180:30:290]) {
+                        translate([-40,-outerD/2-13.6,z-4])
+                            rounded_cube_yz([80,4,8],r=1.5);
+                    }
+                }
+           }
+            
+            translate([0,0,150])
+            rotate([270,0,180])
+                linear_extrude(outerD)
+                    SSNvB_conProfile(40);
+        
+        }        
+    }         
+}
+*SSNvB_UOEncMount_stl();
+
+//Lower Outer enclosure mount
+module SSNvB_LOEncMount_stl() {
+    stl("SSNvB_LOEncMount");
+
+  translate([0,0,0]) {
+        intersection() {
+        
+            difference() {
+                union() {
+                    translate([0,0,10]) linear_extrude(160) SSNvB_outerMountProfile();
+                    hull() {
+                        translate([0,0,7]) linear_extrude(3) SSNvB_outerMountProfile();
+                    }
+                }       
+                union() {
+                    translate([0,0,-10]) cylinder(h=200,d=outerD);                
+                    for(z=[40:30:150]) {
+                        translate([-40,-outerD/2-13.6,z-4])
+                            rounded_cube_yz([80,4,8],r=1.5);
+                    }
+                }   
+            }
+            
+            translate([0,0,150])
+            rotate([90,0,0])
+                linear_extrude(outerD)
+                    SSNvB_conProfile(40);
+            
+        }
+    }
+}
+*SSNvB_LOEncMount_stl();
 
 //Optional cable guide
 module SSNvB_cableGuide_stl() {
