@@ -1,9 +1,9 @@
 # LoRaMeshNodes
-A collection of DIY LoRa mesh nodes
+A collection of DIY LoRa mesh nodes:
 
 - [MSNvA (Mobile Solar Node Variant A)](https://github.com/hotwolf/LoRaMeshNodes/tree/main/MSNvA)
 
-  <img src="https://github.com/hotwolf/LoRaMeshNodes/blob/gh-pages/images/2025-08-11-MSNvA_outside.jpg?raw=true" alt="MSNvA" width="200" height="auto">
+  <img src="https://github.com/hotwolf/LoRaMeshNodes/blob/gh-pages/images/2025-08-11-MSNvA_outside.jpg?raw=true" alt="MSNvA" width="300" height="auto">
 - [MSVvB (Mobile Solar Node Variant B)](https://github.com/hotwolf/LoRaMeshNodes/tree/main/MSNvB)
 
   <img src="https://github.com/hotwolf/LoRaMeshNodes/blob/gh-pages/images/2025-09-06_MSNvB_outside.jpg?raw=true" alt="MSNvB" width="300" height="auto">
@@ -22,3 +22,10 @@ A collection of DIY LoRa mesh nodes
 - [SSNvD (Stationary Solar Node Variant D)](https://github.com/hotwolf/LoRaMeshNodes/tree/main/SSNvD)
 
   <img src="https://github.com/hotwolf/LoRaMeshNodes/blob/gh-pages/images/2026-01-27-SSNvD_3.png?raw=true" alt="SSNvD" width="300" height="auto">
+
+And tools:
+
+- [LiFePo4Charger (A 1S 32700 LiFePO4 battery charger)](https://github.com/hotwolf/LoRaMeshNodes/tree/main/LiFePo4Charger)
+
+  <img src="https://github.com/hotwolf/LoRaMeshNodes/blob/gh-pages/images/2026-01-01-LiFePo4Charger_1.jpg?raw=true" alt="LiFePo4Charger" width="300" height="auto">
+  
