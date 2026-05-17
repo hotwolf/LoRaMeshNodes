@@ -4,7 +4,7 @@ A collection of DIY LoRa mesh nodes:
 - [MSNvA (Mobile Solar Node Variant A)](https://github.com/hotwolf/LoRaMeshNodes/tree/main/MSNvA)
 
   <img src="https://github.com/hotwolf/LoRaMeshNodes/blob/gh-pages/images/2025-08-11-MSNvA_outside.jpg?raw=true" alt="MSNvA" width="300" height="auto">
-- [MSVvB (Mobile Solar Node Variant B)](https://github.com/hotwolf/LoRaMeshNodes/tree/main/MSNvB)
+- [MSNvB (Mobile Solar Node Variant B)](https://github.com/hotwolf/LoRaMeshNodes/tree/main/MSNvB)
 
   <img src="https://github.com/hotwolf/LoRaMeshNodes/blob/gh-pages/images/2025-09-06_MSNvB_outside.jpg?raw=true" alt="MSNvB" width="300" height="auto">
 - [MNvA  (Mobile Node Variant A)](https://github.com/hotwolf/LoRaMeshNodes/tree/main/MNvA)
